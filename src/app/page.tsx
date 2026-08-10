@@ -6,6 +6,7 @@ import EducationDirections from '@/components/EducationDirections/EducationDirec
 import FeaturedPrograms from '@/components/FeaturedPrograms/FeaturedPrograms';
 import LearningBenefits from '@/components/LearningBenefits/LearningBenefits';
 import AuthorSection from '@/components/AuthorSection/AuthorSection';
+import TestimonialsSection from '@/components/TestimonialsSection/TestimonialsSection';
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +42,7 @@ export default function Home() {
       <FeaturedPrograms />
       <LearningBenefits />
       <AuthorSection />
+      <TestimonialsSection />
     </LayoutShell>
   );
 }
