@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
 import '@fontsource/open-sans/300.css';
 import '@fontsource/open-sans/400.css';
@@ -17,57 +18,67 @@ import '@fontsource/montserrat/800.css';
 import 'modern-normalize/modern-normalize.css';
 import '../styles/globals.css';
 
-import type { Metadata } from 'next';
-
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
 
   title: {
-    default: 'InGenium Life — пространство знаний и идей',
-    template: '%s | Ingenium Life',
+    default: 'InGenium — школа астрологии и образовательный проект',
+    template: '%s | InGenium',
   },
 
   description:
-    'Авторский проект о человеке и мире: психология, мышление, символизм, развитие и практические знания для осознанной жизни.',
-
-  alternates: {
-    canonical: '/',
-  },
+    'InGenium — образовательный проект об астрологии. Онлайн-курсы, вебинары, статьи и авторские материалы Павла Дементьева.',
 
   icons: {
-    icon: [{ url: '/favicon.ico' }, { url: '/favicon.png', type: 'image/png' }],
+    icon: [
+      {
+        url: '/favicon.ico',
+      },
+      {
+        url: '/favicon.png',
+        type: 'image/png',
+      },
+    ],
   },
 
   openGraph: {
     type: 'website',
-    siteName: 'Ingenium Life',
-    title: 'InGenium Life — знания для осознанной жизни',
+    siteName: 'InGenium',
+    title: 'InGenium — школа астрологии и образовательный проект',
     description:
-      'Пространство знаний и идей о человеке, мышлении, развитии и современном мире.',
+      'Онлайн-курсы, вебинары, статьи и авторские материалы об астрологии.',
     images: [
       {
         url: '/images/ogImage/ogMain.webp',
         width: 1200,
         height: 630,
-        alt: 'Ingenium Life',
+        alt: 'InGenium — школа астрологии',
       },
     ],
     locale: 'ru_RU',
+    alternateLocale: ['uk_UA'],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'InGenium Life — знания для осознанной жизни',
+    title: 'InGenium — школа астрологии и образовательный проект',
     description:
-      'Пространство знаний и идей о человеке, мышлении, развитии и современном мире.',
+      'Онлайн-курсы, вебинары, статьи и авторские материалы об астрологии.',
     images: ['/images/ogImage/ogMain.webp'],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 };
 
@@ -78,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="wrapper">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

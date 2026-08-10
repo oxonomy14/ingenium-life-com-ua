@@ -1,0 +1,284 @@
+/* MobileMenu.module.css */
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+    overflow: hidden;
+
+    transition:
+      grid-template-rows 0.35s ease,
+      opacity 0.25s ease;
+  }
+
+  .menuOpen {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+  }
+
+  .inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Navigation */
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .navLink,
+  .navButton {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0;
+
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+
+    color: var(--color-text);
+    background: transparent;
+
+    text-align: left;
+    text-decoration: none;
+
+    cursor: pointer;
+  }
+
+  .navLink {
+    transition: color 0.2s ease;
+  }
+
+  .navLink:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Education */
+
+  .group {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .group .navButton {
+    border-bottom: 0;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    font-family: var(--font-body);
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+
+    color: var(--color-text-secondary);
+
+    transition:
+      transform 0.25s ease,
+      color 0.2s ease;
+  }
+
+  .arrowOpen {
+    color: var(--color-accent-hover);
+
+    transform: rotate(45deg);
+  }
+
+  /* Education submenu */
+
+  .subnav {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    overflow: hidden;
+
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .subnavOpen {
+    grid-template-rows: 1fr;
+  }
+
+  .subnavInner {
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    padding-left: 18px;
+  }
+
+  .subnavInner a {
+    padding: 9px 0;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: var(--color-text-secondary);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+  .subnavInner a:first-child {
+    padding-top: 4px;
+  }
+
+  .subnavInner a:last-child {
+    padding-bottom: 22px;
+  }
+
+  .subnavInner a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 32px 0 36px;
+  }
+
+  .label {
+    margin: 0 0 14px;
+
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--color-text-muted);
+  }
+
+  /* Contacts */
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px 22px;
+
+    margin-bottom: 14px;
+  }
+
+  .contacts a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: var(--color-blue);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+  .contacts a:hover {
+    color: var(--color-blue-hover);
+  }
+
+  .contactsLink {
+    display: inline-block;
+
+    margin-bottom: 32px;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    color: var(--color-text-secondary);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+  .contactsLink:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Languages */
+
+  .languages {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .languages a {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    color: var(--color-text-muted);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+  .languages a:hover {
+    color: var(--color-text);
+  }
+
+  .languages .languageActive {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding-top: 12px;
+  }
+
+  .navLink,
+  .navButton {
+    min-height: 56px;
+
+    font-size: 21px;
+  }
+
+  .footer {
+    padding: 28px 0 32px;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+}
