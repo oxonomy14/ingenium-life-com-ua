@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import PracticeLearning from '@/components/PracticeLearning/PracticeLearning';
 import Hero from '@/components/Hero/Hero';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
+import EducationDirections from '@/components/EducationDirections/EducationDirections';
 
 export const metadata: Metadata = {
   title: {
@@ -33,6 +34,7 @@ export default function Home() {
     <LayoutShell>
       <Hero />
       <PracticeLearning />
+      <EducationDirections />
     </LayoutShell>
   );
 }

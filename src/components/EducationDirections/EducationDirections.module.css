@@ -1,0 +1,295 @@
+.section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg2);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 72px;
+  align-items: end;
+
+  margin-bottom: 56px;
+}
+
+.heading {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+}
+
+.title span {
+  display: block;
+  color: var(--color-blue);
+}
+
+.description {
+  max-width: 500px;
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-rows: repeat(3, minmax(180px, auto));
+  gap: 16px;
+}
+
+/* Card */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+
+  min-height: 220px;
+  padding: 32px;
+
+  text-decoration: none;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featured {
+  grid-row: 1 / 4;
+
+  min-height: 100%;
+  padding: 48px;
+
+  background: var(--color-surface-warm);
+}
+
+.badge {
+  display: inline-flex;
+
+  margin-bottom: 32px;
+  padding: 7px 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-blue);
+  background: var(--color-accent-light);
+
+  border-radius: var(--radius-sm);
+}
+
+.cardTitle {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  color: var(--color-text);
+}
+
+.featured .cardTitle {
+  max-width: 520px;
+
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.08;
+
+  color: var(--color-blue);
+}
+
+.cardText {
+  max-width: 520px;
+  margin: 16px 0 0;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+.featured .cardText {
+  max-width: 580px;
+
+  margin-top: 20px;
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* Link */
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-blue);
+}
+
+.cardLink span {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .cardLink span {
+  transform: translateX(4px);
+}
+
+/* Closed InGenium */
+
+.channel {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.channel:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+}
+
+.channel .cardTitle {
+  color: var(--color-white);
+}
+
+.channel .cardText {
+  color: var(--color-blue-light);
+}
+
+.channel .cardLink {
+  color: var(--color-accent-light);
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    margin-bottom: 48px;
+  }
+
+  .description {
+    max-width: 640px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .featured {
+    grid-column: 1 / -1;
+    grid-row: auto;
+
+    min-height: 360px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .featured {
+    min-height: auto;
+    padding: 28px;
+  }
+
+  .featured {
+    grid-column: auto;
+  }
+
+  .badge {
+    margin-bottom: 24px;
+  }
+
+  .cardTitle,
+  .featured .cardTitle {
+    font-size: 27px;
+  }
+
+  .featured .cardText {
+    font-size: 16px;
+  }
+}
