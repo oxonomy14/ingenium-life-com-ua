@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-
+import PracticeLearning from '@/components/PracticeLearning/PracticeLearning';
 import Hero from '@/components/Hero/Hero';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
 
@@ -32,6 +32,7 @@ export default function Home() {
   return (
     <LayoutShell>
       <Hero />
+      <PracticeLearning />
     </LayoutShell>
   );
 }

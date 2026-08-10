@@ -1,18 +1,25 @@
 .hero {
-  padding: 128px 0 112px;
-  background: var(--color-surface-warm);
+  padding: 80px 0 96px;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  align-items: center;
+  gap: 72px;
 }
 
 .content {
-  max-width: 920px;
+  max-width: 720px;
 }
 
 .eyebrow {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
 
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.4;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -23,26 +30,27 @@
 .title {
   margin: 0;
 
-  max-width: 900px;
-
   font-family: var(--font-heading);
-  font-size: clamp(52px, 7vw, 92px);
+  font-size: clamp(48px, 5.4vw, 76px);
   font-weight: 500;
   line-height: 1.02;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
 
   color: var(--color-text);
 }
 
+.title span {
+  display: block;
+  color: var(--color-blue);
+}
+
 .description {
+  max-width: 650px;
   margin: 32px 0 0;
 
-  max-width: 720px;
-
-  font-family: var(--font-body);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.7;
 
   color: var(--color-text-secondary);
 }
@@ -50,99 +58,230 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 28px;
 
   margin-top: 40px;
 }
 
-.primaryButton,
-.secondaryButton {
+.primaryButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   min-height: 52px;
-  padding: 0 24px;
+  padding: 14px 28px;
 
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 
-  font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
 
-  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-accent);
 
   transition:
     background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.primaryButton {
-  border: 1px solid var(--color-accent);
-  background: var(--color-accent);
-  color: var(--color-white);
-  border-radius: var(--radius-sm);
+    transform 0.2s ease;
 }
 
 .primaryButton:hover {
-  border-color: var(--color-accent-hover);
   background: var(--color-accent-hover);
+  transform: translateY(-1px);
 }
 
-.secondaryButton {
-  border: 1px solid var(--color-border);
-  background: transparent;
-  color: var(--color-text);
-  border-radius: var(--radius-sm);
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--color-blue);
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
 }
 
-.secondaryButton:hover {
-  border-color: var(--color-text);
+.secondaryLink:hover {
+  gap: 14px;
+  color: var(--color-blue-hover);
 }
 
-@media (max-width: 1024px) {
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+
+  margin: 48px 0 0;
+  padding: 24px 0 0;
+
+  list-style: none;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.features li {
+  position: relative;
+
+  padding-left: 18px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+.features li::before {
+  content: '';
+
+  position: absolute;
+  top: 8px;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* Visual */
+
+.visual {
+  position: relative;
+  min-width: 0;
+}
+
+.imageCard {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  background: var(--color-bg2);
+  border-radius: var(--radius-md);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
   .hero {
-    padding: 104px 0 88px;
+    padding: 64px 0 80px;
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr) minmax(400px, 0.9fr);
+    gap: 48px;
   }
 
   .title {
-    font-size: clamp(48px, 8vw, 72px);
+    font-size: clamp(44px, 5.5vw, 64px);
+  }
+
+  .description {
+    font-size: 17px;
   }
 }
 
+/* Mobile / Tablet portrait */
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .content {
+    max-width: 760px;
+  }
+
+  .visual {
+    max-width: 700px;
+  }
+
+  .imageCard {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Mobile */
+
 @media (max-width: 767px) {
   .hero {
-    padding: 72px 0 64px;
+    padding: 48px 0 64px;
+  }
+
+  .inner {
+    gap: 44px;
   }
 
   .eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 12px;
   }
 
   .title {
-    font-size: 44px;
-    line-height: 1.05;
+    font-size: clamp(40px, 12vw, 54px);
+    line-height: 1.04;
   }
 
   .description {
     margin-top: 24px;
 
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
   }
 
   .actions {
+    align-items: flex-start;
     flex-direction: column;
-    align-items: stretch;
+    gap: 14px;
 
     margin-top: 32px;
   }
 
-  .primaryButton,
-  .secondaryButton {
+  .primaryButton {
     width: 100%;
+  }
+
+  .secondaryLink {
+    padding: 8px 0;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 36px;
+    padding-top: 20px;
+  }
+
+  .imageCard {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 39px;
+  }
+
+  .imageCard {
+    aspect-ratio: 1 / 1;
   }
 }

@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/" className={css.logo} onClick={closeMobileMenu}>
             <span className={css.logoMark}>In</span>
 
-            <span className={css.logoText}>InGenium</span>
+            <span className={css.logoText}>InGenium Life</span>
           </Link>
 
           {/* Desktop navigation */}
