@@ -4,6 +4,8 @@ import Hero from '@/components/Hero/Hero';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
 import EducationDirections from '@/components/EducationDirections/EducationDirections';
 import FeaturedPrograms from '@/components/FeaturedPrograms/FeaturedPrograms';
+import LearningBenefits from '@/components/LearningBenefits/LearningBenefits';
+import AuthorSection from '@/components/AuthorSection/AuthorSection';
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +39,8 @@ export default function Home() {
       <PracticeLearning />
       <EducationDirections />
       <FeaturedPrograms />
+      <LearningBenefits />
+      <AuthorSection />
     </LayoutShell>
   );
 }

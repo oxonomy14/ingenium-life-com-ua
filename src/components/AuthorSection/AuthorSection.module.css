@@ -1,0 +1,165 @@
+.section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.15fr);
+  gap: 88px;
+  align-items: center;
+}
+
+/* Image */
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+
+  aspect-ratio: 4 / 5;
+
+  background: var(--color-bg2);
+  border-radius: var(--radius-md);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* Content */
+
+.content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 4.2vw, 58px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+}
+
+.title span {
+  display: block;
+  color: var(--color-blue);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 32px;
+}
+
+.text p {
+  max-width: 620px;
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  margin-top: 36px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--color-blue);
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 6px;
+}
+
+.link span {
+  transition: transform 0.2s ease;
+}
+
+.link:hover span {
+  transform: translateX(4px);
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .inner {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: 48px;
+  }
+
+  .text p {
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageWrapper {
+    max-width: 520px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .text {
+    margin-top: 24px;
+  }
+
+  .text p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .link {
+    margin-top: 28px;
+  }
+}
