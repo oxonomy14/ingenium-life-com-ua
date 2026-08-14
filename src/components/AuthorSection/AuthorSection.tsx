@@ -12,7 +12,7 @@ export default function AuthorSection() {
         <div className={css.inner}>
           <div className={css.imageWrapper}>
             <Image
-              src="/images/author/pavel-dementiev.jpg"
+              src="/images/about/pavel-dementiev.webp"
               alt="Павел Дементьев — автор проекта InGenium"
               width={720}
               height={860}

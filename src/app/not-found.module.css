@@ -1,0 +1,155 @@
+.notFound {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  align-items: center;
+  padding: var(--space-xl) 0;
+  background: var(--color-bg);
+}
+
+.inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.code {
+  margin-bottom: -24px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(120px, 20vw, 240px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+
+  color: var(--color-bg2);
+
+  user-select: none;
+}
+
+.eyebrow {
+  position: relative;
+
+  margin: 0 0 16px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  position: relative;
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  color: var(--color-text);
+}
+
+.title span {
+  color: var(--color-blue);
+}
+
+.description {
+  max-width: 620px;
+  margin: 24px auto 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 40px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 0 24px;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+
+  border-radius: var(--radius-sm);
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primaryButton {
+  color: var(--color-white);
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+}
+
+.primaryButton:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+}
+
+.secondaryButton {
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.secondaryButton:hover {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+@media (max-width: 767px) {
+  .notFound {
+    min-height: calc(100vh - 72px);
+    padding: var(--space-lg) 0;
+  }
+
+  .code {
+    margin-bottom: -12px;
+  }
+
+  .description {
+    margin-top: 20px;
+
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

@@ -68,7 +68,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className={css.languages}>
+            {/*   <div className={css.languages}>
               <Link href="/" className={css.languageActive}>
                 RU
               </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
               <Link href="/uk" className={css.language}>
                 UA
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div className={css.column}>

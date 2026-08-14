@@ -75,7 +75,7 @@ export default function Header() {
 
           <div className={css.actions}>
             {/* Languages */}
-
+            {/* 
             <div className={css.languages}>
               <Link
                 href="/"
@@ -89,7 +89,7 @@ export default function Header() {
               <Link href="/ua" className={css.language}>
                 UA
               </Link>
-            </div>
+            </div> */}
 
             {/* Contacts dropdown */}
 
