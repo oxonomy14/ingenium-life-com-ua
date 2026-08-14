@@ -7,6 +7,10 @@ import FeaturedPrograms from '@/components/FeaturedPrograms/FeaturedPrograms';
 import LearningBenefits from '@/components/LearningBenefits/LearningBenefits';
 import AuthorSection from '@/components/AuthorSection/AuthorSection';
 import TestimonialsSection from '@/components/TestimonialsSection/TestimonialsSection';
+import WebinarsSection from '@/components/WebinarsSection/WebinarsSection';
+import LatestArticles from '@/components/LatestArticles/LatestArticles';
+import FaqSection from '@/components/FaqSection/FaqSection';
+import FinalCta from '@/components/FinalCta/FinalCta';
 
 export const metadata: Metadata = {
   title: {
@@ -43,6 +47,10 @@ export default function Home() {
       <LearningBenefits />
       <AuthorSection />
       <TestimonialsSection />
+      <WebinarsSection />
+      <LatestArticles />
+      <FaqSection />
+      <FinalCta />
     </LayoutShell>
   );
 }

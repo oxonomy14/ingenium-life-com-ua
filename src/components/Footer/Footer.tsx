@@ -1,6 +1,13 @@
-import React from 'react';
 import Link from 'next/link';
+import {
+  FaTelegramPlane,
+  FaYoutube,
+  FaInstagram,
+  FaFacebookF,
+} from 'react-icons/fa';
+
 import Container from '@/components/Container/Container';
+
 import css from './Footer.module.css';
 
 export default function Footer() {
@@ -10,70 +17,115 @@ export default function Footer() {
         <div className={css.top}>
           <div className={css.brand}>
             <Link href="/" className={css.logo}>
-              InGenium
+              <span className={css.logoMark}>In</span>
+              <span className={css.logoText}>InGenium Life</span>
             </Link>
 
             <p className={css.description}>
-              Авторский журнал о человеке, психологии, культуре, символах и
-              различных системах понимания личности.
+              Авторский образовательный проект об астрологии, Таро, психологии и
+              системном изучении человека.
             </p>
+
+            <div className={css.socials}>
+              <a
+                href="..."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                className={css.socialLink}
+              >
+                <FaTelegramPlane />
+              </a>
+
+              <a
+                href="..."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className={css.socialLink}
+              >
+                <FaYoutube />
+              </a>
+
+              <a
+                href="..."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className={css.socialLink}
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="..."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className={css.socialLink}
+              >
+                <FaFacebookF />
+              </a>
+            </div>
+
+            <div className={css.languages}>
+              <Link href="/" className={css.languageActive}>
+                RU
+              </Link>
+
+              <Link href="/uk" className={css.language}>
+                UA
+              </Link>
+            </div>
           </div>
 
-          <nav className={css.nav} aria-label="Навигация в подвале">
-            <div className={css.navGroup}>
-              <p className={css.navTitle}>Журнал</p>
+          <div className={css.column}>
+            <p className={css.columnTitle}>Обучение</p>
 
-              <Link href="/articles">Статьи</Link>
-              <Link href="/topics">Темы</Link>
+            <nav className={css.links}>
+              <Link href="/education">Все программы</Link>
+              <Link href="/education/astrology">Астрология</Link>
+              <Link href="/education/tarot">Таро</Link>
+              <Link href="/education/psychology">Психология</Link>
               <Link href="/webinars">Вебинары</Link>
+            </nav>
+          </div>
+
+          <div className={css.column}>
+            <p className={css.columnTitle}>Материалы</p>
+
+            <nav className={css.links}>
+              <Link href="/articles">Статьи</Link>
+              <Link href="/articles/category/astrology">Об астрологии</Link>
+              <Link href="/articles/category/tarot">О Таро</Link>
+              <Link href="/articles/category/psychology">О психологии</Link>
+              <Link href="/reviews">Отзывы</Link>
+            </nav>
+          </div>
+
+          <div className={css.column}>
+            <p className={css.columnTitle}>InGenium</p>
+
+            <nav className={css.links}>
               <Link href="/about">О проекте</Link>
-            </div>
 
-            <div className={css.navGroup}>
-              <p className={css.navTitle}>InGenium</p>
-
-              <Link href="/membership">Подписка</Link>
               <a
-                href="https://ingenium-life.ru"
+                href="https://ingenium-life.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ingenium-life.ru
+                Закрытый InGenium ↗
               </a>
 
-              <a
-                href="https://ingenium-life.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ingenium-life.org
-              </a>
-            </div>
-          </nav>
-
-          <div className={css.community}>
-            <p className={css.eyebrow}>Закрытый InGenium</p>
-
-            <h2 className={css.communityTitle}>
-              Больше материалов.
-              <br />
-              Больше глубины.
-            </h2>
-
-            <p className={css.communityText}>
-              Авторские публикации, вебинары, разборы и материалы для участников
-              сообщества.
-            </p>
-
-            <Link href="/membership" className={css.communityLink}>
-              Узнать о подписке
-              <span aria-hidden="true">→</span>
-            </Link>
+              <Link href="/contacts">Контакты</Link>
+            </nav>
           </div>
         </div>
 
         <div className={css.bottom}>
-          <p className={css.copyright}>© {new Date().getFullYear()} InGenium</p>
+          <p className={css.copyright}>
+            © {new Date().getFullYear()} InGenium Life
+          </p>
 
           <div className={css.legal}>
             <Link href="/privacy">Политика конфиденциальности</Link>
