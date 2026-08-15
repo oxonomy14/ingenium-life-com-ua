@@ -1,0 +1,154 @@
+.section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+  gap: 96px;
+}
+
+.heading {
+  max-width: 470px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+}
+
+.title span {
+  color: var(--color-blue);
+}
+
+.description {
+  margin: 24px 0 0;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+.list {
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding: 28px 0;
+
+  cursor: pointer;
+  list-style: none;
+
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: var(--color-text);
+}
+
+.question::-webkit-details-marker {
+  display: none;
+}
+
+.icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+
+  color: var(--color-blue);
+
+  transition: transform 0.2s ease;
+}
+
+.item[open] .icon {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-width: 720px;
+  padding: 0 66px 28px 0;
+}
+
+.answer p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+@media screen and (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .heading {
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .inner {
+    gap: 40px;
+  }
+
+  .question {
+    gap: 20px;
+    padding: 24px 0;
+
+    font-size: 18px;
+  }
+
+  .answer {
+    padding: 0 0 24px;
+  }
+}

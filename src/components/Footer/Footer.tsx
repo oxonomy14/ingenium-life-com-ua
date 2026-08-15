@@ -86,7 +86,9 @@ export default function Footer() {
               <Link href="/education">Все программы</Link>
               <Link href="/education/astrology">Астрология</Link>
               <Link href="/education/tarot">Таро</Link>
-              <Link href="/education/psychology">Психология</Link>
+              <Link href="/education/jungian-psychology">
+                Юнгианская психология
+              </Link>
               <Link href="/webinars">Вебинары</Link>
             </nav>
           </div>

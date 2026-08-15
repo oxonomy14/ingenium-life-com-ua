@@ -18,6 +18,10 @@ import '@fontsource/montserrat/800.css';
 import 'modern-normalize/modern-normalize.css';
 import '../styles/globals.css';
 
+import OrganizationSchema from '@/components/Seo/OrganizationSchema/OrganizationSchema';
+import WebSiteSchema from '@/components/Seo/WebSiteSchema/WebSiteSchema';
+import PersonSchema from '@/components/Seo/PersonSchema/PersonSchema';
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
@@ -89,7 +93,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <OrganizationSchema />
+        <PersonSchema />
+        <WebSiteSchema />
+        {children}
+      </body>
     </html>
   );
 }

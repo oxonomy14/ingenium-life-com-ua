@@ -5,10 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-
+import ArticleSchema from '@/components/Seo/ArticleSchema/ArticleSchema';
+import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
 import Container from '@/components/Container/Container';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
 
+import { siteConfig } from '@/config/site';
 import { getAllArticleSlugs, getArticleBySlug } from '@/lib/articles';
 
 import css from './ArticlePage.module.css';
@@ -18,9 +20,6 @@ type Props = {
     slug: string;
   }>;
 };
-
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://ingenium-life.com.ua';
 
 export function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -39,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const articleUrl = `${baseUrl}/articles/${article.slug}`;
+  const articleUrl = `/articles/${article.slug}`;
 
   return {
     title: article.title,
@@ -85,7 +84,8 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
-  const articleUrl = `${baseUrl}/articles/${article.slug}`;
+  const articlePath = `/articles/${article.slug}`;
+  const articleUrl = `${siteConfig.url}${articlePath}`;
 
   const formattedDate = new Intl.DateTimeFormat('ru-RU', {
     day: '2-digit',
@@ -93,107 +93,46 @@ export default async function ArticlePage({ params }: Props) {
     year: 'numeric',
   }).format(new Date(article.date));
 
-  /* Article JSON-LD */
-
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-
-    headline: article.title,
-
-    description: article.description,
-
-    datePublished: article.date,
-
-    ...(article.updatedAt && {
-      dateModified: article.updatedAt,
-    }),
-
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': articleUrl,
-    },
-
-    author: {
-      '@type': 'Organization',
-      name: 'InGenium Life',
-      url: baseUrl,
-    },
-
-    publisher: {
-      '@type': 'Organization',
-      name: 'InGenium Life',
-      url: baseUrl,
-    },
-
-    ...(article.image && {
-      image: `${baseUrl}${article.image}`,
-    }),
-
-    articleSection: article.category,
-  };
-
-  /* BreadcrumbList JSON-LD */
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Главная',
-        item: baseUrl,
-      },
-
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Статьи',
-        item: `${baseUrl}/articles`,
-      },
-
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: article.title,
-        item: articleUrl,
-      },
-    ],
-  };
-
   return (
     <LayoutShell>
-      {/* JSON-LD */}
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c'),
-        }}
+      <ArticleSchema
+        title={article.title}
+        description={article.description}
+        slug={article.slug}
+        datePublished={article.date}
+        dateModified={article.updatedAt}
+        image={article.image}
+        category={article.category}
       />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c'),
-        }}
+      <BreadcrumbSchema
+        items={[
+          {
+            name: 'Главная',
+            url: '/',
+          },
+          {
+            name: 'Статьи',
+            url: '/articles',
+          },
+          {
+            name: article.title,
+            url: articlePath,
+          },
+        ]}
       />
-
       <div className={css.article}>
         <Container>
           <header className={css.header}>
             <nav className={css.breadcrumbs} aria-label="Хлебные крошки">
               <Link href="/">Главная</Link>
 
-              <span>/</span>
+              <span aria-hidden="true">/</span>
 
               <Link href="/articles">Статьи</Link>
 
-              <span>/</span>
+              <span aria-hidden="true">/</span>
 
-              <span>{article.title}</span>
+              <span aria-current="page">{article.title}</span>
             </nav>
 
             <p className={css.category}>{article.category}</p>

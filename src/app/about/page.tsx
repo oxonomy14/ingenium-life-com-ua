@@ -11,6 +11,8 @@ import AboutDirections from '@/components/AboutDirections/AboutDirections';
 import AboutApproach from '@/components/AboutApproach/AboutApproach';
 import AboutToday from '@/components/AboutToday/AboutToday';
 import AboutCTA from '@/components/AboutCTA/AboutCTA';
+import AboutPageSchema from '@/components/Seo/AboutPageSchema/AboutPageSchema';
+import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'О проекте InGenium Life',
@@ -32,6 +34,20 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <LayoutShell>
+      <AboutPageSchema />
+
+      <BreadcrumbSchema
+        items={[
+          {
+            name: 'Главная',
+            url: '/',
+          },
+          {
+            name: 'О проекте',
+            url: '/about',
+          },
+        ]}
+      />
       <AboutHero />
       <AboutIdea />
       <AboutAuthor />

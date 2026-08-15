@@ -19,9 +19,9 @@ const directions = [
     linkLabel: 'Смотреть программы',
   },
   {
-    title: 'Психология',
+    title: 'Юнгианская психология',
     text: 'Программы и материалы о личности, отношениях, поведении и психологии человека.',
-    href: '/education/psychology',
+    href: '/education/jungian-psychology',
     linkLabel: 'Смотреть программы',
   },
   {
