@@ -1,0 +1,248 @@
+.hero {
+  padding: 96px 0;
+
+  background: var(--color-bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(340px, 0.7fr);
+
+  align-items: center;
+
+  gap: 96px;
+}
+
+.content {
+  max-width: 780px;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(48px, 5.4vw, 76px);
+  font-weight: 500;
+
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+}
+
+.title span {
+  display: block;
+
+  color: var(--color-blue);
+}
+
+.description {
+  max-width: 700px;
+
+  margin: 30px 0 0;
+
+  font-size: 18px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 24px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-radius: var(--radius-md);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton {
+  color: var(--color-white);
+
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+}
+
+.primaryButton:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  color: var(--color-blue);
+
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-blue);
+
+  transform: translateY(-1px);
+}
+
+/* Right block */
+
+.aside {
+  padding: 36px;
+
+  background: var(--color-surface-warm);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.asideLabel {
+  margin: 0 0 16px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.asideText {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: 22px;
+  font-weight: 500;
+
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+
+  color: var(--color-text);
+}
+
+.points {
+  margin-top: 32px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.point {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+
+  gap: 12px;
+
+  padding: 16px 0;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.number {
+  font-size: 12px;
+  font-weight: 700;
+
+  color: var(--color-accent);
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr) 340px;
+
+    gap: 48px;
+  }
+
+  .title {
+    font-size: clamp(44px, 6vw, 62px);
+  }
+
+  .aside {
+    padding: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 64px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+  }
+
+  .title {
+    font-size: clamp(40px, 12vw, 54px);
+  }
+
+  .description {
+    margin-top: 24px;
+
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 30px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .aside {
+    padding: 24px;
+  }
+
+  .asideText {
+    font-size: 20px;
+  }
+}

@@ -22,7 +22,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             className={css.image}
           />
 
-          <span className={css.category}>{article.category}</span>
+          <span className={css.category}>{article.labelCategory}</span>
         </div>
       </Link>
 
@@ -37,7 +37,9 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           </Link>
         </h2>
 
-        <p className={css.description}>{article.description}</p>
+        <p className={css.description}>
+          {article.shortDescription || article.description}
+        </p>
 
         <Link href={`/articles/${article.slug}`} className={css.link}>
           Читать статью

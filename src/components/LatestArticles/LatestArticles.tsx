@@ -49,11 +49,14 @@ export default function LatestArticles() {
             </div>
 
             <div className={css.featuredContent}>
-              <p className={css.category}>{featuredArticle.category}</p>
+              <p className={css.category}>{featuredArticle.labelCategory}</p>
 
               <h3 className={css.featuredTitle}>{featuredArticle.title}</h3>
 
-              <p className={css.excerpt}>{featuredArticle.description}</p>
+              <p className={css.excerpt}>
+                {featuredArticle.shortDescription ||
+                  featuredArticle.description}
+              </p>
 
               <span className={css.readLink}>
                 Читать статью
@@ -80,11 +83,13 @@ export default function LatestArticles() {
                 </div>
 
                 <div className={css.smallContent}>
-                  <p className={css.category}>{article.category}</p>
+                  <p className={css.category}>{article.labelCategory}</p>
 
                   <h3 className={css.smallTitle}>{article.title}</h3>
 
-                  <p className={css.smallExcerpt}>{article.description}</p>
+                  <p className={css.smallExcerpt}>
+                    {article.shortDescription || featuredArticle.description}
+                  </p>
 
                   <span className={css.readLink}>
                     Читать

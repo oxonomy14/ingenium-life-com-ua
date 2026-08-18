@@ -5,13 +5,26 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import AuthorSection from './_components/AuthorSection/AuthorSection';
+import RelatedArticles from './_components/RelatedArticles/RelatedArticles';
 import ArticleSchema from '@/components/Seo/ArticleSchema/ArticleSchema';
 import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
 import Container from '@/components/Container/Container';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
 
 import { siteConfig } from '@/config/site';
-import { getAllArticleSlugs, getArticleBySlug } from '@/lib/articles';
+
+import {
+  getAllArticleSlugs,
+  getArticleBySlug,
+  getArticlesByCategory,
+} from '@/lib/articles';
+
+import { getAuthorById } from '@/data/authors';
+
+import ArticleCourseBanner from './_components/ArticleCourseBanner/ArticleCourseBanner';
+
+import { getCourse } from '@/lib/courses';
 
 import css from './ArticlePage.module.css';
 
@@ -93,6 +106,20 @@ export default async function ArticlePage({ params }: Props) {
     year: 'numeric',
   }).format(new Date(article.date));
 
+  const author = article.authorId ? getAuthorById(article.authorId) : undefined;
+
+  const relatedArticles = getArticlesByCategory(article.category)
+    .filter((item) => item.slug !== article.slug)
+    .slice(0, 3);
+
+  const course = article.course
+    ? getCourse(article.course.category, article.course.slug)
+    : null;
+
+  const courseHref = article.course
+    ? `/education/${article.course.category}/${article.course.slug}`
+    : null;
+
   return (
     <LayoutShell>
       <ArticleSchema
@@ -102,7 +129,7 @@ export default async function ArticlePage({ params }: Props) {
         datePublished={article.date}
         dateModified={article.updatedAt}
         image={article.image}
-        category={article.category}
+        category={article.labelCategory}
       />
       <BreadcrumbSchema
         items={[
@@ -135,11 +162,13 @@ export default async function ArticlePage({ params }: Props) {
               <span aria-current="page">{article.title}</span>
             </nav>
 
-            <p className={css.category}>{article.category}</p>
+            <p className={css.category}>{article.labelCategory}</p>
 
             <h1 className={css.title}>{article.title}</h1>
 
-            <p className={css.lead}>{article.description}</p>
+            <p className={css.lead}>
+              {article.shortDescription || article.description}
+            </p>
 
             <div className={css.meta}>
               <time dateTime={article.date}>{formattedDate}</time>
@@ -161,11 +190,41 @@ export default async function ArticlePage({ params }: Props) {
 
           <div className={css.articleLayout}>
             <article className={css.content}>
-              <ReactMarkdown>{article.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  img: ({ src, alt }) => {
+                    if (!src) return null;
+
+                    return (
+                      <span className={css.articleImage}>
+                        <Image
+                          src={src}
+                          alt={alt || ''}
+                          width={1200}
+                          height={675}
+                          sizes="(max-width: 767px) 100vw, 1200px"
+                          loading="lazy"
+                        />
+                      </span>
+                    );
+                  },
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
             </article>
           </div>
         </Container>
       </div>
+      {/* Author */}
+      {author && <AuthorSection author={author} />}
+
+      {/* Related articles */}
+      <RelatedArticles articles={relatedArticles} />
+
+      {course && courseHref && (
+        <ArticleCourseBanner course={course} href={courseHref} />
+      )}
     </LayoutShell>
   );
 }

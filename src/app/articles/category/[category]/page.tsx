@@ -65,7 +65,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
-  const articles = getArticlesByCategory(currentCategory.label);
+  const articles = getArticlesByCategory(currentCategory.slug);
 
   return (
     <LayoutShell>

@@ -1,10 +1,16 @@
 ---
+authorId: 'pavel-dementiev'
 title: 'Чем отличается Луна в Тельце от Солнца в Тельце?'
 description: 'Разбираем разницу между Луной и Солнцем в Тельце, а также особенности Венеры, Марса и Меркурия в этом знаке.'
 slug: 'chem-otlichaetsya-luna-v-teltse-ot-solntsa-v-teltse'
+courseSlug: 'natal-astrology-v2'
+course:
+  category: 'astrology'
+  slug: 'natal-astrology-v2'
 date: '2023-12-08'
 updatedAt: '2026-08-12'
-category: 'Астрология'
+category: 'astrology'
+labelCategory: 'Астрология'
 image: '/images/articles/chem-otlichaetsya-luna-v-teltse-ot-solntsa-v-teltse.webp'
 imageAlt: 'Луна и Солнце в знаке Тельца'
 ---

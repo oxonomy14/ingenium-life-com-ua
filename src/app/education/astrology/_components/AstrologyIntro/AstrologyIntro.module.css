@@ -1,0 +1,146 @@
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-surface);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+
+  gap: 96px;
+}
+
+.heading {
+  max-width: 520px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(34px, 3.8vw, 50px);
+  font-weight: 500;
+
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+}
+
+.content {
+  max-width: 720px;
+}
+
+.content p {
+  margin: 0 0 20px;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: var(--color-text-secondary);
+}
+
+.lead {
+  font-size: 20px !important;
+  font-weight: 500;
+
+  line-height: 1.65 !important;
+
+  color: var(--color-text) !important;
+}
+
+.note {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+
+  gap: 18px;
+
+  margin-top: 32px;
+  padding: 24px;
+
+  background: var(--color-surface-warm);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.noteMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+
+  color: var(--color-white);
+
+  background: var(--color-blue);
+
+  border-radius: 50%;
+}
+
+.note p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: var(--color-text);
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .lead {
+    font-size: 18px !important;
+  }
+
+  .note {
+    grid-template-columns: 40px minmax(0, 1fr);
+
+    padding: 20px;
+  }
+}

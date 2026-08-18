@@ -1,3 +1,5 @@
+// src/lib/articles.ts
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -28,10 +30,15 @@ export function getAllArticles(): Articles[] {
 
       return {
         slug,
+        courseSlug: data.courseSlug,
+        course: data.course,
+        authorId: data.authorId,
         title: data.title,
         description: data.description,
+        shortDescription: data.shortDescription,
         date: data.date,
         category: data.category,
+        labelCategory: data.labelCategory,
         image: data.image,
         imageAlt: data.imageAlt,
       };
@@ -55,11 +62,16 @@ export function getArticleBySlug(slug: string): Article | null {
 
   return {
     slug,
+    courseSlug: data.courseSlug,
+    course: data.course,
+    authorId: data.authorId,
     title: data.title,
     description: data.description,
+    shortDescription: data.shortDescription,
     date: data.date,
     updatedAt: data.updatedAt,
     category: data.category,
+    labelCategory: data.labelCategory,
     image: data.image,
     imageAlt: data.imageAlt,
     content,
