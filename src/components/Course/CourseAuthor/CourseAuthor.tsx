@@ -28,8 +28,7 @@ export default function CourseAuthor() {
             <h2 className={css.title}>Павел Дементьев</h2>
 
             <p className={css.lead}>
-              Автор образовательного проекта InGenium и преподаватель курсов по
-              астрологии.
+              Автор образовательного проекта InGenium и преподаватель курсов.
             </p>
 
             <p className={css.description}>

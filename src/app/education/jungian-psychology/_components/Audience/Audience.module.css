@@ -1,0 +1,146 @@
+/* src/app/education/jungian-psychology/_components/Audience/Audience.module.css */
+
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-surface);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.heading {
+  position: sticky;
+  top: 120px;
+
+  max-width: 520px;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-accent);
+
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4vw, 50px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  margin: var(--space-md) 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  min-height: 260px;
+  padding: 30px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-bg);
+}
+
+.number {
+  display: block;
+
+  margin-bottom: 36px;
+
+  color: var(--color-accent);
+
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cardTitle {
+  margin: 0 0 14px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .heading {
+    position: static;
+
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+
+    padding: 26px;
+  }
+
+  .number {
+    margin-bottom: 28px;
+  }
+}

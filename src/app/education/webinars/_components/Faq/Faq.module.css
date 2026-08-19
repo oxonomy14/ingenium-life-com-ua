@@ -1,0 +1,167 @@
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+
+  gap: 96px;
+}
+
+.heading {
+  max-width: 500px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(34px, 3.8vw, 50px);
+  font-weight: 500;
+
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text);
+}
+
+.description {
+  margin: 24px 0 0;
+
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+.list {
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 24px 0;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  font-family: var(--font-heading);
+
+  font-size: 19px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  color: var(--color-text);
+}
+
+.question::-webkit-details-marker {
+  display: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: var(--color-blue);
+
+  transition: transform 0.2s ease;
+}
+
+.item[open] .icon {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-width: 720px;
+
+  padding: 0 48px 24px 0;
+}
+
+.answer p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.75;
+
+  color: var(--color-text-secondary);
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .question {
+    padding: 20px 0;
+
+    font-size: 17px;
+  }
+
+  .answer {
+    padding: 0 0 20px;
+  }
+
+  .answer p {
+    font-size: 15px;
+  }
+}

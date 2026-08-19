@@ -5,6 +5,8 @@ export type ArticleCourseReference = {
   slug: string;
 };
 
+export type ArticleCategory = 'astrology' | 'tarot' | 'jungian-psychology';
+
 export type Articles = {
   authorId?: string;
   slug: string;
@@ -14,7 +16,7 @@ export type Articles = {
   description: string;
   shortDescription: string;
   date: string;
-  category: string;
+  category: ArticleCategory;
   labelCategory: string;
   image: string;
   imageAlt?: string;

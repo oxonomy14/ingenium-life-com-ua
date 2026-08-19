@@ -1,0 +1,185 @@
+/* src/app/webinars/_components/WebinarCatalog/WebinarCatalog.module.css */
+
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-bg);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 480px);
+  gap: var(--space-xl);
+
+  align-items: end;
+
+  margin-bottom: var(--space-lg);
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--space-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-accent);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.description {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: var(--space-lg);
+}
+
+.filter {
+  min-height: 42px;
+
+  padding: 9px 18px;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-text-secondary);
+
+  background: transparent;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.filter:hover {
+  color: var(--color-blue);
+
+  border-color: var(--color-blue);
+}
+
+.filter:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+.active {
+  color: var(--color-white);
+
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.active:hover {
+  color: var(--color-white);
+
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.empty {
+  margin: var(--space-xl) 0 0;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  color: var(--color-text-muted);
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .description {
+    max-width: 680px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .filters {
+    gap: 8px;
+
+    margin-bottom: 32px;
+  }
+
+  .filter {
+    min-height: 40px;
+
+    padding: 8px 14px;
+
+    font-size: 13px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

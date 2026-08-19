@@ -1,0 +1,294 @@
+/* src/app/education/jungian-psychology/_components/Hero/Hero.module.css */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: var(--space-2xl) 0;
+
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(216, 169, 40, 0.14),
+      transparent 32%
+    ),
+    var(--color-bg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  align-items: center;
+  gap: var(--space-xl);
+
+  min-height: 520px;
+}
+
+.content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-accent);
+
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 760px;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-heading);
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.description {
+  max-width: 680px;
+  margin: var(--space-md) 0 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: var(--space-lg);
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+  padding: 0 24px;
+
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.primaryButton:hover {
+  background: var(--color-blue-hover);
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-blue);
+
+  color: var(--color-blue);
+}
+
+/* Visual */
+
+.visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 430px;
+}
+
+.visualCard {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: min(100%, 390px);
+  aspect-ratio: 0.88;
+
+  padding: 42px;
+
+  border: 1px solid rgba(36, 59, 83, 0.12);
+  border-radius: 28px;
+
+  background: var(--color-blue);
+  box-shadow: 0 24px 60px rgba(32, 32, 30, 0.12);
+}
+
+.symbol {
+  color: var(--color-accent-light);
+
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.visualText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.visualText span {
+  color: rgba(255, 255, 255, 0.82);
+
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.circleOne,
+.circleTwo {
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+.circleOne {
+  top: 8%;
+  right: 0;
+
+  width: 160px;
+  height: 160px;
+
+  background: var(--color-accent-light);
+}
+
+.circleTwo {
+  bottom: 4%;
+  left: 4%;
+
+  width: 110px;
+  height: 110px;
+
+  border: 24px solid var(--color-bg2);
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: var(--space-lg);
+
+    min-height: auto;
+  }
+
+  .visual {
+    min-height: 380px;
+  }
+
+  .visualCard {
+    max-width: 320px;
+
+    padding: 34px;
+  }
+
+  .symbol {
+    font-size: 78px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 56px 0 64px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .content {
+    max-width: none;
+  }
+
+  .title {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .description {
+    margin-top: 20px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .actions {
+    margin-top: 28px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .visual {
+    min-height: auto;
+  }
+
+  .visualCard {
+    width: min(88%, 340px);
+
+    padding: 30px;
+
+    border-radius: 22px;
+  }
+
+  .circleOne {
+    width: 120px;
+    height: 120px;
+  }
+
+  .circleTwo {
+    width: 86px;
+    height: 86px;
+
+    border-width: 18px;
+  }
+}

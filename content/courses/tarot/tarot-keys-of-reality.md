@@ -10,6 +10,7 @@ description: 'Полный курс по системе Таро, символи
 shortDescription: 'От структуры колоды и символики Арканов до самостоятельного чтения и анализа раскладов.'
 
 category: 'Таро'
+categorySlug: 'tarot'
 
 level: 'Для начинающих и продолжающих'
 
@@ -32,7 +33,7 @@ price:
 
 featured: true
 published: true
-order: 1
+order: 2
 
 pricing:
   title: 'Выберите свой вариант участия'

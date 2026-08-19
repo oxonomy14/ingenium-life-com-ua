@@ -100,7 +100,9 @@ export default function Footer() {
               <Link href="/articles">Статьи</Link>
               <Link href="/articles/category/astrology">Об астрологии</Link>
               <Link href="/articles/category/tarot">О Таро</Link>
-              <Link href="/articles/category/psychology">О психологии</Link>
+              <Link href="/articles/category/jungian-psychology">
+                О психологии
+              </Link>
               <Link href="/reviews">Отзывы</Link>
             </nav>
           </div>

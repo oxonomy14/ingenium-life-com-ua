@@ -1,37 +1,25 @@
+// src/components/FeaturedPrograms/FeaturedPrograms.tsx
+
 import Link from 'next/link';
 
 import Container from '@/components/Container/Container';
+import { getAllCourses } from '@/lib/courses';
 
 import css from './FeaturedPrograms.module.css';
 
-const programs = [
-  {
-    category: 'Астрология',
-    title: 'Живая Астрология',
-    description:
-      'Практический курс для тех, кто хочет системно понимать натальную карту и уверенно применять знания в работе.',
-    meta: ['Онлайн', 'Авторская программа'],
-    href: '/education/astrology/live-astrology',
-  },
-  {
-    category: 'Таро',
-    title: 'Практика Таро',
-    description:
-      'Курс о символике, логике раскладов и самостоятельной интерпретации карт без механического заучивания значений.',
-    meta: ['Онлайн', 'Практический формат'],
-    href: '/education/tarot',
-  },
-  {
-    category: 'Психология',
-    title: 'Психология отношений',
-    description:
-      'Программа о сценариях поведения, взаимодействии между людьми и понимании эмоциональных процессов.',
-    meta: ['Онлайн', 'Авторские материалы'],
-    href: '/education/psychology',
-  },
+const featuredCourseSlugs = [
+  'natal-astrology-v2',
+  'tarot-keys-of-reality',
+  'functions-of-consciousness',
 ];
 
 export default function FeaturedPrograms() {
+  const allCourses = getAllCourses();
+
+  const programs = featuredCourseSlugs
+    .map((slug) => allCourses.find((course) => course.slug === slug))
+    .filter((course) => course !== undefined);
+
   return (
     <section className={css.section}>
       <Container>
@@ -53,22 +41,30 @@ export default function FeaturedPrograms() {
 
         <div className={css.grid}>
           {programs.map((program) => (
-            <article className={css.card} key={program.title}>
+            <article className={css.card} key={program.slug}>
               <div>
                 <p className={css.category}>{program.category}</p>
 
                 <h3 className={css.cardTitle}>{program.title}</h3>
 
-                <p className={css.description}>{program.description}</p>
+                <p className={css.description}>
+                  {program.shortDescription || program.description}
+                </p>
 
                 <div className={css.meta}>
-                  {program.meta.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
+                  {program.format && <span>{program.format}</span>}
+
+                  {program.lessonCount && (
+                    <span>{program.lessonCount} уроков</span>
+                  )}
                 </div>
               </div>
 
-              <Link href={program.href} className={css.cardLink}>
+              <Link
+                href={`/education/${program.categorySlug}/${program.slug}`}
+                className={css.cardLink}
+                aria-label={`Подробнее о курсе ${program.title}`}
+              >
                 Подробнее
                 <span aria-hidden="true">→</span>
               </Link>

@@ -20,7 +20,7 @@ export const articleCategories = [
   },
 
   {
-    slug: 'psychology',
+    slug: 'jungian-psychology',
     label: 'Психология',
 
     title: 'Статьи по психологии',

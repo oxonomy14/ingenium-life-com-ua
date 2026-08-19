@@ -78,6 +78,7 @@ export type Course = {
 
   category: string;
   level?: string;
+  categorySlug: string;
 
   image?: string;
   imageAlt?: string;
@@ -135,6 +136,7 @@ function parseCourse(
 
     category: data.category || category,
     level: data.level,
+    categorySlug: data.categorySlug,
 
     image: data.image,
     imageAlt: data.imageAlt,

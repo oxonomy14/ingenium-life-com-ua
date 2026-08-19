@@ -30,7 +30,7 @@ export const siteConfig = {
   },
 
   social: {
-    telegram: '',
+    telegram: 'https://t.me/ingenium_life',
     instagram: '',
     facebook: '',
     youtube: '',

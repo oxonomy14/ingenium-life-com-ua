@@ -25,10 +25,14 @@ const directions = [
     linkLabel: 'Смотреть программы',
   },
   {
-    title: 'Закрытый InGenium',
-    text: 'Авторские вебинары и материалы о человеке, культуре, мышлении и мировоззрении.',
-    href: 'https://ingenium-life.com',
-    linkLabel: 'Узнать о проекте',
+    title: 'InGenium в Telegram',
+
+    text: 'Заметки, наблюдения и материалы об астрологии, Таро, психологии и понимании человека.',
+
+    href: 'https://t.me/ingenium_life',
+
+    linkLabel: 'Перейти в Telegram',
+
     external: true,
   },
 ];
