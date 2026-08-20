@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import Container from '@/components/Container/Container';
+import { siteConfig } from '@/config/site';
+
 import MobileMenu from './MobileMenu';
 
 import css from './Header.module.css';
@@ -15,6 +17,8 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const { contacts } = siteConfig;
+
   return (
     <header className={css.header}>
       <Container>
@@ -24,7 +28,7 @@ export default function Header() {
           <Link href="/" className={css.logo} onClick={closeMobileMenu}>
             <span className={css.logoMark}>In</span>
 
-            <span className={css.logoText}>InGenium Life</span>
+            <span className={css.logoText}>{siteConfig.name}</span>
           </Link>
 
           {/* Desktop navigation */}
@@ -74,23 +78,6 @@ export default function Header() {
           {/* Actions */}
 
           <div className={css.actions}>
-            {/* Languages */}
-            {/* 
-            <div className={css.languages}>
-              <Link
-                href="/"
-                className={`${css.language} ${css.languageActive}`}
-              >
-                RU
-              </Link>
-
-              <span className={css.languageDivider}>/</span>
-
-              <Link href="/ua" className={css.language}>
-                UA
-              </Link>
-            </div> */}
-
             {/* Contacts dropdown */}
 
             <div className={css.contactDropdown}>
@@ -103,23 +90,43 @@ export default function Header() {
               </button>
 
               <div className={css.contactMenu}>
-                <a
-                  href="https://t.me/USERNAME"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Telegram
-                </a>
+                {/* Client manager */}
 
-                <a
-                  href="https://wa.me/380XXXXXXXXX"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </a>
+                {contacts.clientManager && (
+                  <a
+                    href={contacts.clientManager}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Написать менеджеру
+                  </a>
+                )}
 
-                <a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a>
+                {/* Telegram */}
+
+                {contacts.telegram && (
+                  <a
+                    href={contacts.telegram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Telegram
+                  </a>
+                )}
+
+                {/* Phone */}
+
+                {contacts.phone && (
+                  <a href={`tel:${contacts.phone.replace(/\s/g, '')}`}>
+                    {contacts.phoneLabel || contacts.phone}
+                  </a>
+                )}
+
+                {/* Email */}
+
+                {contacts.email && (
+                  <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+                )}
 
                 <div className={css.contactDivider} />
 
@@ -146,8 +153,6 @@ export default function Header() {
             </button>
           </div>
         </div>
-
-        {/* Mobile navigation */}
 
         <MobileMenu isOpen={isMenuOpen} onClose={closeMobileMenu} />
       </Container>

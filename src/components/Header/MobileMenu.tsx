@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import { siteConfig } from '@/config/site';
+
 import css from './MobileMenu.module.css';
 
 type MobileMenuProps = {
@@ -12,6 +14,8 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const [isEducationOpen, setIsEducationOpen] = useState(false);
+
+  const { contacts } = siteConfig;
 
   const handleClose = () => {
     setIsEducationOpen(false);
@@ -96,19 +100,35 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <p className={css.label}>Связаться</p>
 
           <div className={css.contacts}>
-            <a href="https://t.me/USERNAME" target="_blank" rel="noreferrer">
-              Telegram
-            </a>
+            {contacts.clientManager && (
+              <a
+                href={contacts.clientManager}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Написать менеджеру
+              </a>
+            )}
 
-            <a
-              href="https://wa.me/380XXXXXXXXX"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp
-            </a>
+            {contacts.telegram && (
+              <a
+                href={contacts.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Telegram
+              </a>
+            )}
 
-            <a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a>
+            {contacts.phone && (
+              <a href={`tel:${contacts.phone.replace(/\s/g, '')}`}>
+                {contacts.phoneLabel || contacts.phone}
+              </a>
+            )}
+
+            {contacts.email && (
+              <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+            )}
           </div>
 
           <Link
@@ -119,6 +139,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             Все контакты →
           </Link>
 
+          {/*
           <div className={css.languages}>
             <Link href="/" className={css.languageActive} onClick={handleClose}>
               Русский
@@ -128,6 +149,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               Українська
             </Link>
           </div>
+          */}
         </div>
       </div>
     </div>

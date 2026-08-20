@@ -113,13 +113,7 @@ export default function Footer() {
             <nav className={css.links}>
               <Link href="/about">О проекте</Link>
 
-              <a
-                href="https://ingenium-life.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Закрытый InGenium ↗
-              </a>
+              <a href="/closed-channel">Закрытый InGenium ↗</a>
 
               <Link href="/contacts">Контакты</Link>
             </nav>

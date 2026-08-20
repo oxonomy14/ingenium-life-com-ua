@@ -5,9 +5,9 @@ import type { Metadata } from 'next';
 import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
 import ContactPageSchema from '@/components/Seo/ContactPageSchema/ContactPageSchema';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
-import ContactsHero from '@/components/ContactsHero/ContactsHero';
-import ContactsInfo from '@/components/ContactsInfo/ContactsInfo';
-import ContactsCta from '@/components/ContactsCta/ContactsCta';
+import ContactsHero from '@/app/contacts/_components/ContactsHero/ContactsHero';
+import ContactsInfo from '@/app/contacts/_components/ContactsInfo/ContactsInfo';
+import ContactsCta from '@/app/contacts/_components/ContactsCta/ContactsCta';
 
 export const metadata: Metadata = {
   title: 'Контакты InGenium Life',

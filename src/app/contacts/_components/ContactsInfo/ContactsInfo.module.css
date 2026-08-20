@@ -7,8 +7,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
-  gap: 96px;
+  grid-template-columns: minmax(0, 0.8fr) minmax(480px, 1.2fr);
+  gap: 80px;
+  align-items: start;
 }
 
 .intro {
@@ -21,6 +22,7 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
+
   letter-spacing: 0.1em;
   text-transform: uppercase;
 
@@ -34,6 +36,7 @@
   font-size: clamp(36px, 4vw, 50px);
   font-weight: 500;
   line-height: 1.12;
+
   letter-spacing: -0.035em;
 
   color: var(--color-text);
@@ -52,62 +55,65 @@
   color: var(--color-text-secondary);
 }
 
-.contacts {
+/* Direct contacts */
+
+.directContacts {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 40px;
+
   border-top: 1px solid var(--color-border);
 }
 
-.contact {
+.directContact {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  gap: 5px;
 
-  padding: 26px 4px;
-
-  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
 
   color: inherit;
   text-decoration: none;
 
+  border-bottom: 1px solid var(--color-border);
+
   transition:
-    padding 0.2s ease,
+    padding-left 0.2s ease,
     color 0.2s ease;
 }
 
-.contact:hover {
-  padding-left: 12px;
-  color: var(--color-blue);
+.directContact:hover {
+  padding-left: 8px;
 }
 
-.label {
-  display: block;
-  margin-bottom: 5px;
-
+.directLabel {
   font-size: 12px;
   font-weight: 700;
+  line-height: 1.4;
+
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
   color: var(--color-text-muted);
 }
 
-.value {
-  display: block;
-
+.directValue {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  line-height: 1.4;
 
   color: var(--color-text);
+
+  transition: color 0.2s ease;
 }
 
-.arrow {
-  flex-shrink: 0;
-
-  font-size: 22px;
-
-  color: var(--color-accent);
+.directContact:hover .directValue {
+  color: var(--color-blue);
 }
+
+/* Questions */
 
 .questions {
   margin-top: 112px;
@@ -125,6 +131,7 @@
   font-size: clamp(32px, 3.5vw, 44px);
   font-weight: 500;
   line-height: 1.15;
+
   letter-spacing: -0.03em;
 
   color: var(--color-text);
@@ -138,21 +145,26 @@
 }
 
 .question {
+  min-width: 0;
+
   padding: 32px 28px 0 0;
 }
 
 .question + .question {
   padding-left: 28px;
+
   border-left: 1px solid var(--color-border);
 }
 
 .question > span {
   display: block;
+
   margin-bottom: 32px;
 
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
+  line-height: 1;
 
   color: var(--color-accent);
 }
@@ -163,6 +175,7 @@
   font-family: var(--font-heading);
   font-size: 21px;
   font-weight: 500;
+  line-height: 1.3;
 
   color: var(--color-text);
 }
@@ -176,7 +189,13 @@
   color: var(--color-text-secondary);
 }
 
+/* Tablet */
+
 @media screen and (max-width: 1024px) {
+  .section {
+    padding: 88px 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -186,16 +205,38 @@
     max-width: 680px;
   }
 
-  .questionGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 0;
+  .directContacts {
+    max-width: 520px;
   }
 
-  .question:nth-child(3) {
+  .questions {
+    margin-top: 96px;
+  }
+
+  .questionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .question {
+    padding: 32px 28px 32px 0;
+
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .question:nth-child(even) {
+    padding-right: 0;
+    padding-left: 28px;
+
+    border-left: 1px solid var(--color-border);
+  }
+
+  .question:nth-child(odd) {
     padding-left: 0;
     border-left: 0;
   }
 }
+
+/* Mobile */
 
 @media screen and (max-width: 767px) {
   .section {
@@ -206,29 +247,63 @@
     gap: 40px;
   }
 
-  .value {
-    font-size: 18px;
+  .title {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+
+  .text {
+    margin-top: 22px;
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .directContacts {
+    margin-top: 32px;
+  }
+
+  .directContact {
+    padding: 18px 0;
+  }
+
+  .directContact:hover {
+    padding-left: 0;
+  }
+
+  .directValue {
+    font-size: 17px;
+
+    overflow-wrap: anywhere;
   }
 
   .questions {
     margin-top: 80px;
   }
 
+  .questionsHeader {
+    margin-bottom: 32px;
+  }
+
   .questionGrid {
     grid-template-columns: 1fr;
+
+    border-top: 1px solid var(--color-border);
   }
 
-  .question {
+  .question,
+  .question:nth-child(even),
+  .question:nth-child(odd) {
     padding: 28px 0;
-    border-bottom: 1px solid var(--color-border);
-  }
 
-  .question + .question {
-    padding-left: 0;
     border-left: 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .question > span {
     margin-bottom: 18px;
+  }
+
+  .question h3 {
+    font-size: 20px;
   }
 }
