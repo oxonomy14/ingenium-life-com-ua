@@ -1,9 +1,9 @@
-/* src/app/webinars/_components/Cta/Cta.module.css */
+/* src/components/Webinar/WebinarCta/WebinarCta.module.css */
 
 .section {
   padding: var(--space-2xl) 0;
 
-  background: var(--color-bg);
+  background: var(--color-surface);
 }
 
 .card {
@@ -15,11 +15,13 @@
 
   padding: var(--space-xl);
 
-  background: var(--color-blue);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
 .content {
+  min-width: 0;
   max-width: 760px;
 }
 
@@ -32,7 +34,7 @@
   font-weight: 600;
   line-height: 1.4;
 
-  color: var(--color-accent-light);
+  color: var(--color-accent-hover);
 
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -42,46 +44,71 @@
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(30px, 3.6vw, 46px);
   font-weight: 600;
   line-height: 1.15;
 
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .description {
   margin: var(--space-md) 0 0;
 
-  max-width: 680px;
+  max-width: 640px;
 
   font-size: 17px;
   line-height: 1.7;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--color-text-secondary);
 }
 
-.actions {
+.action {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 
-  min-width: 220px;
+  min-width: 240px;
 }
 
-.primaryButton,
-.secondaryButton {
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.priceLabel {
+  font-size: 13px;
+  line-height: 1.4;
+
+  color: var(--color-text-muted);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   min-height: 52px;
 
-  padding: 12px 24px;
+  margin-top: var(--space-md);
+  padding: 12px 26px;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1;
 
+  color: var(--color-white);
+
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
   border-radius: var(--radius-sm);
 
   text-decoration: none;
@@ -89,42 +116,20 @@
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
-    color 180ms ease,
     transform 180ms ease;
 }
 
-.primaryButton {
-  color: var(--color-text);
-
-  background: var(--color-accent);
-  border: 1px solid var(--color-accent);
+.button:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
 }
 
-.primaryButton:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
-.secondaryButton {
-  color: var(--color-white);
-
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.secondaryButton:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.primaryButton:active,
-.secondaryButton:active {
+.button:active {
   transform: translateY(1px);
 }
 
-.primaryButton:focus-visible,
-.secondaryButton:focus-visible {
-  outline: 2px solid var(--color-white);
+.button:focus-visible {
+  outline: 2px solid var(--color-blue);
   outline-offset: 4px;
 }
 
@@ -138,8 +143,7 @@
     gap: var(--space-lg);
   }
 
-  .actions {
-    flex-direction: row;
+  .action {
     min-width: 0;
   }
 }
@@ -150,7 +154,7 @@
   }
 
   .card {
-    padding: 40px 24px;
+    padding: 32px 24px;
   }
 
   .title {
@@ -161,12 +165,11 @@
     font-size: 16px;
   }
 
-  .actions {
-    flex-direction: column;
+  .price {
+    font-size: 30px;
   }
 
-  .primaryButton,
-  .secondaryButton {
+  .button {
     width: 100%;
   }
 }

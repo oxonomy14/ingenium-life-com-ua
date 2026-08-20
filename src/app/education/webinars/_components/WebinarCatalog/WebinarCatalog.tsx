@@ -28,7 +28,7 @@ export default function WebinarCatalog({ webinars }: WebinarCatalogProps) {
       : webinars.filter((webinar) => webinar.category === activeCategory);
 
   return (
-    <section className={css.section}>
+    <section className={css.section} id="webinars">
       <Container>
         <div className={css.header}>
           <div className={css.heading}>

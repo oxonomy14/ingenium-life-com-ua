@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     'Авторские вебинары InGenium по астрологии, Таро, юнгианской психологии, символам, личности и самопознанию.',
 
   alternates: {
-    canonical: '/webinars',
+    canonical: '/education/webinars',
   },
 
   openGraph: {
     title: 'Вебинары InGenium',
     description:
       'Авторские вебинары по астрологии, Таро и юнгианской психологии.',
-    url: '/webinars',
+    url: '/education/webinars',
     type: 'website',
   },
 };
@@ -41,7 +41,7 @@ export default function WebinarsPage() {
 
   return (
     <LayoutShell>
-      {/*  <PageSchema /> */}
+      <PageSchema webinars={webinars} />
       <BreadcrumbSchema />
       <FaqSchema />
 

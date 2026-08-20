@@ -7,6 +7,11 @@ export type WebinarPrice = {
   currency: 'RUB' | 'UAH';
 };
 
+export type WebinarProgramItem = {
+  title: string;
+  description?: string;
+};
+
 export type Webinars = {
   slug: string;
 
@@ -30,10 +35,15 @@ export type Webinars = {
   format?: string;
   duration?: string;
   webinarYear?: number;
+  date?: string;
+
+  program?: WebinarProgramItem[];
 
   price?: WebinarPrice;
 
   channelWebinar?: boolean;
+
+  materials?: string[];
 
   featured?: boolean;
   published?: boolean;

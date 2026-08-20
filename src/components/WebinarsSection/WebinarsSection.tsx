@@ -2,33 +2,13 @@ import Link from 'next/link';
 
 import Container from '@/components/Container/Container';
 
+import { getWebinars } from '@/lib/webinars';
+
 import css from './WebinarsSection.module.css';
 
-const webinars = [
-  {
-    category: 'Мировоззрение',
-    title: 'Как меняется наше представление о себе',
-    description:
-      'Разговор о личности, внутренних сценариях и том, как формируется взгляд человека на себя и окружающий мир.',
-    href: '/webinars/how-we-see-ourselves',
-  },
-  {
-    category: 'Психология',
-    title: 'Почему мы повторяем одни и те же сценарии',
-    description:
-      'Вебинар о повторяющихся моделях поведения, выборе и внутренних механизмах, которые влияют на наши решения.',
-    href: '/webinars/repeating-scenarios',
-  },
-  {
-    category: 'Культура и мышление',
-    title: 'Как идеи формируют наше мировоззрение',
-    description:
-      'О влиянии культуры, среды и идей на то, как человек воспринимает события, отношения и собственный жизненный путь.',
-    href: '/webinars/ideas-and-worldview',
-  },
-];
-
 export default function WebinarsSection() {
+  const webinars = getWebinars().slice(0, 3);
+
   return (
     <section className={css.section}>
       <Container>
@@ -43,14 +23,14 @@ export default function WebinarsSection() {
           </div>
 
           <p className={css.description}>
-            Авторские встречи о человеке, культуре, психологии, мышлении и
-            мировоззрении — для тех, кому интересно исследовать тему глубже.
+            Авторские встречи по астрологии, Таро, психологии и символическим
+            системам — для тех, кому интересно исследовать тему глубже.
           </p>
         </div>
 
         <div className={css.grid}>
           {webinars.map((webinar, index) => (
-            <article className={css.card} key={webinar.title}>
+            <article className={css.card} key={webinar.slug}>
               <div className={css.visual}>
                 <span className={css.index}>
                   {String(index + 1).padStart(2, '0')}
@@ -58,13 +38,16 @@ export default function WebinarsSection() {
               </div>
 
               <div className={css.cardContent}>
-                <p className={css.category}>{webinar.category}</p>
+                <p className={css.category}>{webinar.labelCategory}</p>
 
                 <h3 className={css.cardTitle}>{webinar.title}</h3>
 
-                <p className={css.cardText}>{webinar.description}</p>
+                <p className={css.cardText}>{webinar.shortDescription}</p>
 
-                <Link href={webinar.href} className={css.cardLink}>
+                <Link
+                  href={`/education/webinars/${webinar.slug}`}
+                  className={css.cardLink}
+                >
                   Подробнее
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -88,15 +71,10 @@ export default function WebinarsSection() {
             </p>
           </div>
 
-          <a
-            href="https://ingenium-life.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.channelLink}
-          >
+          <Link href="/closed-channel" className={css.channelLink}>
             Узнать о подписке
             <span aria-hidden="true">→</span>
-          </a>
+          </Link>
         </div>
       </Container>
     </section>

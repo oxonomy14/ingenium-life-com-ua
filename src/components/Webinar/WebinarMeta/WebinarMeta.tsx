@@ -24,14 +24,20 @@ export default function WebinarMeta({ webinar }: WebinarMetaProps) {
           <div className={css.item}>
             <span className={css.label}>Доступ</span>
 
-            <strong className={css.value}>Запись вебинара</strong>
+            <strong className={css.value}>
+              {webinar.format || 'Вебинар в записи'}
+            </strong>
           </div>
 
-          <div className={css.item}>
-            <span className={css.label}>Материалы</span>
+          {webinar.materials && webinar.materials.length > 0 && (
+            <div className={css.item}>
+              <span className={css.label}>Материалы</span>
 
-            <strong className={css.value}>Запись и презентация</strong>
-          </div>
+              <strong className={css.value}>
+                {webinar.materials.join(' · ')}
+              </strong>
+            </div>
+          )}
 
           {webinar.channelWebinar && (
             <div className={css.item}>

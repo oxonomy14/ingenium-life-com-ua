@@ -1,0 +1,222 @@
+/* src/components/Webinar/WebinarPricing/WebinarPricing.module.css */
+
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-bg);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: var(--space-xl);
+
+  padding: var(--space-xl);
+
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--space-sm);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--color-accent-hover);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.description {
+  margin: var(--space-md) 0 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+.materials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: var(--space-md) 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.material {
+  position: relative;
+
+  padding-left: 22px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: var(--color-text);
+}
+
+.material::before {
+  content: '✓';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 700;
+
+  color: var(--color-accent-hover);
+}
+
+.purchase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding-left: var(--space-lg);
+
+  border-left: 1px solid var(--color-border);
+}
+
+.priceLabel {
+  font-size: 13px;
+  line-height: 1.4;
+
+  color: var(--color-text-muted);
+}
+
+.price {
+  margin-top: 6px;
+
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  margin-top: var(--space-md);
+  padding: 12px 26px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  color: var(--color-white);
+
+  background: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  border-radius: var(--radius-sm);
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.button:hover {
+  background: var(--color-blue-hover);
+  border-color: var(--color-blue-hover);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 4px;
+}
+
+.note {
+  margin: var(--space-sm) 0 0;
+
+  max-width: 320px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: var(--color-text-muted);
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .purchase {
+    padding-top: var(--space-lg);
+    padding-left: 0;
+
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 30px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .note {
+    max-width: none;
+  }
+}

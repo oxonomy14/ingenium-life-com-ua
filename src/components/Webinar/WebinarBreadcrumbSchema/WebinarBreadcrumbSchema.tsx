@@ -1,9 +1,17 @@
-// src/app/education/webinars/_components/BreadcrumbSchema/BreadcrumbSchema.tsx
+// src/components/Webinar/WebinarBreadcrumbSchema/WebinarBreadcrumbSchema.tsx
+
+import type { Webinar } from '@/types/webinar';
 
 import { siteConfig } from '@/config/site';
 
-export default function BreadcrumbSchema() {
-  const pageUrl = `${siteConfig.url}/education/webinars`;
+type WebinarBreadcrumbSchemaProps = {
+  webinar: Webinar;
+};
+
+export default function WebinarBreadcrumbSchema({
+  webinar,
+}: WebinarBreadcrumbSchemaProps) {
+  const webinarUrl = `${siteConfig.url}/education/webinars/${webinar.slug}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -19,14 +27,14 @@ export default function BreadcrumbSchema() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Обучение',
-        item: `${siteConfig.url}/education`,
+        name: 'Вебинары',
+        item: `${siteConfig.url}/webinars`,
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: 'Вебинары',
-        item: pageUrl,
+        name: webinar.title,
+        item: webinarUrl,
       },
     ],
   };

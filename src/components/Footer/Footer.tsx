@@ -89,7 +89,7 @@ export default function Footer() {
               <Link href="/education/jungian-psychology">
                 Юнгианская психология
               </Link>
-              <Link href="/webinars">Вебинары</Link>
+              <Link href="/education/webinars">Вебинары</Link>
             </nav>
           </div>
 

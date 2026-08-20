@@ -1,15 +1,17 @@
-// src/app/education/jungian-psychology/_components/PageSchema/PageSchema.tsx
+// src/app/webinars/_components/PageSchema/PageSchema.tsx
 
 import { siteConfig } from '@/config/site';
 
-import type { Course } from '@/lib/courses';
+import { convertRubToUah } from '@/lib/currency';
+
+import type { Webinars } from '@/types/webinar';
 
 type PageSchemaProps = {
-  courses: Course[];
+  webinars: Webinars[];
 };
 
-export default function PageSchema({ courses }: PageSchemaProps) {
-  const pageUrl = `${siteConfig.url}/education/jungian-psychology`;
+export default function PageSchema({ webinars }: PageSchemaProps) {
+  const pageUrl = `${siteConfig.url}/education/webinars`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -18,10 +20,11 @@ export default function PageSchema({ courses }: PageSchemaProps) {
     '@id': `${pageUrl}#webpage`,
 
     url: pageUrl,
-    name: 'Обучение юнгианской психологии',
+
+    name: 'Вебинары InGenium',
 
     description:
-      'Курсы и программы по юнгианской психологии: архетипы, Тень, психологические типы, функции сознания, символы, сновидения и бессознательные процессы.',
+      'Авторские вебинары Павла Дементьева по астрологии, Таро и юнгианской психологии. Записи вебинаров доступны для отдельного приобретения.',
 
     inLanguage: siteConfig.language,
 
@@ -32,32 +35,74 @@ export default function PageSchema({ courses }: PageSchemaProps) {
 
     about: {
       '@type': 'Thing',
-      name: 'Юнгианская психология',
-      alternateName: 'Аналитическая психология',
+      name: 'Вебинары InGenium',
     },
 
     mainEntity: {
       '@type': 'ItemList',
 
-      itemListElement: courses.map((course, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
+      numberOfItems: webinars.length,
 
-        item: {
-          '@type': 'Course',
+      itemListElement: webinars.map((webinar, index) => {
+        const webinarUrl = `${pageUrl}/${webinar.slug}`;
 
-          name: course.title,
-          description: course.shortDescription || course.description,
+        const priceUah = webinar.price
+          ? Math.round(
+              webinar.price.currency === 'RUB'
+                ? convertRubToUah(webinar.price.amount)
+                : webinar.price.amount,
+            )
+          : undefined;
 
-          url: `${pageUrl}/${course.slug}`,
+        const imageUrl = webinar.image
+          ? webinar.image.startsWith('http')
+            ? webinar.image
+            : `${siteConfig.url}${webinar.image}`
+          : undefined;
 
-          provider: {
-            '@type': 'Organization',
-            '@id': `${siteConfig.url}/#organization`,
-            name: siteConfig.name,
+        return {
+          '@type': 'ListItem',
+
+          position: index + 1,
+
+          item: {
+            '@type': 'Product',
+
+            '@id': `${webinarUrl}#product`,
+
+            name: webinar.title,
+
+            description: webinar.shortDescription || webinar.description,
+
+            url: webinarUrl,
+
+            ...(imageUrl && {
+              image: imageUrl,
+            }),
+
+            category: webinar.labelCategory,
+
+            brand: {
+              '@type': 'Organization',
+              '@id': `${siteConfig.url}/#organization`,
+              name: siteConfig.name,
+            },
+
+            ...(priceUah !== undefined && {
+              offers: {
+                '@type': 'Offer',
+
+                url: webinarUrl,
+
+                price: priceUah,
+                priceCurrency: 'UAH',
+
+                availability: 'https://schema.org/InStock',
+              },
+            }),
           },
-        },
-      })),
+        };
+      }),
     },
   };
 

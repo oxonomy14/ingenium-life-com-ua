@@ -27,7 +27,7 @@ export default function ClosedChannel() {
               публикациями на сайте.
             </p>
 
-            <Link href="/closed" className={css.button}>
+            <Link href="/closed-channel" className={css.button}>
               Узнать о закрытом канале
             </Link>
           </div>

@@ -1,24 +1,24 @@
-// src/app/education/jungian-psychology/_components/Faq/Faq.tsx
+// src/app/webinars/_components/Faq/Faq.tsx
 
 import Container from '@/components/Container/Container';
 
-import css from './Faq.module.css';
-
 import { faqItems } from '../../_data/faq';
+
+import css from './Faq.module.css';
 
 export default function Faq() {
   return (
     <section className={css.section}>
       <Container>
-        <div className={css.inner}>
-          <div className={css.heading}>
-            <p className={css.eyebrow}>Вопросы и ответы</p>
+        <div className={css.grid}>
+          <div className={css.header}>
+            <span className={css.eyebrow}>Частые вопросы</span>
 
-            <h2 className={css.title}>Частые вопросы об обучении</h2>
+            <h2 className={css.title}>О вебинарах InGenium</h2>
 
             <p className={css.description}>
-              Основная информация о программах, уровне подготовки и формате
-              изучения юнгианской психологии.
+              Как устроен доступ к записям, что входит в приобретение и можно ли
+              купить вебинар отдельно от подписки.
             </p>
           </div>
 

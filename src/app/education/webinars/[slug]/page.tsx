@@ -10,16 +10,14 @@ import LayoutShell from '@/components/LayoutShell/LayoutShell';
 import WebinarHero from '@/components/Webinar/WebinarHero/WebinarHero';
 import WebinarMeta from '@/components/Webinar/WebinarMeta/WebinarMeta';
 import WebinarContent from '@/components/Webinar/WebinarContent/WebinarContent';
-/* 
-
+import WebinarProgram from '@/components/Webinar/WebinarProgram/WebinarProgram';
 import WebinarPricing from '@/components/Webinar/WebinarPricing/WebinarPricing';
 import WebinarAuthor from '@/components/Webinar/WebinarAuthor/WebinarAuthor';
 import WebinarChannel from '@/components/Webinar/WebinarChannel/WebinarChannel';
 import WebinarCta from '@/components/Webinar/WebinarCta/WebinarCta';
-
 import WebinarSchema from '@/components/Webinar/WebinarSchema/WebinarSchema';
 import WebinarBreadcrumbSchema from '@/components/Webinar/WebinarBreadcrumbSchema/WebinarBreadcrumbSchema';
- */
+
 type WebinarPageProps = {
   params: Promise<{
     slug: string;
@@ -45,7 +43,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const canonical = `/webinars/${webinar.slug}`;
+  const canonical = `/education/webinars/${webinar.slug}`;
 
   return {
     title: webinar.seoTitle || webinar.title,
@@ -95,25 +93,18 @@ export default async function WebinarPage({ params }: WebinarPageProps) {
 
   return (
     <LayoutShell>
-      {/*  <WebinarSchema webinar={webinar} />
-       */}
-      {/*  <WebinarBreadcrumbSchema webinar={webinar} /> */}
+      <WebinarSchema webinar={webinar} />
+
+      <WebinarBreadcrumbSchema webinar={webinar} />
 
       <WebinarHero webinar={webinar} />
       <WebinarMeta webinar={webinar} />
       <WebinarContent content={webinar.content} />
-
-      {/* 
-
-      
-
+      <WebinarProgram webinar={webinar} />
       <WebinarPricing webinar={webinar} />
-
       <WebinarAuthor />
-
       {webinar.channelWebinar && <WebinarChannel />}
-
-      <WebinarCta webinar={webinar} /> */}
+      <WebinarCta webinar={webinar} />
     </LayoutShell>
   );
 }

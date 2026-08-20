@@ -63,6 +63,9 @@ function parseWebinarFile(filePath: string): Webinar {
     duration: data.duration,
     webinarYear: data.webinarYear,
 
+    materials: data.materials,
+    program: data.program,
+
     price: data.price,
 
     channelWebinar: data.channelWebinar ?? false,
@@ -85,10 +88,11 @@ export function getWebinars(): Webinars[] {
     .filter((webinar) => webinar.published)
     .map(({ content, ...webinar }) => webinar)
     .sort((a, b) => {
-      const yearA = a.webinarYear ?? 0;
-      const yearB = b.webinarYear ?? 0;
+      const dateA = a.date ? new Date(a.date).getTime() : 0;
 
-      return yearB - yearA;
+      const dateB = b.date ? new Date(b.date).getTime() : 0;
+
+      return dateB - dateA;
     });
 }
 
