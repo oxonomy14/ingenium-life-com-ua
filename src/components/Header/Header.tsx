@@ -114,18 +114,22 @@ export default function Header() {
                   </a>
                 )}
 
-                {/* Phone */}
-
                 {contacts.phone && (
-                  <a href={`tel:${contacts.phone.replace(/\s/g, '')}`}>
+                  <a
+                    href={`tel:${contacts.phone.replace(/\s/g, '')}`}
+                    className={css.contactValue}
+                  >
                     {contacts.phoneLabel || contacts.phone}
                   </a>
                 )}
 
-                {/* Email */}
-
                 {contacts.email && (
-                  <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+                  <a
+                    href={`mailto:${contacts.email}`}
+                    className={`${css.contactValue} ${css.contactEmail}`}
+                  >
+                    {contacts.email}
+                  </a>
                 )}
 
                 <div className={css.contactDivider} />

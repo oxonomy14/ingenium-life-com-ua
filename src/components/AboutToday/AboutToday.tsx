@@ -31,7 +31,7 @@ const items = [
     number: '05',
     title: 'Закрытый InGenium',
     text: 'Пространство для участников сообщества: авторские материалы, вебинары, разборы и более глубокая работа с темами проекта.',
-    href: 'https://ingenium-life.com',
+    href: '/closed-channel',
     linkText: 'Узнать больше',
   },
 ];

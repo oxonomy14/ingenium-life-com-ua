@@ -272,9 +272,8 @@
   top: calc(100% + 8px);
   right: 0;
 
-  min-width: 210px;
-
-  padding: 14px;
+  min-width: 260px;
+  padding: 16px;
 
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -285,13 +284,26 @@
 
   opacity: 0;
   visibility: hidden;
-
   transform: translateY(8px);
 
   transition:
     opacity 0.2s ease,
     visibility 0.2s ease,
     transform 0.2s ease;
+}
+
+.contactValue {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+.contactEmail {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .contactDropdown:hover .contactMenu {
@@ -304,12 +316,13 @@
 .contactMenu a {
   display: block;
 
-  padding: 9px 10px;
+  padding: 8px 6px;
 
   border-radius: var(--radius-sm);
 
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.5;
 
   color: var(--color-text);
   text-decoration: none;
