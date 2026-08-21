@@ -22,6 +22,8 @@ import OrganizationSchema from '@/components/Seo/OrganizationSchema/Organization
 import WebSiteSchema from '@/components/Seo/WebSiteSchema/WebSiteSchema';
 import PersonSchema from '@/components/Seo/PersonSchema/PersonSchema';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
@@ -98,6 +100,7 @@ export default function RootLayout({
         <PersonSchema />
         <WebSiteSchema />
         {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
