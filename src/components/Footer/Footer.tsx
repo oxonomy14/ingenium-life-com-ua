@@ -139,8 +139,10 @@ export default function Footer() {
           </p>
 
           <div className={css.legal}>
-            <Link href="/privacy">Политика конфиденциальности</Link>
+            <Link href="/confpolicy">Политика конфиденциальности</Link>
             <Link href="/terms">Условия использования</Link>
+            <Link href="/oferta">Публичная оферта</Link>
+            <Link href="/refund-policy">Политика возврата</Link>
           </div>
         </div>
       </Container>

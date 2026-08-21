@@ -25,7 +25,7 @@ export const siteConfig = {
   },
 
   contacts: {
-    email: 'info@ingenium-life.com.ua',
+    email: 'hello@ingenium-life.com.ua',
 
     // Если захотим выводить публичный телефон
     phone: '+380 94 490-75-26',
