@@ -61,6 +61,8 @@ export function getAllArticles(): Articles[] {
       category: data.category as ArticleCategory,
       labelCategory: data.labelCategory,
 
+      updatedAt: data.updatedAt,
+
       image: data.image,
       imageAlt: data.imageAlt,
     };

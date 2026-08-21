@@ -193,7 +193,7 @@ export default async function ArticlePage({ params }: Props) {
               <ReactMarkdown
                 components={{
                   img: ({ src, alt }) => {
-                    if (!src) return null;
+                    if (typeof src !== 'string') return null;
 
                     return (
                       <span className={css.articleImage}>

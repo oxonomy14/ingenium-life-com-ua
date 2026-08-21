@@ -187,7 +187,7 @@ export function getCoursesByCategory(category: string): Course[] {
       return parseCourse(filePath, fileName, category);
     })
     .filter((course) => course.published)
-    .sort((a, b) => a.order - b.order);
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
 export function getCourse(category: string, slug: string): Course | null {
@@ -214,7 +214,7 @@ export function getFeaturedCourses(category?: string): Course[] {
   return categories
     .flatMap((categoryName) => getCoursesByCategory(categoryName))
     .filter((course) => course.featured)
-    .sort((a, b) => a.order - b.order);
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
 export function getAllCourses(): Course[] {
@@ -230,5 +230,5 @@ export function getAllCourses(): Course[] {
 
   return categories
     .flatMap((categoryName) => getCoursesByCategory(categoryName))
-    .sort((a, b) => a.order - b.order);
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }

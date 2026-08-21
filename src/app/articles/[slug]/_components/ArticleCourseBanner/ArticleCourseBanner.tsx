@@ -16,6 +16,9 @@ export default function ArticleCourseBanner({
   course,
   href,
 }: ArticleCourseBannerProps) {
+  if (!course || !course.image) {
+    return null;
+  }
   return (
     <section className={css.section}>
       <Container>
@@ -38,7 +41,7 @@ export default function ArticleCourseBanner({
           <div className={css.imageWrapper}>
             <Image
               src={course.image}
-              alt={course.title}
+              alt={course.imageAlt ?? course.title}
               fill
               sizes="(max-width: 767px) 100vw, 480px"
               className={css.image}

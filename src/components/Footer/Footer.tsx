@@ -7,10 +7,13 @@ import {
 } from 'react-icons/fa';
 
 import Container from '@/components/Container/Container';
+import { siteConfig } from '@/config/site';
 
 import css from './Footer.module.css';
 
 export default function Footer() {
+  const { social } = siteConfig;
+
   return (
     <footer className={css.footer}>
       <Container>
@@ -18,7 +21,7 @@ export default function Footer() {
           <div className={css.brand}>
             <Link href="/" className={css.logo}>
               <span className={css.logoMark}>In</span>
-              <span className={css.logoText}>InGenium Life</span>
+              <span className={css.logoText}>{siteConfig.name}</span>
             </Link>
 
             <p className={css.description}>
@@ -27,48 +30,57 @@ export default function Footer() {
             </p>
 
             <div className={css.socials}>
-              <a
-                href="..."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram"
-                className={css.socialLink}
-              >
-                <FaTelegramPlane />
-              </a>
+              {social.telegram && (
+                <a
+                  href={social.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  className={css.socialLink}
+                >
+                  <FaTelegramPlane />
+                </a>
+              )}
 
-              <a
-                href="..."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className={css.socialLink}
-              >
-                <FaYoutube />
-              </a>
+              {social.youtube && (
+                <a
+                  href={social.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className={css.socialLink}
+                >
+                  <FaYoutube />
+                </a>
+              )}
 
-              <a
-                href="..."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className={css.socialLink}
-              >
-                <FaInstagram />
-              </a>
+              {social.instagram && (
+                <a
+                  href={social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className={css.socialLink}
+                >
+                  <FaInstagram />
+                </a>
+              )}
 
-              <a
-                href="..."
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className={css.socialLink}
-              >
-                <FaFacebookF />
-              </a>
+              {social.facebook && (
+                <a
+                  href={social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className={css.socialLink}
+                >
+                  <FaFacebookF />
+                </a>
+              )}
             </div>
 
-            {/*   <div className={css.languages}>
+            {/*
+            <div className={css.languages}>
               <Link href="/" className={css.languageActive}>
                 RU
               </Link>
@@ -76,7 +88,8 @@ export default function Footer() {
               <Link href="/uk" className={css.language}>
                 UA
               </Link>
-            </div> */}
+            </div>
+            */}
           </div>
 
           <div className={css.column}>
@@ -122,7 +135,7 @@ export default function Footer() {
 
         <div className={css.bottom}>
           <p className={css.copyright}>
-            © {new Date().getFullYear()} InGenium Life
+            © {new Date().getFullYear()} {siteConfig.name}
           </p>
 
           <div className={css.legal}>

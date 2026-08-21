@@ -16,6 +16,7 @@ export type Articles = {
   description: string;
   shortDescription: string;
   date: string;
+  updatedAt?: string;
   category: ArticleCategory;
   labelCategory: string;
   image: string;

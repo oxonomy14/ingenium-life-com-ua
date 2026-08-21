@@ -1,31 +1,32 @@
-export const articleCategories = [
+import type { ArticleCategory } from '@/types/article';
+
+export type ArticleCategoryItem = {
+  slug: ArticleCategory;
+  label: string;
+  title: string;
+  description: string;
+};
+
+export const articleCategories: ArticleCategoryItem[] = [
   {
     slug: 'astrology',
     label: 'Астрология',
-
     title: 'Статьи по астрологии',
-
     description:
-      'Статьи об астрологии, натальной карте, планетах, знаках зодиака, домах и аспектах. Авторские материалы и разборы InGenium.',
+      'Материалы по натальной астрологии, планетам, знакам, домам и аспектам.',
   },
-
   {
     slug: 'tarot',
     label: 'Таро',
-
     title: 'Статьи о Таро',
-
     description:
-      'Статьи о картах Таро, значениях арканов, символике, раскладах и практике работы с Таро.',
+      'Материалы о системе Таро, Арканах, символике и практике раскладов.',
   },
-
   {
     slug: 'jungian-psychology',
-    label: 'Психология',
-
-    title: 'Статьи по психологии',
-
+    label: 'Юнгианская психология',
+    title: 'Статьи по юнгианской психологии',
     description:
-      'Статьи о психологии, личности, отношениях, эмоциях и понимании себя и других.',
+      'Материалы об аналитической психологии, архетипах, Тени, Самости и процессе индивидуации.',
   },
 ];
