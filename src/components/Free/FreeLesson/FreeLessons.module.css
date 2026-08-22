@@ -1,0 +1,59 @@
+/* FreeLessons.module.css */
+
+.section {
+  padding: var(--space-2xl) 0;
+
+  background: var(--color-bg);
+}
+
+.header {
+  max-width: 720px;
+
+  margin-bottom: var(--space-lg);
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-accent-hover);
+}
+
+.title {
+  margin: 0 0 16px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+
+  color: var(--color-text);
+}
+
+.description {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: var(--color-text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
