@@ -2,98 +2,127 @@
 
 import type { MetadataRoute } from 'next';
 
+import { siteConfig } from '@/config/site';
+import { articleCategories } from '@/data/articleCategories';
+import { legalPages } from '@/data/legalPages';
 import { getAllArticles } from '@/lib/articles';
 import { getAllCourses } from '@/lib/courses';
 import { getWebinars } from '@/lib/webinars';
 
-const BASE_URL = 'https://ingenium-life.com.ua';
-
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteConfig.url;
+
   const articles = getAllArticles();
   const courses = getAllCourses();
   const webinars = getWebinars();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: BASE_URL,
+      url: baseUrl,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: `${BASE_URL}/articles`,
+      url: `${baseUrl}/articles`,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/education`,
+      url: `${baseUrl}/education`,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/education/astrology`,
+      url: `${baseUrl}/education/astrology`,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/education/tarot`,
+      url: `${baseUrl}/education/tarot`,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/education/jungian-psychology`,
+      url: `${baseUrl}/education/jungian-psychology`,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/webinars`,
+      url: `${baseUrl}/education/webinars`,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/consultations`,
+      url: `${baseUrl}/consultations`,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/about`,
+      url: `${baseUrl}/reviews`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/closed-channel`,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/about`,
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: `${BASE_URL}/contacts`,
+      url: `${baseUrl}/contacts`,
       changeFrequency: 'yearly',
       priority: 0.5,
     },
   ];
 
-  const articleCategoryPages: MetadataRoute.Sitemap = [
-    'astrology',
-    'tarot',
-    'jungian-psychology',
-  ].map((category) => ({
-    url: `${BASE_URL}/articles/category/${category}`,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+  // Категории статей
+
+  const articleCategoryPages: MetadataRoute.Sitemap = articleCategories.map(
+    (category) => ({
+      url: `${baseUrl}/articles/category/${category.slug}`,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }),
+  );
+
+  // Статьи
 
   const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${BASE_URL}/articles/${article.slug}`,
+    url: `${baseUrl}/articles/${article.slug}`,
     lastModified: new Date(article.date),
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
+  // Курсы
+
   const coursePages: MetadataRoute.Sitemap = courses.map((course) => ({
-    url: `${BASE_URL}/education/${course.categorySlug}/${course.slug}`,
+    url: `${baseUrl}/education/${course.categorySlug}/${course.slug}`,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
+  // Вебинары
+
   const webinarPages: MetadataRoute.Sitemap = webinars.map((webinar) => ({
-    url: `${BASE_URL}/webinars/${webinar.slug}`,
+    url: `${baseUrl}/education/webinars/${webinar.slug}`,
     changeFrequency: 'monthly',
     priority: 0.7,
   }));
+
+  // Юридические страницы
+
+  const legalPageRoutes: MetadataRoute.Sitemap = Object.values(legalPages).map(
+    (page) => ({
+      url: `${baseUrl}/${page.slug}`,
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    }),
+  );
 
   return [
     ...staticPages,
@@ -101,5 +130,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articlePages,
     ...coursePages,
     ...webinarPages,
+    ...legalPageRoutes,
   ];
 }

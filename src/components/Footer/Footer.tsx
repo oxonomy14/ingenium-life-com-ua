@@ -135,7 +135,7 @@ export default function Footer() {
 
         <div className={css.bottom}>
           <p className={css.copyright}>
-            © {new Date().getFullYear()} {siteConfig.name}
+            © {new Date().getFullYear()} InGenium Life CO., LTD.
           </p>
 
           <div className={css.legal}>
