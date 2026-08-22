@@ -65,7 +65,7 @@ export async function generateMetadata({
         images: [
           {
             url: ogImage,
-            alt: course.imageAlt || course.title,
+            alt: ogImageAlt,
           },
         ],
       }),
@@ -98,25 +98,22 @@ export default async function CoursePage({ params }: CoursePageProps) {
   }
 
   return (
-    <>
-      {' '}
-      <LayoutShell>
-        <CourseSchema course={course} categorySlug="astrology" />
+    <LayoutShell>
+      <CourseSchema course={course} categorySlug="astrology" />
 
-        <CourseBreadcrumbSchema
-          course={course}
-          categorySlug="astrology"
-          categoryName="Астрология"
-        />
-        <CourseHero course={course} />
-        <CourseMeta course={course} />
-        <CourseContent content={course.content} />
-        <CourseParts course={course} />
-        <CourseProgram course={course} />
-        <CoursePricing course={course} />
-        <CourseAuthor />
-        <CourseCta course={course} />
-      </LayoutShell>
-    </>
+      <CourseBreadcrumbSchema
+        course={course}
+        categorySlug="astrology"
+        categoryName="Астрология"
+      />
+      <CourseHero course={course} />
+      <CourseMeta course={course} />
+      <CourseContent content={course.content} />
+      <CourseParts course={course} />
+      <CourseProgram course={course} />
+      <CoursePricing course={course} />
+      <CourseAuthor />
+      <CourseCta course={course} />
+    </LayoutShell>
   );
 }
