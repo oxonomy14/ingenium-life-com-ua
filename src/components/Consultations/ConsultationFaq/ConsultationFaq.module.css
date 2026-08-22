@@ -1,0 +1,123 @@
+.section {
+  padding: var(--space-2xl) 0;
+  background: var(--color-surface);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.header {
+  position: sticky;
+  top: 120px;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-accent-hover);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  max-width: 520px;
+  margin: var(--space-md) 0 0;
+  color: var(--color-text-secondary);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.list {
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 24px 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+}
+
+.question::-webkit-details-marker {
+  display: none;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--color-blue);
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.item[open] .icon {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-width: 760px;
+  padding: 0 48px 24px 0;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.answer p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: static;
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .question {
+    padding: 20px 0;
+    font-size: 17px;
+  }
+
+  .answer {
+    padding-right: 0;
+  }
+}
