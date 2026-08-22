@@ -21,6 +21,7 @@ export interface FreeLesson {
   vimeoHash?: string;
 
   uploadDate?: string;
+  durationIso?: string;
 
   courseSlug?: string;
   courseTitle?: string;
@@ -44,6 +45,8 @@ export const freeLessons: FreeLesson[] = [
     courseSlug: 'natal-astrology-v2',
     courseTitle: 'Натальная астрология 2.0',
     uploadDate: '2018-06-06',
+    duration: '2 ч 17 мин',
+    durationIso: 'PT2H17M',
     order: 1,
   },
 
@@ -60,7 +63,9 @@ export const freeLessons: FreeLesson[] = [
     vimeoHash: '06bc624594',
     courseSlug: 'business-finance-astrology',
     courseTitle: 'Астрология бизнеса и финансов 3.0',
+    duration: '2 ч 17 мин',
     uploadDate: '2020-02-29',
+    durationIso: 'PT1H32M',
     order: 2,
   },
 
@@ -77,7 +82,9 @@ export const freeLessons: FreeLesson[] = [
     vimeoHash: '341b0d4251',
     courseSlug: 'tarot-keys-of-reality',
     courseTitle: 'Таро. Ключи Реальности',
+    duration: '2 ч 17 мин',
     uploadDate: '2019-11-30',
+    durationIso: 'PT1H32M',
     order: 3,
   },
 ];

@@ -41,6 +41,10 @@ export default function FreeLessonsSchema() {
             uploadDate: lesson.uploadDate,
           }),
 
+          ...(lesson.durationIso && {
+            duration: lesson.durationIso,
+          }),
+
           embedUrl: lesson.vimeoHash
             ? `https://player.vimeo.com/video/${lesson.vimeoId}?h=${lesson.vimeoHash}`
             : `https://player.vimeo.com/video/${lesson.vimeoId}`,
