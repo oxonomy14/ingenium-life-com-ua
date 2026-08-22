@@ -23,5 +23,36 @@ jobs:
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli
 
+      - name: Wait for production deployment
+        shell: bash
+        run: |
+          URL="https://ingenium-life.com.ua"
+
+          echo "Waiting for production deployment..."
+
+          for i in {1..30}; do
+            STATUS=$(curl -L -s -o /dev/null -w "%{http_code}" "$URL")
+
+            echo "Attempt $i: HTTP $STATUS"
+
+            if [ "$STATUS" = "200" ]; then
+              echo "Production is available."
+
+              sleep 20
+
+              STATUS_AGAIN=$(curl -L -s -o /dev/null -w "%{http_code}" "$URL")
+
+              if [ "$STATUS_AGAIN" = "200" ]; then
+                echo "Production is stable."
+                exit 0
+              fi
+            fi
+
+            sleep 10
+          done
+
+          echo "Production did not become ready in time."
+          exit 1
+
       - name: Run Lighthouse CI
         run: lhci autorun
