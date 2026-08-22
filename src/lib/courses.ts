@@ -142,6 +142,8 @@ function parseCourse(
 
     image: data.image,
     imageAlt: data.imageAlt,
+    ogImage: data.ogImage,
+    ogImageAlt: data.ogImageAlt,
 
     format: data.format,
     duration: data.duration,
