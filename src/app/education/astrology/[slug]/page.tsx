@@ -42,6 +42,10 @@ export async function generateMetadata({
 
   const canonical = `/education/astrology/${course.slug}`;
 
+  const ogImage = course.ogImage || course.image;
+
+  const ogImageAlt = course.ogImageAlt || course.imageAlt || course.title;
+
   return {
     title: course.seoTitle || course.title,
 
@@ -57,10 +61,10 @@ export async function generateMetadata({
       url: canonical,
       type: 'website',
 
-      ...(course.image && {
+      ...(ogImage && {
         images: [
           {
-            url: course.image,
+            url: ogImage,
             alt: course.imageAlt || course.title,
           },
         ],
@@ -72,8 +76,13 @@ export async function generateMetadata({
       title: course.seoTitle || course.title,
       description: course.seoDescription || course.description,
 
-      ...(course.image && {
-        images: [course.image],
+      ...(ogImage && {
+        images: [
+          {
+            url: ogImage,
+            alt: ogImageAlt,
+          },
+        ],
       }),
     },
   };

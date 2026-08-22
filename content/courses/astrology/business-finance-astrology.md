@@ -13,6 +13,8 @@ level: 'Для начинающих и практикующих астролог
 
 image: '/images/courses/astrology/business-finance-astrology-cover.webp'
 imageAlt: 'Курс Астрология бизнеса и финансов'
+ogImage: '/images/ogImage/og-business-finance-astrology.webp'
+ogImageAlt: 'Практический курс по финансовой и бизнес-астрологии — курс InGenium'
 
 format: 'Курс в записи'
 duration: '9 занятий + 3 практикума'

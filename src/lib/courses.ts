@@ -82,6 +82,8 @@ export type Course = {
 
   image?: string;
   imageAlt?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 
   format?: string;
   duration?: string;
