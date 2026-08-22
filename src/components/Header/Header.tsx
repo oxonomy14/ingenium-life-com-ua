@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -25,8 +26,20 @@ export default function Header() {
         <div className={css.inner}>
           {/* Logo Image*/}
 
-          <Link href="/" className={css.logo} onClick={closeMobileMenu}>
-            <span className={css.logoMark}>In</span>
+          <Link
+            href="/"
+            className={css.logo}
+            onClick={closeMobileMenu}
+            aria-label="InGenium Life — главная"
+          >
+            <Image
+              src={siteConfig.organization.logo}
+              alt=""
+              width={48}
+              height={48}
+              priority
+              className={css.logoImage}
+            />
 
             <span className={css.logoText}>{siteConfig.name}</span>
           </Link>
