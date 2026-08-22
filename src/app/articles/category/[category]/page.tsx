@@ -8,7 +8,7 @@ import LayoutShell from '@/components/LayoutShell/LayoutShell';
 
 import { articleCategories } from '@/data/articleCategories';
 import { getArticlesByCategory } from '@/lib/articles';
-import ArticleCategories from '@/components/ArticleCategories/ArticleCategories';
+import ArticleCategories from '@/app/articles/_components/ArticleCategories/ArticleCategories';
 import css from '../../ArcticlesPage.module.css';
 
 type CategoryPageProps = {

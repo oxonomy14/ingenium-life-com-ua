@@ -21,7 +21,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .title {
@@ -144,7 +144,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .featuredTitle {

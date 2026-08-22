@@ -7,7 +7,7 @@ import LayoutShell from '@/components/LayoutShell/LayoutShell';
 import { getAllArticles } from '@/lib/articles';
 
 import css from './ArcticlesPage.module.css';
-import ArticleCategories from '@/components/ArticleCategories/ArticleCategories';
+import ArticleCategories from '@/app/articles/_components/ArticleCategories/ArticleCategories';
 
 export const metadata: Metadata = {
   title: 'Статьи об астрологии, Таро и психологии',
