@@ -49,6 +49,7 @@ export default function Hero() {
                 alt="Обучение в школе астрологии InGenium"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 900px) 100vw, 42vw"
                 className={css.image}
               />

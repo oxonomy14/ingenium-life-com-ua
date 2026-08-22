@@ -1,19 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-
-import '@fontsource/open-sans/300.css';
-import '@fontsource/open-sans/400.css';
-import '@fontsource/open-sans/500.css';
-import '@fontsource/open-sans/600.css';
-import '@fontsource/open-sans/700.css';
-import '@fontsource/open-sans/800.css';
-
-import '@fontsource/montserrat/300.css';
-import '@fontsource/montserrat/400.css';
-import '@fontsource/montserrat/500.css';
-import '@fontsource/montserrat/600.css';
-import '@fontsource/montserrat/700.css';
-import '@fontsource/montserrat/800.css';
+import { Montserrat, Open_Sans } from 'next/font/google';
 
 import 'modern-normalize/modern-normalize.css';
 import '../styles/globals.css';
@@ -23,6 +10,20 @@ import WebSiteSchema from '@/components/Seo/WebSiteSchema/WebSiteSchema';
 import PersonSchema from '@/components/Seo/PersonSchema/PersonSchema';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
+
+const openSans = Open_Sans({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-open-sans',
+  display: 'swap',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['500', '600', '700'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
@@ -95,11 +96,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>
+      <body className={`${openSans.variable} ${montserrat.variable}`}>
         <OrganizationSchema />
         <PersonSchema />
         <WebSiteSchema />
+
         {children}
+
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
