@@ -23,7 +23,7 @@ export default function Header() {
     <header className={css.header}>
       <Container>
         <div className={css.inner}>
-          {/* Logo */}
+          {/* Logo Image*/}
 
           <Link href="/" className={css.logo} onClick={closeMobileMenu}>
             <span className={css.logoMark}>In</span>
