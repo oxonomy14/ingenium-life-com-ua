@@ -39,7 +39,7 @@ module.exports = {
         'https://ingenium-life.com.ua/education/webinars/astromagiya-solntsa-i-lva',
       ],
 
-      numberOfRuns: 3,
+      numberOfRuns: 1,
 
       settings: {
         formFactor: 'mobile',
