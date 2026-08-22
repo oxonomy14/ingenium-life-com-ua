@@ -3,7 +3,7 @@
 export type FreeLessonCategory =
   | 'astrology'
   | 'tarot'
-  | 'psychology'
+  | 'jungian-psychology'
   | 'astromagic';
 
 export interface FreeLesson {

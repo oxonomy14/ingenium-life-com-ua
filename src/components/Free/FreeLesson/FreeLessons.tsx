@@ -1,5 +1,9 @@
 // src/components/FreeLessons/FreeLessons.tsx
 
+'use client';
+
+import { useState } from 'react';
+
 import Container from '@/components/Container/Container';
 import FreeLessonCard from '@/components/Free/FreeLessonCard/FreeLessonCard';
 
@@ -10,8 +14,14 @@ import css from './FreeLessons.module.css';
 export default function FreeLessons() {
   const lessons = getFreeLessons();
 
+  const [activeLessonSlug, setActiveLessonSlug] = useState<string | null>(null);
+
+  const handlePlay = (slug: string) => {
+    setActiveLessonSlug((currentSlug) => (currentSlug === slug ? null : slug));
+  };
+
   return (
-    <section className={css.section} id="free-lessons">
+    <section id="free-lessons" className={css.section}>
       <Container>
         <div className={css.header}>
           <span className={css.eyebrow}>Открытые материалы</span>
@@ -26,7 +36,12 @@ export default function FreeLessons() {
 
         <div className={css.grid}>
           {lessons.map((lesson) => (
-            <FreeLessonCard key={lesson.slug} lesson={lesson} />
+            <FreeLessonCard
+              key={lesson.slug}
+              lesson={lesson}
+              isPlaying={activeLessonSlug === lesson.slug}
+              onPlay={() => handlePlay(lesson.slug)}
+            />
           ))}
         </div>
       </Container>

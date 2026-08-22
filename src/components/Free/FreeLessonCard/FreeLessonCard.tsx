@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaPlay } from 'react-icons/fa';
@@ -11,11 +8,15 @@ import css from './FreeLessonCard.module.css';
 
 interface FreeLessonCardProps {
   lesson: FreeLesson;
+  isPlaying: boolean;
+  onPlay: () => void;
 }
 
-export default function FreeLessonCard({ lesson }: FreeLessonCardProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
+export default function FreeLessonCard({
+  lesson,
+  isPlaying,
+  onPlay,
+}: FreeLessonCardProps) {
   const courseHref = lesson.courseSlug
     ? `/education/${lesson.category}/${lesson.courseSlug}`
     : null;
@@ -45,7 +46,7 @@ export default function FreeLessonCard({ lesson }: FreeLessonCardProps) {
             <button
               type="button"
               className={css.playButton}
-              onClick={() => setIsPlaying(true)}
+              onClick={onPlay}
               aria-label={`Смотреть урок: ${lesson.title}`}
             >
               <FaPlay />
@@ -68,15 +69,9 @@ export default function FreeLessonCard({ lesson }: FreeLessonCardProps) {
         <p className={css.description}>{lesson.description}</p>
 
         <div className={css.actions}>
-          {!isPlaying && (
-            <button
-              type="button"
-              className={css.watchButton}
-              onClick={() => setIsPlaying(true)}
-            >
-              Смотреть урок
-            </button>
-          )}
+          <button type="button" className={css.watchButton} onClick={onPlay}>
+            {isPlaying ? 'Закрыть урок' : 'Смотреть урок'}
+          </button>
 
           {courseHref && lesson.courseTitle && (
             <Link href={courseHref} className={css.courseLink}>
