@@ -34,4 +34,9 @@ export const redirects = [
       '/articles/5-pravil-chteniya-sotsialnyh-i-vysshih-planet-v-natalnoj-karte',
     permanent: true,
   },
+  {
+    source: '/natalnye-aspekty-na-praktike',
+    destination: '/articles/natalnye-aspekty-na-praktike',
+    permanent: true,
+  },
 ];
