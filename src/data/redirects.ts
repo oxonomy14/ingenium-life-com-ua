@@ -28,4 +28,10 @@ export const redirects = [
     destination: '/articles/kompleksy-i-arhetipy',
     permanent: true,
   },
+  {
+    source: '/5-pravil-chteniya-sotsialnyh-i-vysshih-planet-v-natalnoj-karte',
+    destination:
+      '/articles/5-pravil-chteniya-sotsialnyh-i-vysshih-planet-v-natalnoj-karte',
+    permanent: true,
+  },
 ];
