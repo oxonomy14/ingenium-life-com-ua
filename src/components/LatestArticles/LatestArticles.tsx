@@ -19,16 +19,16 @@ export default function LatestArticles() {
       <Container>
         <div className={css.header}>
           <div>
-            <p className={css.eyebrow}>Статьи</p>
+            <p className={css.eyebrow}>Статті</p>
 
             <h2 className={css.title}>
-              Новые материалы
+              Нові матеріали
               <span> InGenium Life</span>
             </h2>
           </div>
 
           <Link href="/articles" className={css.allLink}>
-            Все статьи
+            Усі статті
             <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -59,7 +59,7 @@ export default function LatestArticles() {
               </p>
 
               <span className={css.readLink}>
-                Читать статью
+                Читати статтю
                 <span aria-hidden="true">→</span>
               </span>
             </div>
@@ -88,11 +88,11 @@ export default function LatestArticles() {
                   <h3 className={css.smallTitle}>{article.title}</h3>
 
                   <p className={css.smallExcerpt}>
-                    {article.shortDescription || featuredArticle.description}
+                    {article.shortDescription || article.description}
                   </p>
 
                   <span className={css.readLink}>
-                    Читать
+                    Читати
                     <span aria-hidden="true">→</span>
                   </span>
                 </div>

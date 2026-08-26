@@ -30,7 +30,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       <div className={css.inner}>
         <nav className={css.nav}>
           <Link href="/articles" className={css.navLink} onClick={handleClose}>
-            Статьи
+            Статті
           </Link>
 
           <div className={css.group}>
@@ -40,7 +40,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               aria-expanded={isEducationOpen}
               onClick={() => setIsEducationOpen((prev) => !prev)}
             >
-              <span>Обучение</span>
+              <span>Навчання</span>
 
               <span
                 className={`${css.arrow} ${
@@ -58,11 +58,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             >
               <div className={css.subnavInner}>
                 <Link href="/education" onClick={handleClose}>
-                  Все обучение
+                  Усе навчання
                 </Link>
 
                 <Link href="/education/astrology" onClick={handleClose}>
-                  Астрология
+                  Астрологія
                 </Link>
 
                 <Link href="/education/tarot" onClick={handleClose}>
@@ -73,11 +73,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   href="/education/jungian-psychology"
                   onClick={handleClose}
                 >
-                  Юнгианская психология
+                  Юнгіанська психологія
                 </Link>
 
                 <Link href="/education/webinars" onClick={handleClose}>
-                  Отдельные занятия
+                  Окремі заняття
                 </Link>
               </div>
             </div>
@@ -88,16 +88,16 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className={css.navLink}
             onClick={handleClose}
           >
-            Консультации
+            Консультації
           </Link>
 
           <Link href="/about" className={css.navLink} onClick={handleClose}>
-            О проекте
+            Про проєкт
           </Link>
         </nav>
 
         <div className={css.footer}>
-          <p className={css.label}>Связаться</p>
+          <p className={css.label}>Зв’язатися</p>
 
           <div className={css.contacts}>
             {contacts.clientManager && (
@@ -106,7 +106,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Написать менеджеру
+                Написати менеджеру
               </a>
             )}
 
@@ -136,20 +136,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             className={css.contactsLink}
             onClick={handleClose}
           >
-            Все контакты →
+            Усі контакти →
           </Link>
-
-          {/*
-          <div className={css.languages}>
-            <Link href="/" className={css.languageActive} onClick={handleClose}>
-              Русский
-            </Link>
-
-            <Link href="/ua" onClick={handleClose}>
-              Українська
-            </Link>
-          </div>
-          */}
         </div>
       </div>
     </div>

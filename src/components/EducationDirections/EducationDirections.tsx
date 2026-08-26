@@ -6,33 +6,29 @@ import css from './EducationDirections.module.css';
 
 const directions = [
   {
-    title: 'Астрология',
-    text: 'Системное обучение натальной астрологии, интерпретации карты и практическим методам анализа.',
+    title: 'Астрологія',
+    text: 'Системне навчання натальної астрології, інтерпретації карти та практичних методів аналізу.',
     href: '/education/astrology',
-    linkLabel: 'Смотреть программы',
+    linkLabel: 'Переглянути програми',
     featured: true,
   },
   {
     title: 'Таро',
-    text: 'Изучение символики, структуры системы и практического чтения раскладов.',
+    text: 'Вивчення символіки, структури системи та практичного читання розкладів.',
     href: '/education/tarot',
-    linkLabel: 'Смотреть программы',
+    linkLabel: 'Переглянути програми',
   },
   {
-    title: 'Юнгианская психология',
-    text: 'Программы и материалы о личности, отношениях, поведении и психологии человека.',
+    title: 'Юнгіанська психологія',
+    text: 'Програми та матеріали про особистість, стосунки, поведінку та психологію людини.',
     href: '/education/jungian-psychology',
-    linkLabel: 'Смотреть программы',
+    linkLabel: 'Переглянути програми',
   },
   {
-    title: 'InGenium в Telegram',
-
-    text: 'Заметки, наблюдения и материалы об астрологии, Таро, психологии и понимании человека.',
-
+    title: 'InGenium у Telegram',
+    text: 'Нотатки, спостереження та матеріали про астрологію, Таро, психологію й розуміння людини.',
     href: 'https://t.me/ingenium_life',
-
     linkLabel: 'Перейти в Telegram',
-
     external: true,
   },
 ];
@@ -46,14 +42,14 @@ export default function EducationDirections() {
             <p className={css.eyebrow}>InGenium Life</p>
 
             <h2 className={css.title}>
-              Обучение, знания
-              <span> и авторские проекты</span>
+              Навчання, знання
+              <span> та авторські проєкти</span>
             </h2>
           </div>
 
           <p className={css.description}>
-            Выберите направление для системного обучения или познакомьтесь с
-            авторским пространством InGenium за рамками отдельных курсов.
+            Оберіть напрям для системного навчання або познайомтеся з авторським
+            простором InGenium поза межами окремих курсів.
           </p>
         </div>
 
@@ -63,7 +59,7 @@ export default function EducationDirections() {
               <>
                 <div className={css.cardTop}>
                   {direction.featured && (
-                    <span className={css.badge}>Основное направление</span>
+                    <span className={css.badge}>Основний напрям</span>
                   )}
 
                   <h3 className={css.cardTitle}>{direction.title}</h3>

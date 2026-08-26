@@ -12,6 +12,8 @@ import WebinarsSection from '@/components/WebinarsSection/WebinarsSection';
 import LatestArticles from '@/components/LatestArticles/LatestArticles';
 import FaqSection from '@/components/FaqSection/FaqSection';
 import FinalCta from '@/components/FinalCta/FinalCta';
+import FaqSchema from '@/components/Seo/FaqSchema/FaqSchema';
+import { homeFaqItems } from '@/data/homeFaq';
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +28,6 @@ export const metadata: Metadata = {
     languages: {
       uk: 'https://ingenium-life.com.ua/',
       ru: 'https://ingenium-life.com/',
-      'x-default': 'https://ingenium-life.com.ua/',
     },
   },
 
@@ -42,18 +43,21 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <LayoutShell>
-      <Hero />
-      <PracticeLearning />
-      <EducationDirections />
-      <FeaturedPrograms />
-      <LearningBenefits />
-      <AuthorSection />
-      <TestimonialsSection />
-      <WebinarsSection />
-      <LatestArticles />
-      <FaqSection />
-      <FinalCta />
-    </LayoutShell>
+    <>
+      <FaqSchema items={homeFaqItems} />
+      <LayoutShell>
+        <Hero />
+        <PracticeLearning />
+        <EducationDirections />
+        <FeaturedPrograms />
+        <LearningBenefits />
+        <AuthorSection />
+        <TestimonialsSection />
+        <WebinarsSection />
+        <LatestArticles />
+        <FaqSection />
+        <FinalCta />
+      </LayoutShell>
+    </>
   );
 }

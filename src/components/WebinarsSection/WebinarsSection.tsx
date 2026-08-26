@@ -14,17 +14,17 @@ export default function WebinarsSection() {
       <Container>
         <div className={css.header}>
           <div>
-            <p className={css.eyebrow}>Авторские вебинары</p>
+            <p className={css.eyebrow}>Авторські вебінари</p>
 
             <h2 className={css.title}>
-              Темы за пределами
-              <span> учебных программ</span>
+              Теми за межами
+              <span> навчальних програм</span>
             </h2>
           </div>
 
           <p className={css.description}>
-            Авторские встречи по астрологии, Таро, психологии и символическим
-            системам — для тех, кому интересно исследовать тему глубже.
+            Авторські зустрічі з астрології, Таро, психології та символічних
+            систем — для тих, хто прагне досліджувати ці теми глибше.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function WebinarsSection() {
                   href={`/education/webinars/${webinar.slug}`}
                   className={css.cardLink}
                 >
-                  Подробнее
+                  Докладніше
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -58,21 +58,21 @@ export default function WebinarsSection() {
 
         <div className={css.channel}>
           <div className={css.channelContent}>
-            <p className={css.channelEyebrow}>Закрытый InGenium</p>
+            <p className={css.channelEyebrow}>Закритий InGenium</p>
 
             <h3 className={css.channelTitle}>
-              Все вебинары в рамках авторского пространства
+              Усі вебінари в межах авторського простору
             </h3>
 
             <p className={css.channelText}>
-              Участники закрытого InGenium получают доступ к авторским
-              вебинарам, дополнительным материалам и новым встречам по мере их
-              выхода.
+              Учасники закритого InGenium отримують доступ до авторських
+              вебінарів, додаткових матеріалів і нових зустрічей у міру їх
+              виходу.
             </p>
           </div>
 
           <Link href="/closed-channel" className={css.channelLink}>
-            Узнать о подписке
+            Дізнатися про підписку
             <span aria-hidden="true">→</span>
           </Link>
         </div>

@@ -24,13 +24,11 @@ export default function Header() {
     <header className={css.header}>
       <Container>
         <div className={css.inner}>
-          {/* Logo Image*/}
-
           <Link
             href="/"
             className={css.logo}
             onClick={closeMobileMenu}
-            aria-label="InGenium Life — главная"
+            aria-label="InGenium Life — головна"
           >
             <Image
               src={siteConfig.organization.logo}
@@ -44,78 +42,66 @@ export default function Header() {
             <span className={css.logoText}>{siteConfig.name}</span>
           </Link>
 
-          {/* Desktop navigation */}
-
           <nav className={css.nav}>
             <Link href="/articles" className={css.navLink}>
-              Статьи
+              Статті
             </Link>
-
-            {/* Education dropdown */}
 
             <div className={css.navDropdown}>
               <Link href="/education" className={css.navLink}>
-                Обучение
+                Навчання
               </Link>
 
               <div className={css.dropdown}>
                 <div className={css.dropdownInner}>
-                  <p className={css.dropdownLabel}>Курсы</p>
+                  <p className={css.dropdownLabel}>Курси</p>
 
-                  <Link href="/education/astrology">Астрология</Link>
+                  <Link href="/education/astrology">Астрологія</Link>
 
                   <Link href="/education/tarot">Таро</Link>
 
                   <Link href="/education/jungian-psychology">
-                    Юнгианская психология
+                    Юнгіанська психологія
                   </Link>
 
                   <div className={css.dropdownDivider} />
 
-                  <p className={css.dropdownLabel}>Отдельные занятия</p>
+                  <p className={css.dropdownLabel}>Окремі заняття</p>
 
-                  <Link href="/education/webinars">Все вебинары</Link>
+                  <Link href="/education/webinars">Усі вебінари</Link>
                 </div>
               </div>
             </div>
 
             <Link href="/consultations" className={css.navLink}>
-              Консультации
+              Консультації
             </Link>
 
             <Link href="/about" className={css.navLink}>
-              О проекте
+              Про проєкт
             </Link>
           </nav>
 
-          {/* Actions */}
-
           <div className={css.actions}>
-            {/* Contacts dropdown */}
-
             <div className={css.contactDropdown}>
               <button
                 className={css.contactButton}
                 type="button"
-                aria-label="Открыть контакты"
+                aria-label="Відкрити контакти"
               >
-                Связаться
+                Зв’язатися
               </button>
 
               <div className={css.contactMenu}>
-                {/* Client manager */}
-
                 {contacts.clientManager && (
                   <a
                     href={contacts.clientManager}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Написать менеджеру
+                    Написати менеджеру
                   </a>
                 )}
-
-                {/* Telegram */}
 
                 {contacts.telegram && (
                   <a
@@ -148,19 +134,17 @@ export default function Header() {
                 <div className={css.contactDivider} />
 
                 <Link href="/contacts" className={css.allContacts}>
-                  Все контакты →
+                  Усі контакти →
                 </Link>
               </div>
             </div>
-
-            {/* Mobile burger */}
 
             <button
               className={`${css.menuButton} ${
                 isMenuOpen ? css.menuButtonActive : ''
               }`}
               type="button"
-              aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+              aria-label={isMenuOpen ? 'Закрити меню' : 'Відкрити меню'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               onClick={() => setIsMenuOpen((prev) => !prev)}

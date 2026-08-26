@@ -3,20 +3,31 @@
 export const authors = {
   'pavel-dementiev': {
     id: 'pavel-dementiev',
-    name: 'Павел Дементьев',
-    role: 'Автор проекта InGenium Life',
+
+    name: 'Павло Дементьєв',
+
+    role: 'Автор проєкту InGenium Life',
+
     description:
-      'Исследует астрологию, символические системы и юнгианскую психологию, соединяя теорию с практическим пониманием человека.',
+      'Досліджує астрологію, символічні системи та юнгіанську психологію, поєднуючи теорію з практичним розумінням людини.',
+
     image: '/images/author/pavel-dementiev-article.webp',
+
     href: '/about',
   },
+
   'andrei-semenenko': {
     id: 'andrei-semenenko',
-    name: 'Андрей Семененко',
-    role: 'Администратор InGenium Life',
+
+    name: 'Андрій Семененко',
+
+    role: 'Адміністратор InGenium Life',
+
     description:
-      'Выпускник InGenium, прошёл полный цикл обучения натальной астрологии и получил сертификат по результатам итогового экзамена.',
+      'Випускник InGenium, пройшов повний цикл навчання натальної астрології та отримав сертифікат за результатами підсумкового іспиту.',
+
     image: '/images/author/andrei-semenenko-article.webp',
+
     href: '',
   },
 } as const;

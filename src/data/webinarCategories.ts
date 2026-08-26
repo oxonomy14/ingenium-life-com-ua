@@ -4,20 +4,26 @@ import type { WebinarCategory } from '@/types/webinar';
 
 export type WebinarCategoryItem = {
   slug: WebinarCategory;
+
   label: string;
 };
 
 export const webinarCategories: WebinarCategoryItem[] = [
   {
     slug: 'astrology',
-    label: 'Астрология',
+
+    label: 'Астрологія',
   },
+
   {
     slug: 'tarot',
+
     label: 'Таро',
   },
+
   {
     slug: 'jungian-psychology',
-    label: 'Юнгианская психология',
+
+    label: 'Юнгіанська психологія',
   },
 ];

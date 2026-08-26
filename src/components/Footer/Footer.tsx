@@ -25,8 +25,8 @@ export default function Footer() {
             </Link>
 
             <p className={css.description}>
-              Авторский образовательный проект об астрологии, Таро, психологии и
-              системном изучении человека.
+              Авторський освітній проєкт про астрологію, Таро, психологію та
+              системне вивчення людини.
             </p>
 
             <div className={css.socials}>
@@ -78,45 +78,33 @@ export default function Footer() {
                 </a>
               )}
             </div>
-
-            {/*
-            <div className={css.languages}>
-              <Link href="/" className={css.languageActive}>
-                RU
-              </Link>
-
-              <Link href="/uk" className={css.language}>
-                UA
-              </Link>
-            </div>
-            */}
           </div>
 
           <div className={css.column}>
-            <p className={css.columnTitle}>Обучение</p>
+            <p className={css.columnTitle}>Навчання</p>
 
             <nav className={css.links}>
-              <Link href="/education">Все программы</Link>
-              <Link href="/education/astrology">Астрология</Link>
+              <Link href="/education">Усі програми</Link>
+              <Link href="/education/astrology">Астрологія</Link>
               <Link href="/education/tarot">Таро</Link>
               <Link href="/education/jungian-psychology">
-                Юнгианская психология
+                Юнгіанська психологія
               </Link>
-              <Link href="/education/webinars">Вебинары</Link>
+              <Link href="/education/webinars">Вебінари</Link>
             </nav>
           </div>
 
           <div className={css.column}>
-            <p className={css.columnTitle}>Материалы</p>
+            <p className={css.columnTitle}>Матеріали</p>
 
             <nav className={css.links}>
-              <Link href="/articles">Статьи</Link>
-              <Link href="/articles/category/astrology">Об астрологии</Link>
-              <Link href="/articles/category/tarot">О Таро</Link>
+              <Link href="/articles">Статті</Link>
+              <Link href="/articles/category/astrology">Про астрологію</Link>
+              <Link href="/articles/category/tarot">Про Таро</Link>
               <Link href="/articles/category/jungian-psychology">
-                О психологии
+                Про психологію
               </Link>
-              <Link href="/reviews">Отзывы</Link>
+              <Link href="/reviews">Відгуки</Link>
             </nav>
           </div>
 
@@ -124,11 +112,9 @@ export default function Footer() {
             <p className={css.columnTitle}>InGenium</p>
 
             <nav className={css.links}>
-              <Link href="/about">О проекте</Link>
-
-              <a href="/closed-channel">Закрытый InGenium ↗</a>
-
-              <Link href="/contacts">Контакты</Link>
+              <Link href="/about">Про проєкт</Link>
+              <Link href="/closed-channel">Закритий InGenium ↗</Link>
+              <Link href="/contacts">Контакти</Link>
             </nav>
           </div>
         </div>
@@ -139,10 +125,10 @@ export default function Footer() {
           </p>
 
           <div className={css.legal}>
-            <Link href="/confpolicy">Политика конфиденциальности</Link>
-            <Link href="/terms">Условия использования</Link>
-            <Link href="/oferta">Публичная оферта</Link>
-            <Link href="/refund-policy">Политика возврата</Link>
+            <Link href="/confpolicy">Політика конфіденційності</Link>
+            <Link href="/terms">Умови використання</Link>
+            <Link href="/oferta">Публічна оферта</Link>
+            <Link href="/refund-policy">Політика повернення коштів</Link>
           </div>
         </div>
       </Container>

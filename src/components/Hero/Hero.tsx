@@ -14,31 +14,31 @@ export default function Hero() {
             <p className={css.eyebrow}>Онлайн-школа InGenium Life</p>
 
             <h1 className={css.title}>
-              Обучение астрологии,
-              <span> которое становится практикой</span>
+              Навчання астрології,
+              <span> яке стає практикою</span>
             </h1>
 
             <p className={css.description}>
-              Авторские курсы Павла Дементьева для тех, кто хочет глубже
-              понимать астрологию, уверенно работать с натальной картой и
-              применять знания в жизни и консультировании.
+              Авторські курси Павла Дементьєва для тих, хто хоче глибше розуміти
+              астрологію, впевнено працювати з натальною картою та застосовувати
+              знання в житті й консультуванні.
             </p>
 
             <div className={css.actions}>
               <Link href="/education" className={css.primaryButton}>
-                Выбрать курс
+                Обрати курс
               </Link>
 
               <Link href="/education/free" className={css.secondaryLink}>
-                Попробовать бесплатно
+                Спробувати безкоштовно
                 <span aria-hidden="true">→</span>
               </Link>
             </div>
 
             <ul className={css.features}>
-              <li>Авторская методика</li>
-              <li>Практика на реальных картах</li>
-              <li>Доступ к записям занятий</li>
+              <li>Авторська методика</li>
+              <li>Практика на реальних картах</li>
+              <li>Доступ до записів занять</li>
             </ul>
           </div>
 
@@ -46,7 +46,7 @@ export default function Hero() {
             <div className={css.imageCard}>
               <Image
                 src="/images/hero/ingenium-school.webp"
-                alt="Обучение в школе астрологии InGenium"
+                alt="Навчання у школі астрології InGenium"
                 fill
                 priority
                 fetchPriority="high"

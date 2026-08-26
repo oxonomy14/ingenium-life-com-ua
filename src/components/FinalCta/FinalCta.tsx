@@ -10,27 +10,27 @@ export default function FinalCta() {
       <Container>
         <div className={css.inner}>
           <div className={css.content}>
-            <p className={css.eyebrow}>Начать обучение</p>
+            <p className={css.eyebrow}>Розпочати навчання</p>
 
             <h2 className={css.title}>
-              Выберите программу
-              <span> и двигайтесь глубже</span>
+              Оберіть програму
+              <span> та рухайтеся далі</span>
             </h2>
 
             <p className={css.description}>
-              Познакомьтесь с направлениями InGenium и найдите программу,
-              которая подходит вашему уровню подготовки и интересам.
+              Познайомтеся з напрямами InGenium і знайдіть програму, яка
+              відповідає вашому рівню підготовки та інтересам.
             </p>
           </div>
 
           <div className={css.actions}>
             <Link href="/education" className={css.primaryButton}>
-              Смотреть программы
+              Переглянути програми
               <span aria-hidden="true">→</span>
             </Link>
 
             <Link href="/articles" className={css.secondaryButton}>
-              Читать статьи
+              Читати статті
             </Link>
           </div>
         </div>

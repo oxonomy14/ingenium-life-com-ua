@@ -25,16 +25,16 @@ export default function FeaturedPrograms() {
       <Container>
         <div className={css.header}>
           <div>
-            <p className={css.eyebrow}>Обучение</p>
+            <p className={css.eyebrow}>Навчання</p>
 
             <h2 className={css.title}>
-              Популярные
-              <span> программы InGenium</span>
+              Популярні
+              <span> програми InGenium</span>
             </h2>
           </div>
 
           <Link href="/education" className={css.allLink}>
-            Все программы
+            Усі програми
             <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -55,7 +55,7 @@ export default function FeaturedPrograms() {
                   {program.format && <span>{program.format}</span>}
 
                   {program.lessonCount && (
-                    <span>{program.lessonCount} уроков</span>
+                    <span>{program.lessonCount} уроків</span>
                   )}
                 </div>
               </div>
@@ -63,9 +63,9 @@ export default function FeaturedPrograms() {
               <Link
                 href={`/education/${program.categorySlug}/${program.slug}`}
                 className={css.cardLink}
-                aria-label={`Подробнее о курсе ${program.title}`}
+                aria-label={`Докладніше про курс ${program.title}`}
               >
-                Подробнее
+                Докладніше
                 <span aria-hidden="true">→</span>
               </Link>
             </article>
