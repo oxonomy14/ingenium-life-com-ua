@@ -1,5 +1,4 @@
 ---
-
 authorId: 'pavel-dementiev'
 
 title: 'Чим відрізняється Місяць у Тельці від Сонця в Тельці?'
@@ -9,10 +8,6 @@ description: 'Розбираємо різницю між Місяцем і Со�
 slug: 'chem-otlichaetsya-luna-v-teltse-ot-solntsa-v-teltse'
 
 courseSlug: 'natal-astrology-v2'
-
-course:
-category: 'astrology'
-slug: 'natal-astrology-v2'
 
 date: '2023-12-08'
 
@@ -24,7 +19,12 @@ labelCategory: 'Астрологія'
 
 image: '/images/articles/chem-otlichaetsya-luna-v-teltse-ot-solntsa-v-teltse.webp'
 
-## imageAlt: 'Місяць і Сонце у знаку Тельця'
+imageAlt: 'Місяць і Сонце у знаку Тельця'
+
+course:
+  category: 'astrology'
+  slug: 'natal-astrology-v2'
+---
 
 В астрології надзвичайно важлива точність. Розглянемо це на прикладі положення різних планет у Тельці.
 
