@@ -23,7 +23,11 @@ export default function ReviewsList() {
 
         <div className={css.grid}>
           {reviews.map((review) => (
-            <article key={review.id} className={css.card}>
+            <article
+              key={review.id}
+              id={`review-${review.id}`}
+              className={css.card}
+            >
               <span className={css.quote} aria-hidden="true">
                 “
               </span>

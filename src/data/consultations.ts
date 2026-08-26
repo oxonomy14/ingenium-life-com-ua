@@ -1,10 +1,19 @@
 export type ConsultationItem = {
+  slug: string;
+
   title: string;
+
   duration: string;
+
   priceRub: number;
+
   description: string;
+
   topics: string[];
+
   featured?: boolean;
+
+  reviewType: 'consultation' | 'rectification';
 };
 
 export type ConsultationTopic = {
@@ -30,11 +39,17 @@ export type ConsultationFaqItem = {
 
 export const consultations: ConsultationItem[] = [
   {
+    slug: 'full-consultation',
+
     title: 'Полная консультация',
+
     duration: '90 минут',
+
     priceRub: 30000,
+
     description:
       'Комплексный разбор натальной карты и основных жизненных сфер. Подходит для первого знакомства со своей картой или глубокого анализа текущего этапа жизни.',
+
     topics: [
       'Личность и характер',
       'Таланты и сильные стороны',
@@ -43,14 +58,24 @@ export const consultations: ConsultationItem[] = [
       'Отношения',
       'Жизненные сценарии',
     ],
+
     featured: true,
+
+    reviewType: 'consultation',
   },
+
   {
+    slug: 'thematic-consultation',
+
     title: 'Тематическая консультация',
+
     duration: '60 минут',
+
     priceRub: 15000,
+
     description:
       'Глубокий разбор одной выбранной сферы жизни. Основное время встречи посвящено конкретной теме и связанным с ней вопросам.',
+
     topics: [
       'Работа и профессия',
       'Финансы',
@@ -58,25 +83,43 @@ export const consultations: ConsultationItem[] = [
       'Здоровье',
       'Другая жизненная сфера',
     ],
+
+    reviewType: 'consultation',
   },
+
   {
+    slug: 'short-consultation',
+
     title: 'Короткая консультация',
+
     duration: '30 минут',
+
     priceRub: 10000,
+
     description:
       'Фокусная консультация по одному конкретному вопросу или ситуации без полного разбора натальной карты.',
+
     topics: [
       'Один конкретный вопрос',
       'Выбор между вариантами',
       'Текущая ситуация',
     ],
+
+    reviewType: 'consultation',
   },
+
   {
+    slug: 'study-session',
+
     title: 'Учебная сессия',
+
     duration: '60 минут',
+
     priceRub: 10000,
+
     description:
       'Индивидуальная встреча для студентов и практикующих астрологов. Можно разобрать карту, технику интерпретации или сложный учебный вопрос.',
+
     topics: [
       'Разбор натальной карты',
       'Синтез показателей',
@@ -84,18 +127,29 @@ export const consultations: ConsultationItem[] = [
       'Практика интерпретации',
       'Вопросы по обучению',
     ],
+
+    reviewType: 'consultation',
   },
+
   {
+    slug: 'rectification',
+
     title: 'Ректификация',
+
     duration: 'Индивидуально',
+
     priceRub: 6000,
+
     description:
       'Уточнение времени рождения на основании биографии и значимых жизненных событий для дальнейшей работы с натальной картой.',
+
     topics: [
       'Анализ известных данных',
       'Значимые события жизни',
       'Уточнение времени рождения',
     ],
+
+    reviewType: 'rectification',
   },
 ];
 
