@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import PracticeLearning from '@/components/PracticeLearning/PracticeLearning';
 import Hero from '@/components/Hero/Hero';
 import LayoutShell from '@/components/LayoutShell/LayoutShell';
@@ -14,26 +15,28 @@ import FinalCta from '@/components/FinalCta/FinalCta';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Школа астрологии InGenium — обучение астрологии онлайн',
+    absolute: 'Школа астрології InGenium — навчання астрології онлайн',
   },
 
   description:
-    'Онлайн-обучение астрологии в школе InGenium. Авторские курсы Павла Дементьева по натальной астрологии для начинающих и практикующих астрологов.',
+    'Онлайн-навчання астрології у школі InGenium. Авторські курси Павла Дементьєва з натальної астрології для початківців і практикуючих астрологів.',
 
   alternates: {
-    canonical: '/',
+    canonical: 'https://ingenium-life.com.ua/',
     languages: {
-      ru: '/',
-      uk: '/uk',
-      'x-default': '/',
+      uk: 'https://ingenium-life.com.ua/',
+      ru: 'https://ingenium-life.com/',
+      'x-default': 'https://ingenium-life.com.ua/',
     },
   },
 
   openGraph: {
-    title: 'Школа астрологии InGenium — обучение астрологии онлайн',
+    title: 'Школа астрології InGenium — навчання астрології онлайн',
     description:
-      'Авторские онлайн-курсы Павла Дементьева по натальной астрологии для начинающих и практикующих астрологов.',
-    url: '/',
+      'Авторські онлайн-курси Павла Дементьєва з натальної астрології для початківців і практикуючих астрологів.',
+    url: 'https://ingenium-life.com.ua/',
+    locale: 'uk_UA',
+    alternateLocale: ['ru_RU'],
   },
 };
 

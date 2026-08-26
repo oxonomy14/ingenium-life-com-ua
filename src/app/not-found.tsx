@@ -13,25 +13,25 @@ export default function NotFound() {
             404
           </div>
 
-          <p className={css.eyebrow}>Страница не найдена</p>
+          <p className={css.eyebrow}>Сторінку не знайдено</p>
 
           <h1 className={css.title}>
-            Кажется, такой страницы
-            <span> пока не существует</span>
+            Схоже, такої сторінки
+            <span> поки що не існує</span>
           </h1>
 
           <p className={css.description}>
-            Возможно, страница была перемещена, адрес изменился или раздел ещё
-            находится в разработке.
+            Можливо, сторінку було переміщено, адресу змінено або розділ ще
+            перебуває в розробці.
           </p>
 
           <div className={css.actions}>
             <Link href="/" className={css.primaryButton}>
-              На главную
+              На головну
             </Link>
 
             <Link href="/articles" className={css.secondaryButton}>
-              Читать статьи
+              Читати статті
               <span aria-hidden="true">→</span>
             </Link>
           </div>
