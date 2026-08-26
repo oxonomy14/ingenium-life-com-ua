@@ -25,18 +25,19 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://ingenium-life.com.ua';
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
 
   title: {
-    default: 'InGenium — школа астрологии и образовательный проект',
+    default: 'InGenium — школа астрології та освітній проєкт',
     template: '%s | InGenium',
   },
 
   description:
-    'InGenium — образовательный проект об астрологии. Онлайн-курсы, вебинары, статьи и авторские материалы Павла Дементьева.',
+    'InGenium — освітній проєкт про астрологію. Онлайн-курси, вебінари, статті та авторські матеріали Павла Дементьєва.',
 
   icons: {
     icon: [
@@ -53,32 +54,40 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'InGenium',
-    title: 'InGenium — школа астрологии и образовательный проект',
+
+    title: 'InGenium — школа астрології та освітній проєкт',
+
     description:
-      'Онлайн-курсы, вебинары, статьи и авторские материалы об астрологии.',
+      'Онлайн-курси, вебінари, статті та авторські матеріали про астрологію.',
+
     images: [
       {
         url: '/images/ogImage/ogMain.webp',
         width: 1200,
         height: 630,
-        alt: 'InGenium — школа астрологии',
+        alt: 'InGenium — школа астрології',
       },
     ],
-    locale: 'ru_RU',
-    alternateLocale: ['uk_UA'],
+
+    locale: 'uk_UA',
+    alternateLocale: ['ru_RU'],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'InGenium — школа астрологии и образовательный проект',
+
+    title: 'InGenium — школа астрології та освітній проєкт',
+
     description:
-      'Онлайн-курсы, вебинары, статьи и авторские материалы об астрологии.',
+      'Онлайн-курси, вебінари, статті та авторські матеріали про астрологію.',
+
     images: ['/images/ogImage/ogMain.webp'],
   },
 
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -95,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="uk">
       <body className={`${openSans.variable} ${montserrat.variable}`}>
         <OrganizationSchema />
         <PersonSchema />

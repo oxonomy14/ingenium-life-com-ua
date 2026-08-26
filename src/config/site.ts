@@ -6,17 +6,17 @@ export const siteConfig = {
   url: 'https://ingenium-life.com.ua',
 
   description:
-    'Образовательный проект об астрологии, Таро, психологии и развитии человека.',
+    'Освітній проєкт про астрологію, Таро, психологію та розвиток людини.',
 
-  language: 'ru',
-  locale: 'ru_UA',
+  language: 'uk',
+  locale: 'uk_UA',
 
   organization: {
     name: 'InGenium Life',
     legalName: 'InGenium Life',
 
     founder: {
-      name: 'Павел Дементьев',
+      name: 'Павло Дементьєв',
       id: 'pavel-dementiev',
       image: '/images/author/pavel-dementiev.webp',
     },
@@ -27,19 +27,19 @@ export const siteConfig = {
   contacts: {
     email: 'hello@ingenium-life.com.ua',
 
-    // Если захотим выводить публичный телефон
+    // Якщо захочемо показувати публічний телефон
     phone: '+380 94 490-75-26',
     phoneLabel: '',
 
-    // Прямой контакт в Telegram
+    // Прямий контакт у Telegram
     telegram: '',
 
-    // Telegram-бот для общения с клиентами
+    // Telegram-бот для спілкування з клієнтами
     clientManager: '',
   },
 
   social: {
-    // Публичные соцсети проекта
+    // Публічні соцмережі проєкту
     telegram: 'https://t.me/ingenium_life',
     instagram: 'https://www.instagram.com/ingenium_lifepro/',
     facebook: 'https://www.facebook.com/ingeniumlife/',
