@@ -12,6 +12,7 @@ import AboutKyivHistory from '@/app/about/_components/AboutKyivHistory/AboutKyiv
 import AboutDirections from '@/app/about/_components/AboutDirections/AboutDirections';
 import AboutApproach from '@/app/about/_components/AboutApproach/AboutApproach';
 import AboutToday from '@/app/about/_components/AboutToday/AboutToday';
+import AboutWebsites from '@/app/about/_components/AboutWebsites/AboutWebsites';
 import AboutCTA from '@/app/about/_components/AboutCTA/AboutCTA';
 import AboutPageSchema from '@/components/Seo/AboutPageSchema/AboutPageSchema';
 import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
@@ -60,6 +61,7 @@ export default function AboutPage() {
       <AboutDirections />
       <AboutApproach />
       <AboutToday />
+      <AboutWebsites />
       <AboutCTA />
     </LayoutShell>
   );

@@ -36,4 +36,9 @@ export const homeFaqItems = [
     answer:
       'Частина вебінарів може бути доступна окремо. Актуальні варіанти доступу та умови зазначені на сторінці конкретного вебінару.',
   },
+  {
+    question: 'Які сайти InGenium є офіційними?',
+    answer:
+      'Офіційні вебресурси проєкту InGenium працюють на доменах ingenium-life.com.ua, ingenium-life.com, ingenium-life.org та ingenium-life.ru. Це ресурси одного проєкту, створені в різні періоди та для різних завдань. Український напрям InGenium Life представлений на ingenium-life.com.ua.',
+  },
 ];

@@ -49,7 +49,7 @@ export default function AuthorSection() {
             </div>
 
             <Link href="/about" className={css.link}>
-              Докладніше про автора
+              Про проєкт InGenium
               <span aria-hidden="true">→</span>
             </Link>
           </div>

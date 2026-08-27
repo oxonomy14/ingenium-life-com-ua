@@ -5,7 +5,7 @@ export default function OrganizationSchema() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'EducationalOrganization',
     '@id': `${siteConfig.url}/#organization`,
 
     name: siteConfig.organization.name,
@@ -13,14 +13,37 @@ export default function OrganizationSchema() {
 
     url: siteConfig.url,
 
-    logo: `${siteConfig.url}${siteConfig.organization.logo}`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}${siteConfig.organization.logo}`,
+    },
 
     description: siteConfig.description,
 
     founder: {
       '@type': 'Person',
       '@id': `${siteConfig.url}/#${siteConfig.organization.founder.id}`,
+      name: 'Павло Дементьєв',
+      jobTitle: 'Автор InGenium Life',
     },
+
+    employee: [
+      {
+        '@type': 'Person',
+        name: 'Катерина Ярська',
+        jobTitle: 'Авторка курсів InGenium Life, викладачка',
+      },
+      {
+        '@type': 'Person',
+        name: 'Світлана Щербакова',
+        jobTitle: 'Адміністраторка InGenium Life',
+      },
+      {
+        '@type': 'Person',
+        name: 'Андрій Семененко',
+        jobTitle: 'Адміністратор InGenium Life',
+      },
+    ],
 
     ...(siteConfig.contacts.email && {
       email: siteConfig.contacts.email,

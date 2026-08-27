@@ -32,7 +32,7 @@ export const siteConfig = {
     phoneLabel: '',
 
     // Прямий контакт у Telegram
-    telegram: '',
+    telegram: 'https://t.me/ingenium_support',
 
     // Telegram-бот для спілкування з клієнтами
     clientManager: '',

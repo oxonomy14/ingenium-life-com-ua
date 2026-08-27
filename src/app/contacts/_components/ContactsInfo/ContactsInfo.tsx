@@ -8,7 +8,7 @@ import { siteConfig } from '@/config/site';
 import css from './ContactsInfo.module.css';
 
 export default function ContactsInfo() {
-  const { email, phone, phoneLabel } = siteConfig.contacts;
+  const { email, phone, phoneLabel, telegram } = siteConfig.contacts;
 
   return (
     <section className={css.section}>
@@ -37,6 +37,19 @@ export default function ContactsInfo() {
                 <a href={`tel:${phone}`} className={css.directContact}>
                   <span className={css.directLabel}>Телефон</span>
                   <span className={css.directValue}>{phoneLabel || phone}</span>
+                </a>
+              )}
+
+              {phone && (
+                <a
+                  href={telegram}
+                  className={css.directContact}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
+                >
+                  <span className={css.directLabel}>Telegram</span>
+                  <span className={css.directValue}>{telegram}</span>
                 </a>
               )}
             </div>
