@@ -15,18 +15,18 @@ import AboutPageSchema from '@/components/Seo/AboutPageSchema/AboutPageSchema';
 import BreadcrumbSchema from '@/components/Seo/BreadcrumbSchema/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'О проекте InGenium Life',
+  title: 'Про проєкт InGenium Life',
   description:
-    'InGenium Life — авторский образовательный проект об астрологии, Таро, психологии и системах понимания человека. Узнайте больше об идее, подходе и философии проекта.',
+    'InGenium Life — авторський освітній проєкт про астрологію, Таро, психологію та системи розуміння людини. Дізнайтеся більше про ідею, підхід і філософію проєкту.',
 
   alternates: {
     canonical: '/about',
   },
 
   openGraph: {
-    title: 'О проекте InGenium Life',
+    title: 'Про проєкт InGenium Life',
     description:
-      'Авторский образовательный проект об астрологии, Таро, психологии и системах понимания человека.',
+      'Авторський освітній проєкт про астрологію, Таро, психологію та системи розуміння людини.',
     url: '/about',
   },
 };
@@ -39,15 +39,16 @@ export default function AboutPage() {
       <BreadcrumbSchema
         items={[
           {
-            name: 'Главная',
+            name: 'Головна',
             url: '/',
           },
           {
-            name: 'О проекте',
+            name: 'Про проєкт',
             url: '/about',
           },
         ]}
       />
+
       <AboutHero />
       <AboutIdea />
       <AboutAuthor />
