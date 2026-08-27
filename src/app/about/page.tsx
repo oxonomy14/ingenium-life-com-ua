@@ -6,6 +6,7 @@ import LayoutShell from '@/components/LayoutShell/LayoutShell';
 import AboutHero from '@/app/about/_components/AboutHero/AboutHero';
 import AboutIdea from '@/app/about/_components/AboutIdea/AboutIdea';
 import AboutAuthor from '@/app/about/_components/AboutAuthor/AboutAuthor';
+import AboutTeam from '@/app/about/_components/AboutTeam/AboutTeam';
 import AboutHistory from '@/app/about/_components/AboutHistory/AboutHistory';
 import AboutKyivHistory from '@/app/about/_components/AboutKyivHistory/AboutKyivHistory';
 import AboutDirections from '@/app/about/_components/AboutDirections/AboutDirections';
@@ -53,6 +54,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutIdea />
       <AboutAuthor />
+      <AboutTeam />
       <AboutHistory />
       <AboutKyivHistory />
       <AboutDirections />

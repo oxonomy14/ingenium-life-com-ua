@@ -7,32 +7,32 @@ import css from './AboutToday.module.css';
 const items = [
   {
     number: '02',
-    title: 'Статьи',
-    text: 'Открытые материалы об астрологии, Таро, психологии и других темах, которые исследует InGenium.',
+    title: 'Статті',
+    text: 'Відкриті матеріали про астрологію, Таро, психологію та інші теми, які досліджує InGenium.',
     href: '/articles',
-    linkText: 'Читать статьи',
+    linkText: 'Читати статті',
   },
   {
     number: '03',
-    title: 'Консультации',
-    text: 'Индивидуальная работа и разбор конкретных вопросов с использованием инструментов InGenium.',
+    title: 'Консультації',
+    text: 'Індивідуальна робота та розбір конкретних питань із використанням підходів та інструментів InGenium.',
     href: '/consultations',
-    linkText: 'О консультациях',
+    linkText: 'Про консультації',
   },
   {
     number: '04',
     title: 'Telegram',
-    text: 'Открытый канал с авторскими заметками, наблюдениями, небольшими материалами и новостями проекта.',
+    text: 'Відкритий канал з авторськими нотатками, спостереженнями, невеликими матеріалами та новинами проєкту.',
     href: 'https://t.me/ingenium_life',
     linkText: 'Перейти в Telegram',
     external: true,
   },
   {
     number: '05',
-    title: 'Закрытый InGenium',
-    text: 'Пространство для участников сообщества: авторские материалы, вебинары, разборы и более глубокая работа с темами проекта.',
+    title: 'Закритий InGenium',
+    text: 'Простір для учасників спільноти: авторські матеріали, вебінари, розбори та поглиблена робота з темами проєкту.',
     href: '/closed-channel',
-    linkText: 'Узнать больше',
+    linkText: 'Дізнатися більше',
   },
 ];
 
@@ -41,17 +41,17 @@ export default function AboutToday() {
     <section className={css.section}>
       <Container>
         <div className={css.header}>
-          <p className={css.eyebrow}>InGenium сегодня</p>
+          <p className={css.eyebrow}>InGenium сьогодні</p>
 
           <h2 className={css.title}>
-            Учиться, исследовать
-            <span> и оставаться в диалоге</span>
+            Навчатися, досліджувати
+            <span> та залишатися в діалозі</span>
           </h2>
 
           <p className={css.description}>
-            Сегодня InGenium — это не только образовательные программы. Проект
-            объединяет разные форматы, через которые можно знакомиться с
-            материалами, углублять знания и продолжать обучение.
+            Сьогодні InGenium — це не лише освітні програми. Проєкт об’єднує
+            різні формати, через які можна знайомитися з матеріалами,
+            поглиблювати знання та продовжувати навчання.
           </p>
         </div>
 
@@ -60,18 +60,18 @@ export default function AboutToday() {
             <span className={css.number}>01</span>
 
             <div className={css.featuredContent}>
-              <p className={css.label}>Основное направление</p>
+              <p className={css.label}>Основний напрям</p>
 
-              <h3 className={css.featuredTitle}>Обучение</h3>
+              <h3 className={css.featuredTitle}>Навчання</h3>
 
               <p className={css.featuredText}>
-                Курсы и образовательные программы InGenium помогают пройти путь
-                от базовых принципов к системному пониманию и самостоятельной
-                практике.
+                Курси та освітні програми InGenium допомагають пройти шлях від
+                базових принципів до системного розуміння та самостійної
+                практики.
               </p>
 
               <Link href="/education" className={css.featuredLink}>
-                Выбрать обучение
+                Обрати навчання
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

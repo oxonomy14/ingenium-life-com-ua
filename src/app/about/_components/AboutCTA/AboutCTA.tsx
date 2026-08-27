@@ -9,27 +9,26 @@ export default function AboutCTA() {
     <section className={css.section}>
       <Container>
         <div className={css.inner}>
-          <p className={css.eyebrow}>Следующий шаг</p>
+          <p className={css.eyebrow}>Наступний крок</p>
 
           <h2 className={css.title}>
-            Начните с того,
-            <span> что вам сейчас ближе</span>
+            Почніть із того,
+            <span> що вам зараз ближче</span>
           </h2>
 
           <p className={css.description}>
-            Можно начать с открытых материалов, познакомиться с подходом
-            InGenium глубже или выбрать образовательную программу для системного
-            обучения.
+            Можна почати з відкритих матеріалів, глибше познайомитися з підходом
+            InGenium або обрати освітню програму для системного навчання.
           </p>
 
           <div className={css.actions}>
             <Link href="/education" className={css.primary}>
-              Выбрать обучение
+              Обрати навчання
               <span aria-hidden="true">→</span>
             </Link>
 
             <Link href="/articles" className={css.secondary}>
-              Читать статьи
+              Читати статті
               <span aria-hidden="true">→</span>
             </Link>
           </div>
