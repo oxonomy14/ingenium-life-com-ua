@@ -1,0 +1,201 @@
+/* src/app/about/_components/AboutKyivHistory/AboutKyivHistory.module.css */
+
+.section {
+  padding: 96px 0;
+  background: var(--color-surface);
+}
+
+.header {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.eyebrow,
+.videoEyebrow {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.description {
+  margin: 20px 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* Gallery */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+  background: var(--color-background);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.figure {
+  margin: 0;
+}
+
+.caption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+/* Video */
+
+.videoBlock {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.videoContent {
+  max-width: 420px;
+}
+
+.videoTitle {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.videoDescription {
+  margin: 16px 0 0;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.video {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: #000;
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.certificates {
+  margin-top: 80px;
+}
+
+.certificatesHeader {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.certificatesTitle {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.certificatesDescription {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.certificatesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.certificateFigure {
+  margin: 0;
+}
+
+.certificateImage {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  background: var(--color-background);
+}
+
+.certificateImage .image {
+  object-fit: contain;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .videoBlock {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 32px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .videoBlock {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .videoContent {
+    max-width: none;
+  }
+  .certificates {
+    margin-top: 56px;
+  }
+
+  .certificatesGrid {
+    grid-template-columns: 1fr;
+  }
+}

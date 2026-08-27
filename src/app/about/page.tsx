@@ -7,6 +7,7 @@ import AboutHero from '@/app/about/_components/AboutHero/AboutHero';
 import AboutIdea from '@/app/about/_components/AboutIdea/AboutIdea';
 import AboutAuthor from '@/app/about/_components/AboutAuthor/AboutAuthor';
 import AboutHistory from '@/app/about/_components/AboutHistory/AboutHistory';
+import AboutKyivHistory from '@/app/about/_components/AboutKyivHistory/AboutKyivHistory';
 import AboutDirections from '@/app/about/_components/AboutDirections/AboutDirections';
 import AboutApproach from '@/app/about/_components/AboutApproach/AboutApproach';
 import AboutToday from '@/app/about/_components/AboutToday/AboutToday';
@@ -53,6 +54,7 @@ export default function AboutPage() {
       <AboutIdea />
       <AboutAuthor />
       <AboutHistory />
+      <AboutKyivHistory />
       <AboutDirections />
       <AboutApproach />
       <AboutToday />
