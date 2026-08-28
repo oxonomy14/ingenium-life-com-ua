@@ -16,8 +16,8 @@ export const authors = {
     href: '/about',
   },
 
-  'andrei-semenenko': {
-    id: 'andrei-semenenko',
+  'andrii-semenenko': {
+    id: 'andrii-semenenko',
 
     name: 'Андрій Семененко',
 
@@ -26,7 +26,7 @@ export const authors = {
     description:
       'Випускник InGenium, пройшов повний цикл навчання натальної астрології та отримав сертифікат за результатами підсумкового іспиту.',
 
-    image: '/images/author/andrei-semenenko-article.webp',
+    image: '/images/author/andrii-semenenko-article.webp',
 
     href: '',
   },

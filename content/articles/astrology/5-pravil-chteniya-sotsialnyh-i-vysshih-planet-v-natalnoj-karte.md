@@ -15,7 +15,7 @@ category: 'astrology'
 
 labelCategory: 'Астрологія'
 
-authorId: 'andrei-semenenko'
+authorId: 'andrii-semenenko'
 
 image: '/images/articles/astrology/5-pravil-socialnye-vysshie-planety.webp'
 
