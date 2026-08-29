@@ -10,18 +10,18 @@ import ContactsInfo from '@/app/contacts/_components/ContactsInfo/ContactsInfo';
 import ContactsCta from '@/app/contacts/_components/ContactsCta/ContactsCta';
 
 export const metadata: Metadata = {
-  title: 'Контакты InGenium Life',
+  title: 'Контакти InGenium Life',
   description:
-    'Контакты InGenium Life. Свяжитесь с нами по вопросам обучения, консультаций, вебинаров и участия в проектах InGenium.',
+    'Контакти InGenium Life. Зв’яжіться з нами з питань навчання, консультацій, вебінарів та участі в проєктах InGenium.',
 
   alternates: {
     canonical: '/contacts',
   },
 
   openGraph: {
-    title: 'Контакты InGenium Life',
+    title: 'Контакти InGenium Life',
     description:
-      'Свяжитесь с InGenium Life по вопросам обучения, консультаций, вебинаров и других проектов.',
+      'Зв’яжіться з InGenium Life з питань навчання, консультацій, вебінарів та інших проєктів.',
     url: '/contacts',
   },
 };
@@ -30,14 +30,15 @@ export default function ContactsPage() {
   return (
     <LayoutShell>
       <ContactPageSchema />
+
       <BreadcrumbSchema
         items={[
           {
-            name: 'Главная',
+            name: 'Головна',
             url: '/',
           },
           {
-            name: 'Контакты',
+            name: 'Контакти',
             url: '/contacts',
           },
         ]}

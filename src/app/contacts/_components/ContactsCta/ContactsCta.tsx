@@ -12,21 +12,21 @@ export default function ContactsCta() {
       <Container>
         <div className={css.inner}>
           <div>
-            <p className={css.eyebrow}>Консультации</p>
+            <p className={css.eyebrow}>Консультації</p>
 
             <h2 className={css.title}>
-              Хотите записаться
-              <span> на консультацию?</span>
+              Хочете записатися
+              <span> на консультацію?</span>
             </h2>
 
             <p className={css.description}>
-              Посмотрите доступные форматы консультаций и выберите подходящий
-              вариант.
+              Перегляньте доступні формати консультацій та оберіть відповідний
+              варіант.
             </p>
           </div>
 
           <Link href="/consultations" className={css.link}>
-            Перейти к консультациям
+            Перейти до консультацій
             <span aria-hidden="true">→</span>
           </Link>
         </div>

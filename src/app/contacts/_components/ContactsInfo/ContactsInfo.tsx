@@ -15,16 +15,16 @@ export default function ContactsInfo() {
       <Container>
         <div className={css.grid}>
           <div className={css.intro}>
-            <p className={css.eyebrow}>Связаться с нами</p>
+            <p className={css.eyebrow}>Зв’язатися з нами</p>
 
             <h2 className={css.title}>
-              Напишите нам
-              <span> удобным способом</span>
+              Напишіть нам
+              <span> зручним способом</span>
             </h2>
 
             <p className={css.text}>
-              Оставьте сообщение и укажите, где вам удобнее получить ответ — в
-              Telegram, WhatsApp или Viber.
+              Залиште повідомлення та вкажіть, де вам зручніше отримати
+              відповідь — у Telegram, WhatsApp або Viber.
             </p>
 
             <div className={css.directContacts}>
@@ -52,15 +52,16 @@ export default function ContactsInfo() {
                   <span className={css.directValue}>{telegram}</span>
                 </a>
               )}
+
               {whatsapp && (
                 <a
-                  href={telegram}
+                  href={whatsapp}
                   className={css.directContact}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Telegram"
+                  aria-label="WhatsApp"
                 >
-                  <span className={css.directLabel}>Whatsapp</span>
+                  <span className={css.directLabel}>WhatsApp</span>
                   <span className={css.directValue}>{whatsapp}</span>
                 </a>
               )}
@@ -72,10 +73,10 @@ export default function ContactsInfo() {
 
         <div className={css.questions}>
           <div className={css.questionsHeader}>
-            <p className={css.eyebrow}>Можно обратиться</p>
+            <p className={css.eyebrow}>Можна звернутися</p>
 
             <h2 className={css.questionsTitle}>
-              По каким вопросам мы можем помочь
+              З яких питань ми можемо допомогти
             </h2>
           </div>
 
@@ -83,32 +84,32 @@ export default function ContactsInfo() {
             <article className={css.question}>
               <span>01</span>
 
-              <h3>Обучение</h3>
+              <h3>Навчання</h3>
 
               <p>
-                Подбор курса, программа обучения, формат занятий, доступ к
-                материалам и организационные вопросы.
+                Підбір курсу, програма навчання, формат занять, доступ до
+                матеріалів та організаційні питання.
               </p>
             </article>
 
             <article className={css.question}>
               <span>02</span>
 
-              <h3>Консультации</h3>
+              <h3>Консультації</h3>
 
               <p>
-                Запись на консультацию по астрологии или Таро, выбор формата и
-                уточнение деталей.
+                Запис на консультацію з астрології або Таро, вибір формату та
+                уточнення деталей.
               </p>
             </article>
 
             <article className={css.question}>
               <span>03</span>
 
-              <h3>Вебинары</h3>
+              <h3>Вебінари</h3>
 
               <p>
-                Участие в открытых вебинарах, доступ к записям и мероприятиям
+                Участь у відкритих вебінарах, доступ до записів та заходів
                 InGenium.
               </p>
             </article>
@@ -116,11 +117,11 @@ export default function ContactsInfo() {
             <article className={css.question}>
               <span>04</span>
 
-              <h3>Сотрудничество</h3>
+              <h3>Співпраця</h3>
 
               <p>
-                Партнёрские проекты, публикации, выступления и другие
-                предложения о сотрудничестве.
+                Партнерські проєкти, публікації, виступи та інші пропозиції щодо
+                співпраці.
               </p>
             </article>
           </div>

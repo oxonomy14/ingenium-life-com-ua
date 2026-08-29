@@ -126,7 +126,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Whatsapp
+                WhatsApp
               </a>
             )}
 

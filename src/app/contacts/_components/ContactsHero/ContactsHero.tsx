@@ -9,16 +9,16 @@ export default function ContactsHero() {
     <section className={css.hero}>
       <Container>
         <div className={css.content}>
-          <p className={css.eyebrow}>Контакты</p>
+          <p className={css.eyebrow}>Контакти</p>
 
           <h1 className={css.title}>
-            Будем рады
-            <span> вашему сообщению</span>
+            Будемо раді
+            <span> вашому повідомленню</span>
           </h1>
 
           <p className={css.description}>
-            Напишите нам по вопросам обучения, консультаций, вебинаров или
-            участия в проектах InGenium Life.
+            Напишіть нам з питань навчання, консультацій, вебінарів або участі в
+            проєктах InGenium Life.
           </p>
         </div>
       </Container>

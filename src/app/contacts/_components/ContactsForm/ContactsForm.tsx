@@ -60,13 +60,13 @@ export default function ContactsForm() {
       <form className={css.form} onSubmit={handleSubmit}>
         <div className={css.row}>
           <div className={css.field}>
-            <label htmlFor="name">Ваше имя</label>
+            <label htmlFor="name">Ваше ім’я</label>
 
             <input
               id="name"
               name="name"
               type="text"
-              placeholder="Как к вам обращаться"
+              placeholder="Як до вас звертатися"
               autoComplete="name"
               required
             />
@@ -87,25 +87,25 @@ export default function ContactsForm() {
         </div>
 
         <div className={css.field}>
-          <label htmlFor="subject">Тема обращения</label>
+          <label htmlFor="subject">Тема звернення</label>
 
           <select id="subject" name="subject" defaultValue="">
             <option value="" disabled>
-              Выберите тему
+              Оберіть тему
             </option>
 
-            <option value="education">Обучение</option>
-            <option value="consultation">Консультация</option>
-            <option value="webinar">Вебинары</option>
+            <option value="education">Навчання</option>
+            <option value="consultation">Консультація</option>
+            <option value="webinar">Вебінари</option>
             <option value="closed-channel">
-              Авторский канал Павла Дементьева
+              Авторський канал Павла Дементьєва
             </option>
-            <option value="other">Другой вопрос</option>
+            <option value="other">Інше питання</option>
           </select>
         </div>
 
         <fieldset className={css.contactMethod}>
-          <legend>Как вам удобно получить ответ?</legend>
+          <legend>Як вам зручно отримати відповідь?</legend>
 
           <div className={css.methodOptions}>
             <label className={css.method}>
@@ -148,7 +148,7 @@ export default function ContactsForm() {
 
         <div className={css.field}>
           <label htmlFor="contact">
-            {contactMethod === 'telegram' ? 'Ваш Telegram' : 'Номер телефона'}
+            {contactMethod === 'telegram' ? 'Ваш Telegram' : 'Номер телефону'}
           </label>
 
           <input
@@ -164,26 +164,26 @@ export default function ContactsForm() {
 
           <span className={css.hint}>
             {contactMethod === 'telegram'
-              ? 'Укажите username, по которому мы сможем вам написать.'
+              ? 'Вкажіть username, за яким ми зможемо вам написати.'
               : contactMethod === 'whatsapp'
-                ? 'Укажите номер телефона, к которому подключён WhatsApp.'
-                : 'Укажите номер телефона, к которому подключён Viber.'}
+                ? 'Вкажіть номер телефону, до якого підключено WhatsApp.'
+                : 'Вкажіть номер телефону, до якого підключено Viber.'}
           </span>
         </div>
 
         <div className={css.field}>
-          <label htmlFor="message">Сообщение</label>
+          <label htmlFor="message">Повідомлення</label>
 
           <textarea
             id="message"
             name="message"
             rows={6}
-            placeholder="Расскажите коротко, чем мы можем помочь"
+            placeholder="Коротко розкажіть, чим ми можемо допомогти"
             required
           />
         </div>
 
-        {/* Honeypot против простых ботов */}
+        {/* Honeypot проти простих ботів */}
         <div className={css.website} aria-hidden="true">
           <label htmlFor="website">Website</label>
 
@@ -201,25 +201,25 @@ export default function ContactsForm() {
           className={css.submit}
           disabled={status === 'sending'}
         >
-          {status === 'sending' ? 'Отправляем...' : 'Отправить сообщение'}
+          {status === 'sending' ? 'Надсилаємо...' : 'Надіслати повідомлення'}
         </button>
 
         <p className={css.privacy}>
-          Отправляя форму, вы соглашаетесь на обработку данных, необходимых для
-          ответа на ваше обращение.
+          Надсилаючи форму, ви погоджуєтеся на обробку даних, необхідних для
+          відповіді на ваше звернення.
         </p>
 
         {status === 'success' && (
           <p className={css.success} role="status">
-            Спасибо. Сообщение отправлено. Мы свяжемся с вами указанным
+            Дякуємо. Повідомлення надіслано. Ми зв’яжемося з вами вказаним
             способом.
           </p>
         )}
 
         {status === 'error' && (
           <p className={css.error} role="alert">
-            Не удалось отправить сообщение. Попробуйте ещё раз или напишите нам
-            по электронной почте.
+            Не вдалося надіслати повідомлення. Спробуйте ще раз або напишіть нам
+            електронною поштою.
           </p>
         )}
       </form>

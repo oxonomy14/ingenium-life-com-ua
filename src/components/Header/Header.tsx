@@ -118,7 +118,7 @@ export default function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Whatsapp
+                    WhatsApp
                   </a>
                 )}
 
