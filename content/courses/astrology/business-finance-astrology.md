@@ -17,6 +17,7 @@ ogImage: '/images/ogImage/og-business-finance-astrology.webp'
 ogImageAlt: 'Практический курс по финансовой и бизнес-астрологии — курс InGenium'
 
 format: 'Курс в записи'
+language: 'Російська'
 duration: '9 занятий + 3 практикума'
 courseYear: '2020'
 lessonCount: 9

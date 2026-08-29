@@ -86,6 +86,7 @@ export type Course = {
   ogImageAlt?: string;
 
   format?: string;
+  language?: string;
   duration?: string;
   courseYear?: number;
 

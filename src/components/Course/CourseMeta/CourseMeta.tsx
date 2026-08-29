@@ -9,8 +9,14 @@ type CourseMetaProps = {
 };
 
 export default function CourseMeta({ course }: CourseMetaProps) {
-  const { format, courseYear, lessonCount, lessonDuration, certificate } =
-    course;
+  const {
+    format,
+    language,
+    courseYear,
+    lessonCount,
+    lessonDuration,
+    certificate,
+  } = course;
 
   const items = [
     lessonCount
@@ -31,6 +37,13 @@ export default function CourseMeta({ course }: CourseMetaProps) {
       ? {
           label: 'Формат',
           value: format,
+        }
+      : null,
+
+    language
+      ? {
+          label: 'Мова викладання',
+          value: language,
         }
       : null,
 

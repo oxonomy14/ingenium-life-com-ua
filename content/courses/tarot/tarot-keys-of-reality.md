@@ -18,6 +18,7 @@ image: '/images/courses/tarot/tarot-keys-of-reality-main.webp'
 imageAlt: 'Курс Таро. Ключи реальности'
 
 format: 'Курс в записи'
+language: 'Російська'
 duration: '29 занятий'
 courseYear: '2019 - 2020'
 

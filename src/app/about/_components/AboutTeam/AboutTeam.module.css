@@ -61,6 +61,7 @@
 
 .content {
   padding-top: 20px;
+  text-align: center;
 }
 
 .name {
@@ -78,7 +79,8 @@
 }
 
 .text {
-  margin: 14px 0 0;
+  max-width: 320px;
+  margin: 14px auto 0;
   font-size: 15px;
   line-height: 1.7;
   color: var(--color-text-secondary);

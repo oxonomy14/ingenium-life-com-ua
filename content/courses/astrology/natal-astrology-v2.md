@@ -18,6 +18,7 @@ image: '/images/courses/astrology/natal-astrology-v2-main.webp'
 imageAlt: 'Курс Натальная астрология 2.0'
 
 format: 'Курс в записи'
+language: 'Російська'
 duration: '8 месяцев / 2 урока в неделю'
 courseYear: '2017 - 2018'
 

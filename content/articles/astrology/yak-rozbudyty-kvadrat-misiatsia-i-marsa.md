@@ -7,7 +7,7 @@ slug: 'yak-rozbudyty-kvadrat-misiatsia-i-marsa'
 courseSlug: 'natal-astrology-v2'
 course:
   category: 'astrology'
-  slug: 'natal-astrology-v2'
+  slug: 'astrology-a-to-z'
 date: '2019-02-23'
 updatedAt: '2026-08-29'
 category: 'astrology'

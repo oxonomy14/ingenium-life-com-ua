@@ -18,6 +18,7 @@ image: '/images/courses/jungian-psychology/functions-of-consciousness-cover.webp
 imageAlt: 'Курс Функции сознания — типология личности по Карлу Юнгу'
 
 format: 'Курс в записи'
+language: 'Російська'
 duration: '14 занятий'
 courseYear: 2022
 
