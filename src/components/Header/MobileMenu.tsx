@@ -120,6 +120,16 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               </a>
             )}
 
+            {contacts.whatsapp && (
+              <a
+                href={contacts.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Whatsapp
+              </a>
+            )}
+
             {contacts.phone && (
               <a href={`tel:${contacts.phone.replace(/\s/g, '')}`}>
                 {contacts.phoneLabel || contacts.phone}

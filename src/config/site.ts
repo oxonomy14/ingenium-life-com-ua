@@ -34,6 +34,9 @@ export const siteConfig = {
     // Прямий контакт у Telegram
     telegram: 'https://t.me/ingenium_support',
 
+    // Прямий контакт в WhatsApp
+    whatsapp: 'https://wa.me/+66946203512',
+
     // Telegram-бот для спілкування з клієнтами
     clientManager: '',
   },

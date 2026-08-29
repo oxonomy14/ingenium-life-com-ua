@@ -16,6 +16,11 @@ export const redirects = [
     destination: '/contacts',
     permanent: true,
   },
+  {
+    source: '/payplan',
+    destination: '/education',
+    permanent: true,
+  },
 
   {
     source: '/chem-otlichaetsya-luna-v-teltse-ot-solntsa-v-teltse',

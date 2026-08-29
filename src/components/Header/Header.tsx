@@ -112,6 +112,15 @@ export default function Header() {
                     Telegram
                   </a>
                 )}
+                {contacts.whatsapp && (
+                  <a
+                    href={contacts.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Whatsapp
+                  </a>
+                )}
 
                 {contacts.phone && (
                   <a
