@@ -39,4 +39,9 @@ export const redirects = [
     destination: '/articles/natalnye-aspekty-na-praktike',
     permanent: true,
   },
+  {
+    source: '/kak-razbudit-kvadrat-luny-i-marsa',
+    destination: '/articles/yak-rozbudyty-kvadrat-misiatsia-i-marsa',
+    permanent: true,
+  },
 ];
