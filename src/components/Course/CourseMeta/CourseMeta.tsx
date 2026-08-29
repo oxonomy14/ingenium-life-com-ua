@@ -21,14 +21,14 @@ export default function CourseMeta({ course }: CourseMetaProps) {
   const items = [
     lessonCount
       ? {
-          label: 'Занятий',
+          label: 'Занять',
           value: String(lessonCount),
         }
       : null,
 
     lessonDuration
       ? {
-          label: 'Продолжительность занятия',
+          label: 'Тривалість заняття',
           value: lessonDuration,
         }
       : null,
@@ -49,15 +49,15 @@ export default function CourseMeta({ course }: CourseMetaProps) {
 
     courseYear
       ? {
-          label: 'Год проведения курса',
+          label: 'Рік проведення курсу',
           value: String(courseYear),
         }
       : null,
 
     certificate
       ? {
-          label: 'Сертификат',
-          value: 'Предусмотрен',
+          label: 'Сертифікат',
+          value: 'Передбачено',
         }
       : null,
   ].filter(Boolean) as {

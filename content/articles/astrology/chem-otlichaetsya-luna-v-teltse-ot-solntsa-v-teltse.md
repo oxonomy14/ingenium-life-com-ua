@@ -23,7 +23,7 @@ imageAlt: 'Місяць і Сонце у знаку Тельця'
 
 course:
   category: 'astrology'
-  slug: 'natal-astrology-v2'
+  slug: 'business-finance-astrology'
 ---
 
 В астрології надзвичайно важлива точність. Розглянемо це на прикладі положення різних планет у Тельці.

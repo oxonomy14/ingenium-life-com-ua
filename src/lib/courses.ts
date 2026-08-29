@@ -147,6 +147,7 @@ function parseCourse(
     ogImageAlt: data.ogImageAlt,
 
     format: data.format,
+    language: data.language,
     duration: data.duration,
     courseYear: data.courseYear,
 

@@ -44,7 +44,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
               {format && <span className={css.metaItem}>{format}</span>}
 
               {lessonCount && (
-                <span className={css.metaItem}>{lessonCount} занятий</span>
+                <span className={css.metaItem}>{lessonCount} занять</span>
               )}
 
               {lessonDuration && (
@@ -54,11 +54,11 @@ export default function CourseHero({ course }: CourseHeroProps) {
 
             <div className={css.actions}>
               <Link href="#course-program" className={css.primaryButton}>
-                Посмотреть программу
+                Переглянути програму
               </Link>
 
               <Link href="#course-order" className={css.secondaryButton}>
-                Узнать стоимость
+                Дізнатися вартість
               </Link>
             </div>
 
@@ -72,7 +72,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                       ≈ {convertAndFormatRubToUah(price.amount)}
                     </p>
 
-                    {/*   <p className={css.originalPrice}>
+                    {/* <p className={css.originalPrice}>
                       {formatRub(price.amount)}
                     </p> */}
                   </>
