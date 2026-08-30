@@ -7,8 +7,18 @@ import { getAllArticles } from '@/lib/articles';
 
 import css from './LatestArticles.module.css';
 
+const HOME_ARTICLE_SLUGS = [
+  'zhyva-astrologiya',
+  'kompleksy-i-arhetipy',
+  '5-pravil-chteniya-sotsialnyh-i-vysshih-planet-v-natalnoj-karte',
+];
+
 export default function LatestArticles() {
-  const articles = getAllArticles().slice(0, 3);
+  const allArticles = getAllArticles();
+
+  const articles = HOME_ARTICLE_SLUGS.map((slug) =>
+    allArticles.find((article) => article.slug === slug),
+  ).filter((article) => article !== undefined);
 
   const [featuredArticle, ...secondaryArticles] = articles;
 
@@ -22,7 +32,7 @@ export default function LatestArticles() {
             <p className={css.eyebrow}>Статті</p>
 
             <h2 className={css.title}>
-              Нові матеріали
+              Корисні матеріали
               <span> InGenium Life</span>
             </h2>
           </div>
