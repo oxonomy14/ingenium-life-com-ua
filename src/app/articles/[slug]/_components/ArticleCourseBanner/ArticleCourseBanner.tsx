@@ -19,12 +19,13 @@ export default function ArticleCourseBanner({
   if (!course || !course.image) {
     return null;
   }
+
   return (
     <section className={css.section}>
       <Container>
         <div className={css.banner}>
           <div className={css.content}>
-            <p className={css.eyebrow}>Обучение InGenium</p>
+            <p className={css.eyebrow}>Навчання InGenium</p>
 
             <p className={css.category}>{course.category}</p>
 
@@ -33,7 +34,7 @@ export default function ArticleCourseBanner({
             <p className={css.description}>{course.shortDescription}</p>
 
             <Link href={href} className={css.button}>
-              Подробнее о курсе
+              Докладніше про курс
               <span aria-hidden="true">→</span>
             </Link>
           </div>

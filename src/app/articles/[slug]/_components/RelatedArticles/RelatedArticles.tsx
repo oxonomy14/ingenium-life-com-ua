@@ -25,13 +25,13 @@ export default function RelatedArticles({ articles }: RelatedArticlesProps) {
       <Container>
         <div className={css.header}>
           <div>
-            <p className={css.eyebrow}>Продолжить чтение</p>
+            <p className={css.eyebrow}>Продовжити читання</p>
 
-            <h2 className={css.title}>По этой теме</h2>
+            <h2 className={css.title}>За цією темою</h2>
           </div>
 
           <Link href="/articles" className={css.allLink}>
-            Все статьи
+            Усі статті
             <span aria-hidden="true">→</span>
           </Link>
         </div>

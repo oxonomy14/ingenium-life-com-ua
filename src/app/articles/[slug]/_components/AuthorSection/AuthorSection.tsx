@@ -31,7 +31,7 @@ export default function AuthorSection({ author }: ArticleAuthorProps) {
           </div>
 
           <div className={css.content}>
-            <p className={css.eyebrow}>Автор статьи</p>
+            <p className={css.eyebrow}>Автор статті</p>
 
             {author.href ? (
               <Link href={author.href} className={css.nameLink}>
@@ -47,7 +47,7 @@ export default function AuthorSection({ author }: ArticleAuthorProps) {
 
             {author.href && (
               <Link href={author.href} className={css.more}>
-                Об авторе
+                Про автора
                 <span aria-hidden="true">→</span>
               </Link>
             )}

@@ -134,11 +134,11 @@ export default async function ArticlePage({ params }: Props) {
       <BreadcrumbSchema
         items={[
           {
-            name: 'Главная',
+            name: 'Головна',
             url: '/',
           },
           {
-            name: 'Статьи',
+            name: 'Статті',
             url: '/articles',
           },
           {
@@ -151,11 +151,11 @@ export default async function ArticlePage({ params }: Props) {
         <Container>
           <header className={css.header}>
             <nav className={css.breadcrumbs} aria-label="Хлебные крошки">
-              <Link href="/">Главная</Link>
+              <Link href="/">Головна</Link>
 
               <span aria-hidden="true">/</span>
 
-              <Link href="/articles">Статьи</Link>
+              <Link href="/articles">Статті</Link>
 
               <span aria-hidden="true">/</span>
 
