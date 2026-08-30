@@ -19,13 +19,13 @@ export default function AstrologyCourses({ courses }: AstrologyCoursesProps) {
     <section className={css.section} id="astrology-courses">
       <Container>
         <div className={css.header}>
-          <p className={css.eyebrow}>Программы обучения</p>
+          <p className={css.eyebrow}>Навчальні програми</p>
 
-          <h2 className={css.title}>Курсы по астрологии</h2>
+          <h2 className={css.title}>Курси астрології</h2>
 
           <p className={css.description}>
-            Выберите программу в зависимости от уровня подготовки и направления,
-            которое хотите изучить глубже.
+            Оберіть програму залежно від рівня підготовки та напряму, який
+            хочете вивчити глибше.
           </p>
         </div>
 

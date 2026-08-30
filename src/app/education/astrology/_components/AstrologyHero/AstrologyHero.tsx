@@ -10,55 +10,55 @@ export default function AstrologyHero() {
       <Container>
         <div className={css.inner}>
           <div className={css.content}>
-            <p className={css.eyebrow}>Обучение InGenium</p>
+            <p className={css.eyebrow}>Навчання InGenium</p>
 
             <h1 className={css.title}>
-              Курсы по астрологии
-              <span>от основ до практики</span>
+              Курси астрології
+              <span>від основ до практики</span>
             </h1>
 
             <p className={css.description}>
-              Системное обучение астрологии для начинающих и продолжающих.
-              Изучайте натальную карту, событийный анализ, прогностику и
-              практические методы работы с астрологией.
+              Системне навчання астрології для початківців і тих, хто продовжує
+              навчання. Вивчайте натальну карту, подієвий аналіз, прогностику та
+              практичні методи роботи з астрологією.
             </p>
 
             <div className={css.actions}>
               <Link href="#astrology-courses" className={css.primaryButton}>
-                Смотреть курсы
+                Переглянути курси
               </Link>
 
               <Link href="/about" className={css.secondaryButton}>
-                Об InGenium
+                Про InGenium
               </Link>
             </div>
           </div>
 
           <div className={css.aside}>
-            <p className={css.asideLabel}>Подход InGenium</p>
+            <p className={css.asideLabel}>Підхід InGenium</p>
 
             <p className={css.asideText}>
-              Не набор готовых трактовок, а понимание принципов, взаимосвязей и
-              логики астрологической системы.
+              Не набір готових трактувань, а розуміння принципів, взаємозв’язків
+              і логіки астрологічної системи.
             </p>
 
             <div className={css.points}>
               <div className={css.point}>
                 <span className={css.number}>01</span>
 
-                <span>Системное понимание</span>
+                <span>Системне розуміння</span>
               </div>
 
               <div className={css.point}>
                 <span className={css.number}>02</span>
 
-                <span>Практический анализ</span>
+                <span>Практичний аналіз</span>
               </div>
 
               <div className={css.point}>
                 <span className={css.number}>03</span>
 
-                <span>Работа с реальными картами</span>
+                <span>Робота з реальними картами</span>
               </div>
             </div>
           </div>

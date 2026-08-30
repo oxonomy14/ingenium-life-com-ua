@@ -19,10 +19,10 @@ export default function AstrologyPageSchema({
 
     url: pageUrl,
 
-    name: 'Курсы по астрологии онлайн — InGenium',
+    name: 'Курси астрології онлайн — InGenium',
 
     description:
-      'Курсы по астрологии InGenium для начинающих и продолжающих: натальная астрология, анализ карты, прогностика и практическая работа.',
+      'Курси астрології InGenium для початківців і тих, хто продовжує навчання: натальна астрологія, аналіз карти, прогностика та практична робота.',
 
     inLanguage: siteConfig.language,
 
@@ -33,7 +33,7 @@ export default function AstrologyPageSchema({
 
     about: {
       '@type': 'Thing',
-      name: 'Астрология',
+      name: 'Астрологія',
     },
 
     provider: {
@@ -44,7 +44,7 @@ export default function AstrologyPageSchema({
     mainEntity: {
       '@type': 'ItemList',
 
-      name: 'Курсы по астрологии',
+      name: 'Курси астрології',
 
       numberOfItems: courses.length,
 

@@ -10,13 +10,15 @@ export default function AstrologyFaq() {
       <Container>
         <div className={css.inner}>
           <div className={css.heading}>
-            <p className={css.eyebrow}>Вопросы и ответы</p>
+            <p className={css.eyebrow}>Запитання та відповіді</p>
 
-            <h2 className={css.title}>Частые вопросы об обучении астрологии</h2>
+            <h2 className={css.title}>
+              Часті запитання про навчання астрології
+            </h2>
 
             <p className={css.description}>
-              Если вы только выбираете программу, здесь собраны ответы на
-              основные вопросы о формате и уровне подготовки.
+              Якщо ви тільки обираєте програму, тут зібрані відповіді на основні
+              запитання про формат навчання та рівень підготовки.
             </p>
           </div>
 

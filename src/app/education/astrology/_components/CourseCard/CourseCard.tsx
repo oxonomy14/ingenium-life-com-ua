@@ -66,7 +66,7 @@ export default function CourseCard({ course }: CourseCardProps) {
             href={`/education/astrology/${course.slug}`}
             className={css.link}
           >
-            Подробнее
+            Докладніше
             <span aria-hidden="true">→</span>
           </Link>
         </div>

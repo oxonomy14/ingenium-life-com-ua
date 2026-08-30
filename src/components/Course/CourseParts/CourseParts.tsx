@@ -19,13 +19,13 @@ export default function CourseParts({ course }: CoursePartsProps) {
     <section className={css.section}>
       <Container>
         <div className={css.header}>
-          <p className={css.eyebrow}>Структура курса</p>
+          <p className={css.eyebrow}>Структура курсу</p>
 
-          <h2 className={css.title}>Из чего состоит обучение</h2>
+          <h2 className={css.title}>З чого складається навчання</h2>
 
           <p className={css.description}>
-            Курс построен последовательно: от отдельных элементов и принципов к
-            целостному анализу и практической работе.
+            Курс побудований послідовно: від окремих елементів і принципів до
+            цілісного аналізу та практичної роботи.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export default function CourseParts({ course }: CoursePartsProps) {
                 </span>
 
                 {part.lessons && (
-                  <span className={css.lessons}>{part.lessons} занятий</span>
+                  <span className={css.lessons}>{part.lessons} занять</span>
                 )}
               </div>
 

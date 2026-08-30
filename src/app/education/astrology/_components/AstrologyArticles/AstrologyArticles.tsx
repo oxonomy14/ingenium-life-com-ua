@@ -23,18 +23,18 @@ export default function AstrologyArticles({
       <Container>
         <div className={css.header}>
           <div className={css.heading}>
-            <p className={css.eyebrow}>Материалы</p>
+            <p className={css.eyebrow}>Матеріали</p>
 
-            <h2 className={css.title}>Статьи об астрологии</h2>
+            <h2 className={css.title}>Статті про астрологію</h2>
 
             <p className={css.description}>
-              Дополнительные материалы об астрологии, натальной карте и
-              принципах анализа.
+              Додаткові матеріали про астрологію, натальну карту та принципи
+              аналізу.
             </p>
           </div>
 
           <Link href="/articles/astrology" className={css.allLink}>
-            Все статьи
+            Усі статті
             <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function AstrologyArticles({
               </Link>
 
               <div className={css.content}>
-                <p className={css.category}>Астрология</p>
+                <p className={css.category}>Астрологія</p>
 
                 <h3 className={css.cardTitle}>
                   <Link href={`/articles/${article.slug}`}>
@@ -76,7 +76,7 @@ export default function AstrologyArticles({
                   href={`/articles/${article.slug}`}
                   className={css.readMore}
                 >
-                  Читать статью
+                  Читати статтю
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>

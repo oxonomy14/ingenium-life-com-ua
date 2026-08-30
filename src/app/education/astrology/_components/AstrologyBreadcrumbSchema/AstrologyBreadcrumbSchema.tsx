@@ -13,21 +13,21 @@ export default function AstrologyBreadcrumbSchema() {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Главная',
+        name: 'Головна',
         item: siteConfig.url,
       },
 
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Обучение',
+        name: 'Навчання',
         item: `${siteConfig.url}/education`,
       },
 
       {
         '@type': 'ListItem',
         position: 3,
-        name: 'Астрология',
+        name: 'Астрологія',
         item: pageUrl,
       },
     ],

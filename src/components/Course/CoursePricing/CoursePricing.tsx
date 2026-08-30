@@ -18,10 +18,10 @@ function PaymentPrice({ payment }: { payment: CoursePaymentOption }) {
           ≈ {convertAndFormatRubToUah(payment.amount)}
         </p>
 
-        {/*  <p className={css.originalPrice}>{formatRub(payment.amount)}</p> */}
+        {/* <p className={css.originalPrice}>{formatRub(payment.amount)}</p> */}
 
         {payment.payments && payment.payments > 1 && (
-          <p className={css.payments}>{payment.payments} платежа</p>
+          <p className={css.payments}>{payment.payments} платежі</p>
         )}
       </div>
     );
@@ -32,7 +32,7 @@ function PaymentPrice({ payment }: { payment: CoursePaymentOption }) {
       <p className={css.price}>{formatUah(payment.amount)}</p>
 
       {payment.payments && payment.payments > 1 && (
-        <p className={css.payments}>{payment.payments} платежа</p>
+        <p className={css.payments}>{payment.payments} платежі</p>
       )}
     </div>
   );
@@ -51,9 +51,9 @@ export default function CoursePricing({ course }: CoursePricingProps) {
     <section className={css.section} id="course-order">
       <Container>
         <div className={css.header}>
-          <p className={css.eyebrow}>Стоимость</p>
+          <p className={css.eyebrow}>Вартість</p>
 
-          <h2 className={css.title}>{pricing.title || 'Стоимость обучения'}</h2>
+          <h2 className={css.title}>{pricing.title || 'Вартість навчання'}</h2>
 
           {pricing.description && (
             <p className={css.description}>{pricing.description}</p>
@@ -83,7 +83,7 @@ export default function CoursePricing({ course }: CoursePricingProps) {
 
                 {option.consultationIncluded && (
                   <div className={css.consultation}>
-                    <strong>Индивидуальная консультация включена</strong>
+                    <strong>Індивідуальна консультація включена</strong>
 
                     {option.consultationDuration && (
                       <span>{option.consultationDuration}</span>
@@ -107,7 +107,7 @@ export default function CoursePricing({ course }: CoursePricingProps) {
               ) : null}
 
               <div className={css.paymentSection}>
-                <p className={css.paymentLabel}>Варианты оплаты</p>
+                <p className={css.paymentLabel}>Варіанти оплати</p>
 
                 <div className={css.paymentOptions}>
                   {option.paymentOptions.map((payment) => (
@@ -137,15 +137,15 @@ export default function CoursePricing({ course }: CoursePricingProps) {
               </div>
 
               <a href="/contacts" className={css.button}>
-                Выбрать вариант
+                Обрати варіант
               </a>
             </article>
           ))}
         </div>
 
-        {/*  <p className={css.note}>
-          Стоимость в гривнах рассчитана по внутреннему курсу InGenium и носит
-          ориентировочный характер.
+        {/* <p className={css.note}>
+          Вартість у гривнях розрахована за внутрішнім курсом InGenium і має
+          орієнтовний характер.
         </p> */}
       </Container>
     </section>

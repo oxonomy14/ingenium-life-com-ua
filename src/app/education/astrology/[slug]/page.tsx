@@ -104,7 +104,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
       <CourseBreadcrumbSchema
         course={course}
         categorySlug="astrology"
-        categoryName="Астрология"
+        categoryName="Астрологія"
       />
       <CourseHero course={course} />
       <CourseMeta course={course} />

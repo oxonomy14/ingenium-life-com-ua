@@ -19,13 +19,13 @@ export default function CourseProgram({ course }: CourseProgramProps) {
     <section className={css.section} id="course-program">
       <Container>
         <div className={css.header}>
-          <p className={css.eyebrow}>Программа</p>
+          <p className={css.eyebrow}>Програма</p>
 
-          <h2 className={css.title}>Программа курса</h2>
+          <h2 className={css.title}>Програма курсу</h2>
 
           <p className={css.description}>
-            Программа построена последовательно: от базовых принципов к
-            самостоятельному анализу и практической работе.
+            Програма побудована послідовно: від базових принципів до
+            самостійного аналізу та практичної роботи.
           </p>
         </div>
 

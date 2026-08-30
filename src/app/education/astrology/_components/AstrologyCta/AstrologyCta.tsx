@@ -10,26 +10,26 @@ export default function AstrologyCta() {
       <Container>
         <div className={css.inner}>
           <div className={css.content}>
-            <p className={css.eyebrow}>Начните обучение</p>
+            <p className={css.eyebrow}>Почніть навчання</p>
 
             <h2 className={css.title}>
-              Выберите свой путь
-              <span> в изучении астрологии</span>
+              Оберіть свій шлях
+              <span> у вивченні астрології</span>
             </h2>
 
             <p className={css.description}>
-              Изучите программы InGenium и выберите курс, соответствующий вашему
-              уровню подготовки, интересам и задачам.
+              Ознайомтеся з програмами InGenium та оберіть курс, що відповідає
+              вашому рівню підготовки, інтересам і завданням.
             </p>
           </div>
 
           <div className={css.actions}>
             <Link href="#astrology-courses" className={css.primaryButton}>
-              Смотреть курсы
+              Переглянути курси
             </Link>
 
             <Link href="/contacts" className={css.secondaryButton}>
-              Задать вопрос
+              Поставити запитання
             </Link>
           </div>
         </div>

@@ -16,26 +16,26 @@ export default function CourseCta({ course }: CourseCtaProps) {
       <Container>
         <div className={css.inner}>
           <div className={css.content}>
-            <p className={css.eyebrow}>Остались вопросы?</p>
+            <p className={css.eyebrow}>Залишилися запитання?</p>
 
             <h2 className={css.title}>
-              Узнайте больше о курсе
+              Дізнайтеся більше про курс
               <span> {course.title}</span>
             </h2>
 
             <p className={css.description}>
-              Если хотите уточнить формат обучения, варианты оплаты или понять,
-              подходит ли вам программа, свяжитесь с нами.
+              Якщо хочете уточнити формат навчання, варіанти оплати або
+              зрозуміти, чи підходить вам програма, зв’яжіться з нами.
             </p>
           </div>
 
           <div className={css.actions}>
             <Link href="/contacts" className={css.primaryButton}>
-              Связаться с нами
+              Зв’язатися з нами
             </Link>
 
             <Link href="#course-program" className={css.secondaryButton}>
-              Посмотреть программу
+              Переглянути програму
             </Link>
           </div>
         </div>

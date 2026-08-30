@@ -14,7 +14,7 @@ export default function CourseAuthor() {
             <div className={css.imageWrapper}>
               <Image
                 src="/images/about/pavel-dementiev.webp"
-                alt="Павел Дементьев — автор и преподаватель InGenium"
+                alt="Павло Дементьєв — автор і викладач InGenium"
                 fill
                 sizes="(max-width: 767px) 100vw, 420px"
                 className={css.image}
@@ -23,22 +23,22 @@ export default function CourseAuthor() {
           </div>
 
           <div className={css.content}>
-            <p className={css.eyebrow}>Автор курса</p>
+            <p className={css.eyebrow}>Автор курсу</p>
 
-            <h2 className={css.title}>Павел Дементьев</h2>
+            <h2 className={css.title}>Павло Дементьєв</h2>
 
             <p className={css.lead}>
-              Автор образовательного проекта InGenium и преподаватель курсов.
+              Автор освітнього проєкту InGenium і викладач курсів.
             </p>
 
             <p className={css.description}>
-              В основе обучения — системный подход, практика и понимание
-              взаимосвязей между элементами натальной карты вместо механического
-              запоминания готовых трактовок.
+              В основі навчання — системний підхід, практика та розуміння
+              взаємозв’язків між елементами натальної карти замість механічного
+              запам’ятовування готових трактувань.
             </p>
 
             <Link href="/about" className={css.link}>
-              Подробнее об авторе
+              Докладніше про автора
               <span aria-hidden="true">→</span>
             </Link>
           </div>

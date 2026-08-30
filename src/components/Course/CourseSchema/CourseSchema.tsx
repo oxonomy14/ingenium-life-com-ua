@@ -13,6 +13,8 @@ export default function CourseSchema({
 }: CourseSchemaProps) {
   const courseUrl = `${siteConfig.url}/education/${categorySlug}/${course.slug}`;
 
+  const courseLanguage = course.language === 'Російська' ? 'ru' : 'uk';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -29,7 +31,7 @@ export default function CourseSchema({
       image: `${siteConfig.url}${course.image}`,
     }),
 
-    inLanguage: siteConfig.language,
+    inLanguage: courseLanguage,
 
     provider: {
       '@type': 'Organization',
@@ -41,7 +43,7 @@ export default function CourseSchema({
     author: {
       '@type': 'Person',
       '@id': `${siteConfig.url}/about#person`,
-      name: 'Павел Дементьев',
+      name: 'Павло Дементьєв',
       url: `${siteConfig.url}/about`,
     },
 
