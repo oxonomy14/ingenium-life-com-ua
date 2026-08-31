@@ -9,7 +9,7 @@ import UpcomingCourse from './UpcomingCourse';
 import css from './Hero.module.css';
 
 export default function Hero() {
-  const promoCourse = getHeroPromoCourse();
+  const promo = getHeroPromoCourse();
 
   return (
     <section className={css.hero}>
@@ -47,9 +47,9 @@ export default function Hero() {
             </ul>
           </div>
 
-          {promoCourse && (
+          {promo && (
             <div className={css.visual}>
-              <UpcomingCourse course={promoCourse} />
+              <UpcomingCourse course={promo.course} status={promo.status} />
             </div>
           )}
         </div>

@@ -100,7 +100,7 @@ export default async function ArticlePage({ params }: Props) {
   const articlePath = `/articles/${article.slug}`;
   const articleUrl = `${siteConfig.url}${articlePath}`;
 
-  const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+  const formattedDate = new Intl.DateTimeFormat('uk-UA', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',

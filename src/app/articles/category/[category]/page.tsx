@@ -72,7 +72,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <div className={css.page}>
         <Container>
           <header className={css.header}>
-            <p className={css.eyebrow}>Библиотека InGenium</p>
+            <p className={css.eyebrow}>Бібліотека InGenium</p>
 
             <h1 className={css.title}>{currentCategory.title}</h1>
 
@@ -84,10 +84,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <section className={css.articles} aria-labelledby="articles-title">
             <div className={css.sectionHeader}>
               <div>
-                <p className={css.sectionEyebrow}>Материалы</p>
+                <p className={css.sectionEyebrow}>Матеріали</p>
 
                 <h2 id="articles-title" className={css.sectionTitle}>
-                  Статьи по теме «{currentCategory.label}»
+                  Статті по темі «{currentCategory.label}»
                 </h2>
               </div>
 
@@ -103,7 +103,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 ))}
               </div>
             ) : (
-              <p className={css.empty}>В этой категории пока нет статей.</p>
+              <p className={css.empty}>В цій категорії поки що нема статтей.</p>
             )}
           </section>
         </Container>

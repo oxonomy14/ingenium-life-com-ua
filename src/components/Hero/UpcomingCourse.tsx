@@ -7,18 +7,38 @@ import css from './Hero.module.css';
 
 type UpcomingCourseProps = {
   course: Course;
+  status: 'upcoming' | 'past';
 };
 
-export default function UpcomingCourse({ course }: UpcomingCourseProps) {
+function formatCourseDate(date: string) {
+  return new Intl.DateTimeFormat('uk-UA', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
+    .format(new Date(`${date}T00:00:00`))
+    .replace(' р.', '');
+}
+
+export default function UpcomingCourse({
+  course,
+  status,
+}: UpcomingCourseProps) {
   const href = `/education/${course.categorySlug}/${course.slug}`;
+
+  const headerTitle =
+    status === 'upcoming' ? 'Найближчий курс' : 'Попередній онлайн-курс';
 
   return (
     <aside className={css.promoCard}>
       <div className={css.promoHeader}>
-        <span className={css.promoEyebrow}>Найближчий курс</span>
+        <span className={css.promoEyebrow}>{headerTitle}</span>
 
-        {course.heroPromo?.startText && (
-          <span className={css.promoDate}>{course.heroPromo.startText}</span>
+        {course.startDate && (
+          <span className={css.promoDate}>
+            {status === 'upcoming' ? 'З ' : ''}
+            {formatCourseDate(course.startDate)}
+          </span>
         )}
       </div>
 

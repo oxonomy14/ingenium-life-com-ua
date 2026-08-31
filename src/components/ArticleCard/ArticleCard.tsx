@@ -10,6 +10,14 @@ type ArticleCardProps = {
 };
 
 export default function ArticleCard({ article }: ArticleCardProps) {
+  function formatDate(date: string) {
+    return new Intl.DateTimeFormat('uk-UA', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }).format(new Date(date));
+  }
+
   return (
     <article className={css.card}>
       <Link href={`/articles/${article.slug}`} className={css.imageLink}>
@@ -42,18 +50,10 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         </p>
 
         <Link href={`/articles/${article.slug}`} className={css.link}>
-          Читать статью
+          Читати статтю
           <span aria-hidden="true">→</span>
         </Link>
       </div>
     </article>
   );
-}
-
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat('ru-RU', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  }).format(new Date(date));
 }

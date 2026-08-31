@@ -4,6 +4,8 @@ import type { Course } from '@/lib/courses';
 
 import css from './CourseMeta.module.css';
 
+import { formatDate } from '@/lib/formateDate';
+
 type CourseMetaProps = {
   course: Course;
 };
@@ -12,6 +14,7 @@ export default function CourseMeta({ course }: CourseMetaProps) {
   const {
     format,
     language,
+    startDate,
     courseYear,
     lessonCount,
     lessonDuration,
@@ -49,8 +52,15 @@ export default function CourseMeta({ course }: CourseMetaProps) {
 
     courseYear
       ? {
-          label: 'Рік проведення курсу',
+          label: 'Рік проведення',
           value: String(courseYear),
+        }
+      : null,
+
+    startDate
+      ? {
+          label: 'Дата проведення',
+          value: formatDate(startDate),
         }
       : null,
 

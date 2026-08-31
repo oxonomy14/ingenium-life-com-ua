@@ -12,14 +12,14 @@ export default function ArticleCategories({
   activeCategory,
 }: ArticleCategoriesProps) {
   return (
-    <nav className={css.categories} aria-label="Категории статей">
+    <nav className={css.categories} aria-label="Категорії статтей">
       <Link
         href="/articles"
         className={`${css.category} ${
           !activeCategory ? css.categoryActive : ''
         }`}
       >
-        Все статьи
+        Всі статті
       </Link>
 
       {articleCategories.map((category) => (

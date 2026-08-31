@@ -50,6 +50,7 @@
   text-transform: uppercase;
 
   color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .value {

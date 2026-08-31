@@ -10,20 +10,20 @@ import css from './ArcticlesPage.module.css';
 import ArticleCategories from '@/app/articles/_components/ArticleCategories/ArticleCategories';
 
 export const metadata: Metadata = {
-  title: 'Статьи об астрологии, Таро и психологии',
+  title: 'Статті про астрологію, Таро та психологію',
 
   description:
-    'Статьи InGenium об астрологии, Таро, психологии, отношениях и самопознании. Практические материалы, разборы и авторские исследования.',
+    'Статті InGenium про астрологію, Таро, психологію, стосунки та самопізнання. Практичні матеріали, розбори й авторські дослідження.',
 
   alternates: {
     canonical: '/articles',
   },
 
   openGraph: {
-    title: 'Статьи InGenium — астрология, Таро и психология',
+    title: 'Статті InGenium — астрологія, Таро та психологія',
 
     description:
-      'Практические материалы, разборы и авторские статьи об астрологии, Таро, психологии и самопознании.',
+      'Практичні матеріали, розбори й авторські статті про астрологію, Таро, психологію та самопізнання.',
 
     url: '/articles',
   },
@@ -32,18 +32,33 @@ export const metadata: Metadata = {
 export default function ArticlesPage() {
   const articles = getAllArticles();
 
+  function getArticleWord(count: number) {
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+
+    if (mod10 === 1 && mod100 !== 11) {
+      return 'стаття';
+    }
+
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return 'статті';
+    }
+
+    return 'статей';
+  }
+
   return (
     <LayoutShell>
       <div className={css.page}>
         <Container>
           <header className={css.header}>
-            <p className={css.eyebrow}>Библиотека InGenium</p>
+            <p className={css.eyebrow}>Бібліотека InGenium</p>
 
-            <h1 className={css.title}>Статьи</h1>
+            <h1 className={css.title}>Статті</h1>
 
             <p className={css.description}>
-              Материалы об астрологии, Таро, психологии и человеке — от базовых
-              понятий до глубоких авторских разборов.
+              Матеріали про астрологію, Таро, психологію та людину — від базових
+              понять до глибоких авторських розборів.
             </p>
           </header>
 
@@ -52,10 +67,10 @@ export default function ArticlesPage() {
           <section className={css.articles} aria-labelledby="articles-title">
             <div className={css.sectionHeader}>
               <div>
-                <p className={css.sectionEyebrow}>Материалы</p>
+                <p className={css.sectionEyebrow}>Матеріали</p>
 
                 <h2 id="articles-title" className={css.sectionTitle}>
-                  Все статьи
+                  Усі статті
                 </h2>
               </div>
 
@@ -71,26 +86,11 @@ export default function ArticlesPage() {
                 ))}
               </div>
             ) : (
-              <p className={css.empty}>Статьи пока не опубликованы.</p>
+              <p className={css.empty}>Статті поки що не опубліковані.</p>
             )}
           </section>
         </Container>
       </div>
     </LayoutShell>
   );
-}
-
-function getArticleWord(count: number) {
-  const mod10 = count % 10;
-  const mod100 = count % 100;
-
-  if (mod10 === 1 && mod100 !== 11) {
-    return 'статья';
-  }
-
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
-    return 'статьи';
-  }
-
-  return 'статей';
 }

@@ -8,7 +8,11 @@ const coursesDirectory = path.join(process.cwd(), 'content/courses');
 export type CourseHeroPromo = {
   enabled: boolean;
   label?: string;
-  startText?: string;
+};
+
+export type HeroPromoCourse = {
+  course: Course;
+  status: 'upcoming' | 'past';
 };
 
 export type CoursePart = {
@@ -79,6 +83,8 @@ export type Course = {
   title: string;
   subtitle?: string;
 
+  startDate?: string;
+
   description: string;
   shortDescription?: string;
 
@@ -140,6 +146,8 @@ function parseCourse(
 
     title: data.title,
     subtitle: data.subtitle,
+
+    startDate: data.startDate,
 
     description: data.description,
     shortDescription: data.shortDescription,
@@ -247,8 +255,40 @@ export function getAllCourses(): Course[] {
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
-export function getHeroPromoCourse(): Course | null {
-  return (
-    getAllCourses().find((course) => course.heroPromo?.enabled === true) ?? null
+export function getHeroPromoCourse(): HeroPromoCourse | null {
+  const courses = getAllCourses().filter(
+    (course) => course.heroPromo?.enabled === true && course.startDate,
   );
+
+  if (!courses.length) {
+    return null;
+  }
+
+  const now = Date.now();
+
+  const upcomingCourses = courses
+    .filter(
+      (course) => new Date(`${course.startDate}T23:59:59`).getTime() >= now,
+    )
+    .sort(
+      (a, b) =>
+        new Date(a.startDate!).getTime() - new Date(b.startDate!).getTime(),
+    );
+
+  if (upcomingCourses.length > 0) {
+    return {
+      course: upcomingCourses[0],
+      status: 'upcoming',
+    };
+  }
+
+  const pastCourses = courses.sort(
+    (a, b) =>
+      new Date(b.startDate!).getTime() - new Date(a.startDate!).getTime(),
+  );
+
+  return {
+    course: pastCourses[0],
+    status: 'past',
+  };
 }
