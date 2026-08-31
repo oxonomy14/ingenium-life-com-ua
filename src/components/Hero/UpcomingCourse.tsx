@@ -15,7 +15,7 @@ export default function UpcomingCourse({ course }: UpcomingCourseProps) {
   return (
     <aside className={css.promoCard}>
       <div className={css.promoHeader}>
-        <span className={css.promoEyebrow}>Ближайший курс</span>
+        <span className={css.promoEyebrow}>Найближчий курс</span>
 
         {course.heroPromo?.startText && (
           <span className={css.promoDate}>{course.heroPromo.startText}</span>
@@ -54,7 +54,7 @@ export default function UpcomingCourse({ course }: UpcomingCourseProps) {
         )}
 
         <Link href={href} className={css.promoLink}>
-          Подробнее о курсе
+          Детальніше про курс
           <span aria-hidden="true">→</span>
         </Link>
       </div>
