@@ -1,5 +1,6 @@
 .hero {
   padding: 80px 0 96px;
+
   background: var(--color-bg);
   overflow: hidden;
 }
@@ -41,6 +42,7 @@
 
 .title span {
   display: block;
+
   color: var(--color-blue);
 }
 
@@ -88,6 +90,7 @@
 
 .primaryButton:hover {
   background: var(--color-accent-hover);
+
   transform: translateY(-1px);
 }
 
@@ -111,6 +114,7 @@
 
 .secondaryLink:hover {
   gap: 14px;
+
   color: var(--color-blue-hover);
 }
 
@@ -150,31 +154,166 @@
   height: 6px;
 
   border-radius: 50%;
+
   background: var(--color-accent);
 }
 
-/* Visual */
+/* Promo */
 
 .visual {
-  position: relative;
+  width: 100%;
   min-width: 0;
 }
 
-.imageCard {
-  position: relative;
-
+.promoCard {
   width: 100%;
-  aspect-ratio: 4 / 3;
 
   overflow: hidden;
 
   background: var(--color-bg2);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
-.image {
+.promoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  min-height: 52px;
+  padding: 14px 18px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.promoEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-text);
+}
+
+.promoDate {
+  flex-shrink: 0;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--color-text-secondary);
+}
+
+.promoImageLink {
+  display: block;
+
+  text-decoration: none;
+}
+
+.promoImageWrapper {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: var(--color-bg);
+}
+
+.promoImage {
   object-fit: cover;
   object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.promoImageLink:hover .promoImage {
+  transform: scale(1.025);
+}
+
+.promoBadge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 11px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-text);
+  background: var(--color-accent);
+}
+
+.promoContent {
+  padding: 24px;
+}
+
+.promoTitle {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 2.5vw, 38px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+
+  color: var(--color-text);
+}
+
+.promoTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.promoTitle a:hover {
+  color: var(--color-blue);
+}
+
+.promoDescription {
+  margin: 12px 0 0;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: var(--color-text-secondary);
+}
+
+.promoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 22px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  color: var(--color-blue);
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.promoLink:hover {
+  gap: 14px;
+
+  color: var(--color-blue-hover);
 }
 
 /* Tablet */
@@ -196,9 +335,17 @@
   .description {
     font-size: 17px;
   }
+
+  .promoContent {
+    padding: 22px;
+  }
+
+  .promoTitle {
+    font-size: clamp(27px, 2.8vw, 34px);
+  }
 }
 
-/* Mobile / Tablet portrait */
+/* Tablet portrait */
 
 @media (max-width: 900px) {
   .inner {
@@ -211,11 +358,12 @@
   }
 
   .visual {
-    max-width: 700px;
+    width: 100%;
+    max-width: 760px;
   }
 
-  .imageCard {
-    aspect-ratio: 16 / 10;
+  .promoImageWrapper {
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -232,6 +380,7 @@
 
   .eyebrow {
     margin-bottom: 16px;
+
     font-size: 12px;
   }
 
@@ -271,8 +420,50 @@
     padding-top: 20px;
   }
 
-  .imageCard {
-    aspect-ratio: 4 / 3;
+  .promoHeader {
+    min-height: 48px;
+    padding: 13px 16px;
+  }
+
+  .promoEyebrow {
+    font-size: 10px;
+  }
+
+  .promoDate {
+    font-size: 12px;
+  }
+
+  .promoImageWrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .promoBadge {
+    left: 14px;
+    bottom: 14px;
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+  }
+
+  .promoContent {
+    padding: 20px;
+  }
+
+  .promoTitle {
+    font-size: 30px;
+  }
+
+  .promoDescription {
+    margin-top: 10px;
+
+    font-size: 14px;
+  }
+
+  .promoLink {
+    margin-top: 18px;
+
+    font-size: 13px;
   }
 }
 
@@ -281,7 +472,15 @@
     font-size: 39px;
   }
 
-  .imageCard {
-    aspect-ratio: 1 / 1;
+  .promoHeader {
+    gap: 12px;
+  }
+
+  .promoTitle {
+    font-size: 28px;
+  }
+
+  .promoContent {
+    padding: 18px;
   }
 }

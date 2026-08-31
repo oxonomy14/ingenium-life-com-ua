@@ -5,6 +5,12 @@ import matter from 'gray-matter';
 
 const coursesDirectory = path.join(process.cwd(), 'content/courses');
 
+export type CourseHeroPromo = {
+  enabled: boolean;
+  label?: string;
+  startText?: string;
+};
+
 export type CoursePart = {
   title: string;
   lessons?: number;
@@ -86,6 +92,7 @@ export type Course = {
   ogImageAlt?: string;
 
   format?: string;
+  heroPromo?: CourseHeroPromo;
   language?: string;
   duration?: string;
   courseYear?: number;
@@ -147,6 +154,7 @@ function parseCourse(
     ogImageAlt: data.ogImageAlt,
 
     format: data.format,
+    heroPromo: data.heroPromo,
     language: data.language,
     duration: data.duration,
     courseYear: data.courseYear,
@@ -237,4 +245,10 @@ export function getAllCourses(): Course[] {
   return categories
     .flatMap((categoryName) => getCoursesByCategory(categoryName))
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+}
+
+export function getHeroPromoCourse(): Course | null {
+  return (
+    getAllCourses().find((course) => course.heroPromo?.enabled === true) ?? null
+  );
 }

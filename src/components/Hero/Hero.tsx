@@ -1,11 +1,16 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 import Container from '@/components/Container/Container';
+
+import { getHeroPromoCourse } from '@/lib/courses';
+
+import UpcomingCourse from './UpcomingCourse';
 
 import css from './Hero.module.css';
 
 export default function Hero() {
+  const promoCourse = getHeroPromoCourse();
+
   return (
     <section className={css.hero}>
       <Container>
@@ -42,19 +47,11 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div className={css.visual}>
-            <div className={css.imageCard}>
-              <Image
-                src="/images/hero/ingenium-school.webp"
-                alt="Навчання у школі астрології InGenium"
-                fill
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 900px) 100vw, 42vw"
-                className={css.image}
-              />
+          {promoCourse && (
+            <div className={css.visual}>
+              <UpcomingCourse course={promoCourse} />
             </div>
-          </div>
+          )}
         </div>
       </Container>
     </section>
