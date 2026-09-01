@@ -1,55 +1,72 @@
 // src/components/Seo/FreeLessonsSchema/FreeLessonsSchema.tsx
 
-import { getFreeLessons } from '@/data/freeLessons';
+import { getAllCourses } from '@/lib/courses';
 
 const BASE_URL = 'https://ingenium-life.com.ua';
 
 export default function FreeLessonsSchema() {
-  const lessons = getFreeLessons();
+  const courses = getAllCourses().filter(
+    (course) =>
+      course.published &&
+      course.previewLesson?.enabled &&
+      course.previewLesson?.vimeoId,
+  );
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     '@id': `${BASE_URL}/education/free#collectionpage`,
     url: `${BASE_URL}/education/free`,
-    name: 'Бесплатные уроки по астрологии, Таро и психологии',
+    name: 'Відкриті уроки для ознайомлення з астрології, Таро та психології',
     description:
-      'Бесплатные видеоуроки InGenium по астрологии, Таро, астропсихологии и работе с натальной картой.',
-    inLanguage: 'ru',
+      'Відкриті відеоуроки InGenium для ознайомлення з астрологією, Таро, астропсихологією та роботою з натальною картою.',
+    inLanguage: 'uk',
 
     mainEntity: {
       '@type': 'ItemList',
       '@id': `${BASE_URL}/education/free#itemlist`,
-      name: 'Бесплатные уроки InGenium',
-      numberOfItems: lessons.length,
+      name: 'Відкриті уроки для ознайомлення',
+      numberOfItems: courses.length,
 
-      itemListElement: lessons.map((lesson, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
+      itemListElement: courses.map((course, index) => {
+        const lesson = course.previewLesson!;
 
-        item: {
-          '@type': 'VideoObject',
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
 
-          '@id': `${BASE_URL}/education/free#${lesson.slug}`,
+          item: {
+            '@type': 'VideoObject',
 
-          name: lesson.title,
-          description: lesson.description,
+            '@id': `${BASE_URL}/education/free#${course.slug}`,
 
-          thumbnailUrl: `${BASE_URL}${lesson.image}`,
+            name: lesson.videoTitle || course.title,
 
-          ...(lesson.uploadDate && {
-            uploadDate: lesson.uploadDate,
-          }),
+            description:
+              lesson.description ||
+              course.shortDescription ||
+              course.description,
 
-          ...(lesson.durationIso && {
-            duration: lesson.durationIso,
-          }),
+            thumbnailUrl: course.image
+              ? `${BASE_URL}${course.image}`
+              : undefined,
 
-          embedUrl: lesson.vimeoHash
-            ? `https://player.vimeo.com/video/${lesson.vimeoId}?h=${lesson.vimeoHash}`
-            : `https://player.vimeo.com/video/${lesson.vimeoId}`,
-        },
-      })),
+            ...(lesson.uploadDate && {
+              uploadDate: lesson.uploadDate,
+            }),
+
+            ...(lesson.durationIso && {
+              duration: lesson.durationIso,
+            }),
+
+            embedUrl: lesson.vimeoHash
+              ? `https://player.vimeo.com/video/${lesson.vimeoId}?h=${lesson.vimeoHash}`
+              : `https://player.vimeo.com/video/${lesson.vimeoId}`,
+
+            url: `${BASE_URL}/education/${course.categorySlug}/${course.slug}`,
+          },
+        };
+      }),
     },
   };
 

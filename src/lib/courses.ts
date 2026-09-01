@@ -15,6 +15,10 @@ export type CoursePreviewLesson = {
 
   videoTitle?: string;
 
+  uploadDate?: string;
+  durationIso?: string;
+  duration?: string;
+
   lessonTitle?: string;
   lessonDescription?: string[];
 

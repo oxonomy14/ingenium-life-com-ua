@@ -25,9 +25,9 @@ export default function CoursePreviewLesson({
       <Container>
         <div className={css.inner}>
           <div className={css.header}>
-            <p className={css.eyebrow}>Открытое занятие</p>
+            <p className={css.eyebrow}>Відкрите заняття</p>
 
-            <h2 className={css.title}>Посмотрите первое занятие интенсива</h2>
+            <h2 className={css.title}>Перегляньте перше заняття інтенсиву</h2>
 
             {lesson.description && (
               <p className={css.description}>{lesson.description}</p>
@@ -37,7 +37,7 @@ export default function CoursePreviewLesson({
           <div className={css.videoWrapper}>
             <iframe
               src={videoUrl}
-              title={lesson.videoTitle || 'Первое занятие курса'}
+              title={lesson.videoTitle || 'Перше заняття курсу'}
               className={css.video}
               allow="autoplay; fullscreen; picture-in-picture"
               allowFullScreen
@@ -66,7 +66,7 @@ export default function CoursePreviewLesson({
             </div>
 
             <a href="#course-order" className={css.cta}>
-              Получить полный курс
+              Отримати повний курс
               <span aria-hidden="true">→</span>
             </a>
           </div>

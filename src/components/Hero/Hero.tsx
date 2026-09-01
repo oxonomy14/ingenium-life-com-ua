@@ -35,7 +35,7 @@ export default function Hero() {
               </Link>
 
               <Link href="/education/free" className={css.secondaryLink}>
-                Спробувати безкоштовно
+                Відкриті уроки для ознайомлення
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

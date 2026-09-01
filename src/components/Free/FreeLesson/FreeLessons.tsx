@@ -1,49 +1,39 @@
 // src/components/FreeLessons/FreeLessons.tsx
 
-'use client';
-
-import { useState } from 'react';
-
 import Container from '@/components/Container/Container';
-import FreeLessonCard from '@/components/Free/FreeLessonCard/FreeLessonCard';
+import FreeLessonsClient from './FreeLessonsClient';
 
-import { getFreeLessons } from '@/data/freeLessons';
+import { getAllCourses } from '@/lib/courses';
 
 import css from './FreeLessons.module.css';
 
 export default function FreeLessons() {
-  const lessons = getFreeLessons();
+  const courses = getAllCourses().filter(
+    (course) =>
+      course.published &&
+      course.previewLesson?.enabled &&
+      course.previewLesson?.vimeoId,
+  );
 
-  const [activeLessonSlug, setActiveLessonSlug] = useState<string | null>(null);
-
-  const handlePlay = (slug: string) => {
-    setActiveLessonSlug((currentSlug) => (currentSlug === slug ? null : slug));
-  };
+  if (!courses.length) {
+    return null;
+  }
 
   return (
     <section id="free-lessons" className={css.section}>
       <Container>
         <div className={css.header}>
-          <span className={css.eyebrow}>Открытые материалы</span>
+          <span className={css.eyebrow}>Відкриті матеріали</span>
 
-          <h2 className={css.title}>Бесплатные занятия</h2>
+          <h2 className={css.title}>Безкоштовні заняття</h2>
 
           <p className={css.description}>
-            Посмотрите отдельные занятия из программ InGenium и познакомьтесь с
-            нашим подходом к обучению.
+            Перегляньте відкриті заняття з програм InGenium і познайомтеся з
+            нашим підходом до навчання.
           </p>
         </div>
 
-        <div className={css.grid}>
-          {lessons.map((lesson) => (
-            <FreeLessonCard
-              key={lesson.slug}
-              lesson={lesson}
-              isPlaying={activeLessonSlug === lesson.slug}
-              onPlay={() => handlePlay(lesson.slug)}
-            />
-          ))}
-        </div>
+        <FreeLessonsClient courses={courses} />
       </Container>
     </section>
   );

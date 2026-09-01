@@ -1,25 +1,40 @@
+// src/components/Free/FreeLessonCard/FreeLessonCard.tsx
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaPlay } from 'react-icons/fa';
 
-import type { FreeLesson } from '@/data/freeLessons';
+import type { Course } from '@/lib/courses';
 
 import css from './FreeLessonCard.module.css';
 
 interface FreeLessonCardProps {
-  lesson: FreeLesson;
+  course: Course;
   isPlaying: boolean;
   onPlay: () => void;
 }
 
 export default function FreeLessonCard({
-  lesson,
+  course,
   isPlaying,
   onPlay,
 }: FreeLessonCardProps) {
-  const courseHref = lesson.courseSlug
-    ? `/education/${lesson.category}/${lesson.courseSlug}`
-    : null;
+  const lesson = course.previewLesson;
+
+  if (!lesson?.enabled || !lesson.vimeoId) {
+    return null;
+  }
+
+  const courseHref = `/education/${course.categorySlug}/${course.slug}`;
+
+  const videoUrl = lesson.vimeoHash
+    ? `https://player.vimeo.com/video/${lesson.vimeoId}?h=${lesson.vimeoHash}&badge=0&autopause=0&autoplay=1`
+    : `https://player.vimeo.com/video/${lesson.vimeoId}?badge=0&autopause=0&autoplay=1`;
+
+  const lessonTitle = lesson.videoTitle || course.title;
+
+  const lessonDescription =
+    lesson.lessonDescription || course.shortDescription || course.description;
 
   return (
     <article className={css.card}>
@@ -27,27 +42,29 @@ export default function FreeLessonCard({
         {isPlaying ? (
           <iframe
             className={css.video}
-            src={`https://player.vimeo.com/video/${lesson.vimeoId}?h=${lesson.vimeoHash}&badge=0&autopause=0&autoplay=1`}
-            title={lesson.title}
+            src={videoUrl}
+            title={lessonTitle}
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
         ) : (
           <>
-            <Image
-              src={lesson.image}
-              alt={lesson.imageAlt}
-              fill
-              sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw"
-              className={css.image}
-            />
+            {course.image && (
+              <Image
+                src={course.image}
+                alt={course.imageAlt || course.title}
+                fill
+                sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                className={css.image}
+              />
+            )}
 
             <button
               type="button"
               className={css.playButton}
               onClick={onPlay}
-              aria-label={`Смотреть урок: ${lesson.title}`}
+              aria-label={`Дивитися заняття: ${lessonTitle}`}
             >
               <FaPlay />
             </button>
@@ -57,27 +74,27 @@ export default function FreeLessonCard({
 
       <div className={css.content}>
         <div className={css.meta}>
-          <span className={css.category}>{lesson.categoryLabel}</span>
+          <span className={css.category}>{course.category}</span>
 
           {lesson.duration && (
             <span className={css.duration}>{lesson.duration}</span>
           )}
         </div>
 
-        <h2 className={css.title}>{lesson.title}</h2>
+        <h2 className={css.title}>{lessonTitle}</h2>
 
-        <p className={css.description}>{lesson.description}</p>
+        {lessonDescription && (
+          <p className={css.description}>{lessonDescription}</p>
+        )}
 
         <div className={css.actions}>
           <button type="button" className={css.watchButton} onClick={onPlay}>
-            {isPlaying ? 'Закрыть урок' : 'Смотреть урок'}
+            {isPlaying ? 'Закрити заняття' : 'Дивитися заняття'}
           </button>
 
-          {courseHref && lesson.courseTitle && (
-            <Link href={courseHref} className={css.courseLink}>
-              Полный курс →
-            </Link>
-          )}
+          <Link href={courseHref} className={css.courseLink}>
+            Повний курс →
+          </Link>
         </div>
       </div>
     </article>
