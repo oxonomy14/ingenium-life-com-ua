@@ -5,6 +5,22 @@ import matter from 'gray-matter';
 
 const coursesDirectory = path.join(process.cwd(), 'content/courses');
 
+export type CoursePreviewLesson = {
+  enabled?: boolean;
+
+  description?: string;
+
+  vimeoId: string;
+  vimeoHash?: string;
+
+  videoTitle?: string;
+
+  lessonTitle?: string;
+  lessonDescription?: string[];
+
+  lessonTopics?: string[];
+};
+
 export type CourseHeroPromo = {
   enabled: boolean;
   label?: string;
@@ -99,6 +115,7 @@ export type Course = {
 
   format?: string;
   heroPromo?: CourseHeroPromo;
+  previewLesson?: CoursePreviewLesson;
   language?: string;
   duration?: string;
   courseYear?: number;
@@ -163,6 +180,7 @@ function parseCourse(
 
     format: data.format,
     heroPromo: data.heroPromo,
+    previewLesson: data.previewLesson,
     language: data.language,
     duration: data.duration,
     courseYear: data.courseYear,

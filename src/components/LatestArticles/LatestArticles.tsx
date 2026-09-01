@@ -33,7 +33,7 @@ export default function LatestArticles() {
 
             <h2 className={css.title}>
               Корисні матеріали
-              <span> InGenium Life</span>
+              <span> InGenium</span>
             </h2>
           </div>
 

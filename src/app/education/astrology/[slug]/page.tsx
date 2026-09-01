@@ -9,6 +9,7 @@ import CourseMeta from '@/components/Course/CourseMeta/CourseMeta';
 import CourseParts from '@/components/Course/CourseParts/CourseParts';
 import CourseContent from '@/components/Course/CourseContent/CourseContent';
 import CourseProgram from '@/components/Course/CourseProgram/CourseProgram';
+import CoursePreviewLesson from '@/components/Course/CoursePreviewLesson/CoursePreviewLesson';
 import CoursePricing from '@/components/Course/CoursePricing/CoursePricing';
 import CourseAuthor from '@/components/Course/CourseAuthor/CourseAuthor';
 import CourseCta from '@/components/Course/CourseCta/CourseCta';
@@ -111,6 +112,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
       <CourseContent content={course.content} />
       <CourseParts course={course} />
       <CourseProgram course={course} />
+      <CoursePreviewLesson course={course} />
       <CoursePricing course={course} />
       <CourseAuthor />
       <CourseCta course={course} />
