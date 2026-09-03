@@ -67,7 +67,7 @@ export async function POST(request: Request) {
         contact,
         message,
 
-        source: 'http://ingenium-life.com.ua/contacts',
+        source: 'ingenium-life.com.ua',
         createdAt: new Date().toISOString(),
       }),
 
